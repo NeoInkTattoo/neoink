@@ -19,3 +19,32 @@ body{margin:0;min-width:1920px;background:var(--ink);color:var(--beige);font-fam
 .meanings-cover-copy{position:absolute;left:793px;top:569px;width:335px;height:52px;margin:0;text-align:center;font-size:22px;font-weight:400;line-height:26.4px;letter-spacing:-.88px}
 .meanings-cover-button{position:absolute;left:793px;top:641px;width:335px;height:60px;border-radius:5px;background:var(--beige);color:var(--ink);display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:20px;font-weight:400;line-height:24px;letter-spacing:-.8px}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+.meanings-catalog{position:relative;width:1820px;height:2169px;margin:120px 0 0 50px}
+.meanings-catalog>h2{position:absolute;left:0;top:0;width:585px;height:63px;margin:0;font-size:60px;font-weight:500;line-height:63px;letter-spacing:-1.8px;white-space:nowrap}
+.meanings-filters{position:absolute;left:764px;top:3px;width:1056px;height:60px;display:flex;gap:5px}
+.meanings-filters button{height:60px;width:160px;border-radius:1000px;border:1px solid rgba(206,198,193,.2);background:#242424;color:var(--beige);font:inherit;font-size:20px;line-height:24px;letter-spacing:-.8px;cursor:pointer}
+.meanings-filters button:first-child{width:66px}
+.meanings-filters button.is-active{background:var(--beige);color:var(--ink);border-color:var(--beige)}
+.meaning-card{position:absolute;width:592px;height:630px;background:#242424;border-radius:5px;overflow:hidden}
+.meaning-card.is-tall{height:960px}
+.meaning-card-1{left:0;top:113px}
+.meaning-card-2{left:614px;top:113px}
+.meaning-card-3{left:1228px;top:113px}
+.meaning-card-4{left:0;top:773px}
+.meaning-card-5{left:1228px;top:773px}
+.meaning-card-6{left:0;top:1433px}
+.meaning-card-7{left:614px;top:1103px}
+.meaning-card-8{left:1228px;top:1433px}
+.meaning-photo{display:block;width:592px;height:400px;object-fit:cover;border-radius:5px}
+.meaning-card.is-tall .meaning-photo{height:664px}
+.meaning-copy{position:absolute;left:20px;right:20px;top:420px}
+.meaning-card.is-tall .meaning-copy{top:684px}
+.meaning-category{height:22px;font-size:18px;font-weight:400;line-height:21.6px;letter-spacing:-.36px}
+.meaning-copy h3{margin:10px 0 0;font-size:36px;font-weight:500;line-height:43.2px;letter-spacing:-1.44px}
+.meaning-copy p{margin:5px 0 0;width:552px;font-size:18px;font-weight:400;line-height:21.6px;letter-spacing:-.36px}
+.meaning-arrow{display:inline-block;vertical-align:middle;width:auto;height:15px;margin-left:4px}
+.meanings-more{position:absolute;left:735px;top:2113px;width:349px;height:56px;border:0;border-radius:5px;background:var(--beige);color:var(--ink);font:inherit;font-size:20px;line-height:24px;letter-spacing:-.8px;cursor:pointer}
+
+.cta-section{position:relative;width:1820px;height:724px;margin:170px 0 0 50px}.cta-section h2{position:absolute;left:477px;top:0;width:767px;height:60px;margin:0;font-size:50px;font-weight:500;line-height:60px;letter-spacing:-1.5px;white-space:nowrap}.cta-wordmark{position:absolute;left:0;top:105px;width:1820px;height:619px;display:block}.cta-pin{position:absolute;left:108px;top:75px;width:483px;height:353px;display:block;object-fit:contain}.cta-butterfly{position:absolute;left:1212px;top:159px;width:367px;height:462px;display:block;object-fit:cover}.cta-button{position:absolute;left:557px;top:329px;width:705px;height:171px;border-radius:5px;background:var(--ink);display:block;color:var(--beige);text-decoration:none}.cta-button span{position:absolute;left:20px;top:20px;width:528px;height:131px;border:1px solid var(--beige);border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:100px;font-weight:400;line-height:120px;letter-spacing:-4px;white-space:nowrap}.cta-button img{position:absolute;left:568px;top:27px;width:117px;height:117px;display:block}
+.site-footer{position:relative;width:1920px;height:628px;margin:50px auto 0;overflow:hidden}.footer-bg{position:absolute;inset:0;width:1920px;height:628px;object-fit:cover;display:block}.footer-logo{position:absolute;left:50px;top:303px;width:77px;height:20px;color:var(--ink);font-size:20px;font-weight:500;line-height:20px;letter-spacing:-.8px}.footer-contact{position:absolute;left:807px;top:267px;width:278px;height:94px;font-size:20px;font-weight:400;line-height:24px;letter-spacing:-.8px;color:rgba(206,198,193,.8)}.footer-contact p{margin:0;color:var(--beige)}.footer-contact p+p{margin-top:20px}.footer-contact a{color:var(--beige);text-decoration:none}.footer-contact span{color:rgba(206,198,193,.8)}.footer-socials{position:absolute;left:1207px;top:288px;width:236px;height:52px;display:flex;gap:40px}.footer-social{width:52px;height:52px;display:block}.footer-social img{width:52px;height:52px;display:block}
