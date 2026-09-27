@@ -1,8 +1,24 @@
 const menuButton=document.querySelector(".menu-toggle");
+const tabletMenu=document.querySelector("#tablet-menu");
+
+function setMenu(open){
+  if(!menuButton||!tabletMenu)return;
+  menuButton.setAttribute("aria-expanded",String(open));
+  menuButton.setAttribute("aria-label",open?"Закрыть меню":"Открыть меню");
+  tabletMenu.hidden=!open;
+}
+
 menuButton?.addEventListener("click",()=>{
   const open=menuButton.getAttribute("aria-expanded")==="true";
-  menuButton.setAttribute("aria-expanded",String(!open));
-  menuButton.textContent=open?"Menu":"Close";
+  setMenu(!open);
+});
+
+tabletMenu?.querySelectorAll("a").forEach(link=>{
+  link.addEventListener("click",()=>setMenu(false));
+});
+
+document.addEventListener("keydown",event=>{
+  if(event.key==="Escape")setMenu(false);
 });
 
 const siteShell=document.querySelector(".site-shell");
@@ -19,6 +35,8 @@ function updateDesktopScale(){
     siteShell.style.transform="";
     document.body.style.height="";
   }
+
+  if(viewport>768)setMenu(false);
 }
 
 updateDesktopScale();
