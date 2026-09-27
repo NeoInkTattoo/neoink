@@ -18,7 +18,7 @@ body{min-width:0;overflow-x:hidden}
 .menu-toggle::after{top:20px}
 
 
-.tablet-menu{position:absolute;z-index:39;left:0;top:64px;width:768px;height:230px;background:var(--panel);padding:20px;display:flex;flex-direction:column;align-items:flex-start;gap:20px}
+.menu-overlay{position:fixed;z-index:38;inset:64px 0 0 0;background:rgba(0,0,0,.25)}.menu-overlay[hidden]{display:none}.tablet-menu{position:absolute;z-index:39;left:0;top:64px;width:768px;height:230px;background:var(--panel);padding:20px;display:flex;flex-direction:column;align-items:flex-start;gap:20px}
 .tablet-menu[hidden]{display:none}
 .tablet-menu a{color:var(--beige);text-decoration:none;font-size:18px;font-weight:400;line-height:21.6px;letter-spacing:-.72px}
 
