@@ -6,19 +6,19 @@ body{min-width:0;overflow-x:hidden}
 .site-header,main,.site-footer{width:768px;max-width:none;margin-left:auto;margin-right:auto}
 
 /* Header */
-.site-header{height:64px;font-size:18px;line-height:21.6px;letter-spacing:-.72px}
+.site-header{height:64px;font-size:18px;line-height:21.6px;letter-spacing:-.72px;z-index:40}
 .logo{left:20px;top:24px;width:69px;height:16px;font-size:18px;line-height:16px;letter-spacing:-.72px}
 .desktop-nav,.header-contact{display:none}
 .header-right{position:static;width:auto;height:auto;display:block}
 .language{position:absolute;right:81px;left:auto;top:21px;width:59px;height:22px;display:flex;align-items:center;justify-content:center;gap:4px}
 .language button,.language span{font-size:18px;line-height:21.6px;letter-spacing:-.72px}
-.menu-toggle{display:block;position:absolute;right:20px;left:auto;top:21px;width:31px;height:22px;font-size:0}
+.menu-toggle{display:block;position:absolute;right:20px;left:auto;top:21px;width:31px;height:22px;font-size:0;z-index:50;pointer-events:auto;touch-action:manipulation}
 .menu-toggle::before,.menu-toggle::after{content:"";position:absolute;left:0;width:31px;height:2px;background:var(--beige)}
 .menu-toggle::before{top:0;box-shadow:0 10px 0 var(--beige)}
 .menu-toggle::after{top:20px}
 
 
-.tablet-menu{position:absolute;z-index:20;left:0;top:64px;width:768px;height:230px;background:var(--panel);padding:20px;display:flex;flex-direction:column;align-items:flex-start;gap:20px}
+.tablet-menu{position:absolute;z-index:39;left:0;top:64px;width:768px;height:230px;background:var(--panel);padding:20px;display:flex;flex-direction:column;align-items:flex-start;gap:20px}
 .tablet-menu[hidden]{display:none}
 .tablet-menu a{color:var(--beige);text-decoration:none;font-size:18px;font-weight:400;line-height:21.6px;letter-spacing:-.72px}
 
