@@ -10,9 +10,9 @@ body{min-width:0;overflow-x:hidden}
 .logo{left:20px;top:24px;width:69px;height:16px;font-size:18px;line-height:16px;letter-spacing:-.72px}
 .desktop-nav,.header-contact{display:none}
 .header-right{position:static;width:auto;height:auto;display:block}
-.language{position:absolute;left:628px;top:21px;width:59px;height:22px;display:flex;align-items:center;justify-content:center;gap:4px}
+.language{position:absolute;right:81px;left:auto;top:21px;width:59px;height:22px;display:flex;align-items:center;justify-content:center;gap:4px}
 .language button,.language span{font-size:18px;line-height:21.6px;letter-spacing:-.72px}
-.menu-toggle{display:block;position:absolute;left:717px;top:21px;width:31px;height:22px;font-size:0}
+.menu-toggle{display:block;position:absolute;right:20px;left:auto;top:21px;width:31px;height:22px;font-size:0}
 .menu-toggle::before,.menu-toggle::after{content:"";position:absolute;left:0;width:31px;height:2px;background:var(--beige)}
 .menu-toggle::before{top:0;box-shadow:0 10px 0 var(--beige)}
 .menu-toggle::after{top:20px}
