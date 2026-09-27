@@ -76,15 +76,15 @@ body{min-width:0;overflow-x:hidden}
 .review-name{left:250px;top:14px;width:90px;font-size:20px;line-height:24px;letter-spacing:-.8px}
 .review-text{left:185px;top:75px;width:286px;height:188px;font-size:16px;line-height:19.2px;letter-spacing:-.64px;overflow:hidden}
 
-/* CTA 50499:3526 */
-.cta-section{position:relative;width:728px;height:291px;margin:100px 0 0 20px}
-.cta-section h2{left:181px;top:0;width:366px;height:36px;font-size:30px;line-height:36px;letter-spacing:-.9px}
-.cta-wordmark{left:0;top:66px;width:728px;height:225px}
-.cta-pin{left:48px;top:57px;width:168px;height:121px}
-.cta-butterfly{left:489px;top:78px;width:147px;height:185px}
-.cta-button{left:237px;top:142px;width:252px;height:72px}
-.cta-button span{left:10px;top:10px;width:178px;height:52px;font-size:40px;line-height:48px;letter-spacing:-1.6px}
-.cta-button img{left:198px;top:14px;width:44px;height:44px}
+/* CTA — Russian desktop 50503:3877 reduced by the same rules as 50503:3855 → 50503:3866 */
+.cta-section{position:relative;width:728px;height:314px;margin:100px 0 0 20px}
+.cta-section h2{left:134px;top:0;width:460px;height:36px;font-size:30px;line-height:36px;letter-spacing:-.9px;text-align:center}
+.cta-wordmark{left:0;top:66px;width:728px;height:248px}
+.cta-pin{left:43px;top:53px;width:193px;height:141px}
+.cta-butterfly{left:505px;top:88px;width:147px;height:185px}
+.cta-button{left:223px;top:156px;width:282px;height:72px}
+.cta-button span{left:10px;top:10px;width:211px;height:52px;font-size:40px;line-height:48px;letter-spacing:-1.6px}
+.cta-button img{left:227px;top:13px;width:47px;height:47px}
 
 /* Footer 50499:3525 */
 .site-footer{position:relative;width:768px;height:251px;margin:20px auto 0}
