@@ -40,7 +40,7 @@ body{min-width:0;overflow-x:hidden}
 .menu-toggle::before,.menu-toggle::after{content:"";position:absolute;left:0;width:31px;height:2px;background:var(--beige)}
 .menu-toggle::before{top:0;box-shadow:0 10px 0 var(--beige)}
 .menu-toggle::after{top:20px}
-.menu-overlay{position:fixed;z-index:38;inset:64px 0 0 0;background:rgba(0,0,0,.25)}
+.menu-overlay{display:block;position:fixed;z-index:38;inset:64px 0 0 0;background:rgba(0,0,0,.25)}
 .menu-overlay[hidden]{display:none}
 .tablet-menu{position:absolute;z-index:39;left:0;top:64px;width:768px;height:230px;background:var(--panel);padding:20px;display:flex;flex-direction:column;align-items:flex-start;gap:20px}
 .tablet-menu[hidden]{display:none}
@@ -56,15 +56,15 @@ body{min-width:0;overflow-x:hidden}
 .about-cover-button{left:239px;top:313px;width:290px;height:45px;font-size:18px;line-height:21.6px;letter-spacing:-.72px}
 
 /* About 50513:4255 */
-.about-me{position:relative;width:728px;height:766px;margin:80px 0 0 20px}
-.about-me h2{left:0;top:0;width:170px;height:42px;font-size:40px;line-height:42px;letter-spacing:-1.2px}
-.about-me-main{left:242px;top:0;width:486px;height:766px}
-.about-me-main h3{width:486px;height:126px;font-size:70px;line-height:63px;letter-spacing:-2.1px}
-.about-me-text{left:0;top:136px;width:486px;gap:15px;font-size:16px;line-height:19.2px;letter-spacing:-.64px}
+.about-me{position:relative;width:728px;height:829px;margin:80px 0 0 20px}
+.about-me h2{left:0;top:0;width:151px;height:42px;font-size:40px;line-height:42px;letter-spacing:-1.2px}
+.about-me-main{left:242px;top:0;width:486px;height:829px}
+.about-me-main h3{width:486px;height:189px;font-size:70px;line-height:63px;letter-spacing:-2.1px}
+.about-me-text{left:0;top:199px;width:486px;gap:15px;font-size:16px;line-height:19.2px;letter-spacing:-.64px}
 .about-me-text p{width:486px!important}
 .about-me-text p:nth-child(3){width:468px!important}
-.about-me-button{left:0;top:376px;width:290px;height:45px;font-size:18px;line-height:21.6px;letter-spacing:-.72px}
-.about-me-photo{left:0;top:451px;width:401px;height:315px;border-radius:5px}
+.about-me-button{left:0;top:439px;width:290px;height:45px;font-size:18px;line-height:21.6px;letter-spacing:-.72px}
+.about-me-photo{left:0;top:514px;width:401px;height:315px;border-radius:5px}
 
 /* Safety 50513:4248 */
 .safety-section{position:relative;width:728px;height:1038px;margin:100px 0 0 20px}
