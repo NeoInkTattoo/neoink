@@ -35,19 +35,19 @@ body{min-width:0;overflow-x:hidden}
 .portfolio-grid{left:0;top:158px;width:728px;height:275px;display:flex;gap:10px}
 .portfolio-grid img{width:236px;height:275px;flex:0 0 236px;border-radius:5px;object-fit:cover}
 
-/* About stats 50499:3581 */
-.about-stats{position:relative;width:709px;height:219px;margin:100px 0 0 20px}
-.about-stats h2{left:0;top:0;width:auto;height:42px;font-size:40px;line-height:42px;letter-spacing:-1.2px}
-.about-separator{top:72px;width:7px;height:147px}
-.about-separator::before{left:3px;top:4px;width:1px;height:143px}
+/* About stats 50504:3963 — refined Russian tablet layout */
+.about-stats{position:relative;width:708px;height:238px;margin:100px 0 0 20px}
+.about-stats h2{left:0;top:0;width:163px;height:42px;font-size:40px;line-height:42px;letter-spacing:-1.2px}
+.about-separator{top:72px;width:7px;height:165px}
+.about-separator::before{left:3px;top:4px;width:1px;height:161px}
 .about-separator::after{left:0;top:0;width:7px;height:7px}
 .about-separator-1{left:178px}.about-separator-2{left:360px}.about-separator-3{left:542px}
 .about-number{top:72px;height:90px;font-size:90px;line-height:90px;letter-spacing:-7.2px}
-.about-number-1{left:13px;width:148px}.about-number-2{left:209px;width:120px}.about-number-3{left:381px;width:148px}.about-number-4{left:566px;width:143px}
-.about-caption{top:172px;height:47px;gap:5px}
+.about-number-1{left:17px;width:148px}.about-number-2{left:213px;width:120px}.about-number-3{left:382px;width:148px}.about-number-4{left:565px;width:143px}
+.about-caption{top:172px;gap:5px;text-align:center;white-space:normal}
 .about-caption strong{font-size:18px;line-height:21.6px;letter-spacing:-.36px}
 .about-caption span{font-size:16px;line-height:19.2px;letter-spacing:-.64px}
-.about-caption-1{left:8px;width:157px}.about-caption-2{left:191px;width:156px}.about-caption-3{left:384px;width:142px}.about-caption-4{left:574px;width:126px}
+.about-caption-1{left:16px;width:150px;height:65px}.about-caption-2{left:193px;width:160px;height:65px}.about-caption-3{left:374px;width:163px;height:65px}.about-caption-4{left:567px;width:139px;height:66px}
 
 /* Process 50499:3554 */
 .process-section{position:relative;width:716px;height:799px;margin:100px 0 0 20px}
