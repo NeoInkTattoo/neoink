@@ -68,7 +68,7 @@ body{min-width:0;overflow-x:hidden}
 
 /* Safety 50513:4248 */
 .safety-section{position:relative;width:728px;height:1038px;margin:100px 0 0 20px}
-.safety-section h2{width:436px;height:42px;font-size:40px;line-height:42px;letter-spacing:-1.2px;white-space:nowrap}
+.safety-section h2{width:448px;height:42px;font-size:40px;line-height:42px;letter-spacing:-1.2px;white-space:nowrap}
 .safety-grid{left:0;top:72px;width:728px;height:966px;display:grid;grid-template-columns:359px 359px;grid-template-rows:478px 478px;gap:10px}
 .safety-card{width:359px;height:478px;border-width:1.504px;border-radius:5px;padding:20px}
 .safety-card img{width:319px;height:306px;border-radius:5px;object-fit:cover;object-position:bottom}
