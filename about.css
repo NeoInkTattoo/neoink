@@ -77,18 +77,18 @@ body{min-width:0;overflow-x:hidden}
 .safety-card:last-child h3{width:319px}
 
 /* Studio 50513:4239 */
-.studio-section{position:relative;width:728px;height:831px;margin:100px 0 0 20px}
-.studio-section h2{left:220px;top:0;width:287px;height:42px;font-size:40px;line-height:42px;letter-spacing:-1.2px}
-.studio-lead{left:46px;top:72px;width:635px;height:87px;font-size:24px;line-height:28.8px;letter-spacing:-.72px}
-.studio-emphasis{left:242px;top:174px;width:381px;height:88px;font-size:18px;line-height:21.6px;letter-spacing:-.72px}
+.studio-section{position:relative;width:728px;height:860px;margin:100px 0 0 20px}
+.studio-section h2{left:220px;top:0;width:290px;height:42px;font-size:40px;line-height:42px;letter-spacing:-1.2px}
+.studio-lead{left:46px;top:72px;width:664px;height:116px;font-size:24px;line-height:28.8px;letter-spacing:-.72px}
+.studio-emphasis{left:242px;top:203px;width:429px;height:88px;font-size:18px;line-height:21.6px;letter-spacing:-.72px}
 .studio-row{left:242px;width:434px}
-.studio-row-design{top:282px}
-.studio-row-process{top:416px}
+.studio-row-design{top:311px}
+.studio-row-process{top:445px}
 .studio-label{font-size:18px;line-height:21.6px;letter-spacing:-.72px}
 .studio-row p{left:122px;font-size:16px;line-height:19.2px;letter-spacing:-.64px}
 .studio-row-design p{width:312px}
-.studio-row-process p{width:305px}
-.studio-photo{left:0;top:560px;width:728px;height:271px;border-radius:5px}
+.studio-row-process p{width:307px}
+.studio-photo{left:0;top:589px;width:728px;height:271px;border-radius:5px}
 
 /* CTA reused from previous tablet page */
 .cta-section{position:relative;width:728px;height:314px;margin:20px 20px 0 20px;overflow:hidden}
