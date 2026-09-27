@@ -77,7 +77,7 @@ body{min-width:0;overflow-x:hidden}
 .review-text{left:185px;top:75px;width:286px;height:188px;font-size:16px;line-height:19.2px;letter-spacing:-.64px;overflow:hidden}
 
 /* CTA — Russian desktop 50503:3877 reduced by the same rules as 50503:3855 → 50503:3866 */
-.cta-section{position:relative;width:728px;height:314px;margin:100px 0 0 20px}
+.cta-section{position:relative;width:728px;height:314px;margin:100px 20px 0 20px;overflow:hidden}
 .cta-section h2{left:134px;top:0;width:460px;height:36px;font-size:30px;line-height:36px;letter-spacing:-.9px;text-align:center}
 .cta-wordmark{left:0;top:66px;width:728px;height:248px}
 .cta-pin{left:43px;top:53px;width:193px;height:141px}
