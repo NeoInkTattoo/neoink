@@ -1,17 +1,21 @@
 const menuButton=document.querySelector(".menu-toggle");
 const tabletMenu=document.querySelector("#tablet-menu");
+const menuOverlay=document.querySelector("#menu-overlay");
 
 function setMenu(open){
   if(!menuButton||!tabletMenu)return;
   menuButton.setAttribute("aria-expanded",String(open));
   menuButton.setAttribute("aria-label",open?"Закрыть меню":"Открыть меню");
   tabletMenu.hidden=!open;
+  if(menuOverlay)menuOverlay.hidden=!open;
 }
 
 menuButton?.addEventListener("click",()=>{
   const open=menuButton.getAttribute("aria-expanded")==="true";
   setMenu(!open);
 });
+
+menuOverlay?.addEventListener("click",()=>setMenu(false));
 
 tabletMenu?.querySelectorAll("a").forEach(link=>{
   link.addEventListener("click",()=>setMenu(false));
