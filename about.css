@@ -25,7 +25,7 @@ body{margin:0;min-width:0;background:var(--ink);color:var(--beige);font-family:"
 
 .cta-section{position:relative;width:1820px;height:724px;margin:50px 0 0 50px}.cta-section h2{position:absolute;left:477px;top:0;width:767px;height:60px;margin:0;font-size:50px;font-weight:500;line-height:60px;letter-spacing:-1.5px;white-space:nowrap}.cta-wordmark{position:absolute;left:0;top:105px;width:1820px;height:619px;display:block}.cta-pin{position:absolute;left:108px;top:75px;width:483px;height:353px;display:block;object-fit:contain}.cta-butterfly{position:absolute;left:1212px;top:159px;width:367px;height:462px;display:block;object-fit:cover}.cta-button{position:absolute;left:557px;top:329px;width:705px;height:171px;border-radius:5px;background:var(--ink);display:block;color:var(--beige);text-decoration:none}.cta-button span{position:absolute;left:20px;top:20px;width:528px;height:131px;border:1px solid var(--beige);border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:100px;font-weight:400;line-height:120px;letter-spacing:-4px;white-space:nowrap}.cta-button img{position:absolute;left:568px;top:27px;width:117px;height:117px;display:block}
 
-.site-footer{position:relative;width:1920px;height:628px;margin:50px auto 0;overflow:hidden}.footer-bg{position:absolute;inset:0;width:1920px;height:628px;object-fit:cover;display:block}.footer-logo{position:absolute;left:50px;top:303px;width:77px;height:20px;color:var(--ink);font-size:20px;font-weight:500;line-height:20px;letter-spacing:-.8px}.footer-contact{position:absolute;left:807px;top:267px;width:278px;height:94px;font-size:20px;font-weight:400;line-height:24px;letter-spacing:-.8px;color:rgba(206,198,193,.8)}.footer-contact p{margin:0;color:var(--beige)}.footer-contact p+p{margin-top:20px}.footer-contact a{color:var(--beige);text-decoration:none}.footer-contact span{color:rgba(206,198,193,.8)}.footer-socials{position:absolute;left:1207px;top:288px;width:236px;height:52px;display:flex;gap:40px}.footer-social{width:52px;height:52px;display:block}.footer-social img{width:52px;height:52px;display:block}
+.site-footer{position:relative;width:1920px;height:628px;margin:50px auto 0;overflow:hidden}.footer-bg{position:absolute;inset:0;width:1920px;height:628px;object-fit:cover;display:block}.footer-logo{position:absolute;left:50px;top:303px;width:77px;height:20px;color:var(--ink);font-size:20px;font-weight:500;line-height:20px;letter-spacing:-.8px}.footer-contact{position:absolute;left:807px;top:267px;width:278px;height:94px;font-size:20px;font-weight:400;line-height:24px;letter-spacing:-.8px;color:rgba(206,198,193,.8)}.footer-contact p{margin:0;color:var(--beige)}.footer-contact p+p{margin-top:20px}.footer-contact a{color:var(--beige);text-decoration:none}.footer-contact span{color:rgba(206,198,193,.8)}.footer-socials{position:absolute;left:1207px;top:288px;width:236px;height:52px;display:flex;gap:40px}.footer-social{width:52px;height:52px;display:block}.footer-social img{width:52px;height:52px;display:block}.footer-social-note{display:none}
 
 @media (max-width:768px) and (min-width:391px){
 body{min-width:0;overflow-x:hidden}
@@ -54,6 +54,65 @@ body{min-width:0;overflow-x:hidden}
 .about-cover-dots-right{left:auto;right:20px;transform:none}
 .about-cover-copy{left:239px;top:254px;width:290px;height:44px;font-size:18px;line-height:21.6px;letter-spacing:-.72px}
 .about-cover-button{left:239px;top:313px;width:290px;height:45px;font-size:18px;line-height:21.6px;letter-spacing:-.72px}
+
+/* About 50513:4255 */
+.about-me{position:relative;width:728px;height:766px;margin:80px 0 0 20px}
+.about-me h2{left:0;top:0;width:170px;height:42px;font-size:40px;line-height:42px;letter-spacing:-1.2px}
+.about-me-main{left:242px;top:0;width:486px;height:766px}
+.about-me-main h3{width:486px;height:126px;font-size:70px;line-height:63px;letter-spacing:-2.1px}
+.about-me-text{left:0;top:136px;width:486px;gap:15px;font-size:16px;line-height:19.2px;letter-spacing:-.64px}
+.about-me-text p{width:486px!important}
+.about-me-text p:nth-child(3){width:468px!important}
+.about-me-button{left:0;top:376px;width:290px;height:45px;font-size:18px;line-height:21.6px;letter-spacing:-.72px}
+.about-me-photo{left:0;top:451px;width:401px;height:315px;border-radius:5px}
+
+/* Safety 50513:4248 */
+.safety-section{position:relative;width:728px;height:1038px;margin:100px 0 0 20px}
+.safety-section h2{width:436px;height:42px;font-size:40px;line-height:42px;letter-spacing:-1.2px;white-space:nowrap}
+.safety-grid{left:0;top:72px;width:728px;height:966px;display:grid;grid-template-columns:359px 359px;grid-template-rows:478px 478px;gap:10px}
+.safety-card{width:359px;height:478px;border-width:1.504px;border-radius:5px;padding:20px}
+.safety-card img{width:319px;height:306px;border-radius:5px;object-fit:cover;object-position:bottom}
+.safety-card h3{margin:15px 0 0;width:319px;font-size:20px;line-height:24px;letter-spacing:-.6px}
+.safety-card p,.safety-card:first-child p,.safety-card:last-child p{margin:5px 0 0;width:311px;font-size:18px;line-height:21.6px;letter-spacing:-.72px}
+.safety-card:last-child h3{width:319px}
+
+/* Studio 50513:4239 */
+.studio-section{position:relative;width:728px;height:831px;margin:100px 0 0 20px}
+.studio-section h2{left:220px;top:0;width:287px;height:42px;font-size:40px;line-height:42px;letter-spacing:-1.2px}
+.studio-lead{left:46px;top:72px;width:635px;height:87px;font-size:24px;line-height:28.8px;letter-spacing:-.72px}
+.studio-emphasis{left:242px;top:174px;width:381px;height:88px;font-size:18px;line-height:21.6px;letter-spacing:-.72px}
+.studio-row{left:242px;width:434px}
+.studio-row-design{top:282px}
+.studio-row-process{top:416px}
+.studio-label{font-size:18px;line-height:21.6px;letter-spacing:-.72px}
+.studio-row p{left:122px;font-size:16px;line-height:19.2px;letter-spacing:-.64px}
+.studio-row-design p{width:312px}
+.studio-row-process p{width:305px}
+.studio-photo{left:0;top:560px;width:728px;height:271px;border-radius:5px}
+
+/* CTA reused from previous tablet page */
+.cta-section{position:relative;width:728px;height:314px;margin:20px 20px 0 20px;overflow:hidden}
+.cta-section h2{left:134px;top:0;width:460px;height:36px;font-size:30px;line-height:36px;letter-spacing:-.9px;text-align:center}
+.cta-wordmark{left:0;top:66px;width:728px;height:248px}
+.cta-pin{left:43px;top:53px;width:193px;height:141px}
+.cta-butterfly{left:505px;top:88px;width:147px;height:185px}
+.cta-button{left:223px;top:156px;width:282px;height:72px}
+.cta-button span{left:10px;top:10px;width:211px;height:52px;font-size:40px;line-height:48px;letter-spacing:-1.6px}
+.cta-button img{left:227px;top:13px;width:47px;height:47px}
+
+/* Footer reused from previous tablet page */
+.site-footer{position:relative;width:768px;height:251px;margin:20px auto 0}
+.footer-bg{width:768px;height:251px}
+.footer-logo{left:20px;top:116px;width:69px;height:18px;font-size:18px;line-height:18px;letter-spacing:-.72px}
+.footer-contact{left:554px;top:94px;width:194px;height:62px;font-size:16px;line-height:19.2px;letter-spacing:-.64px}
+.footer-contact p{width:195px}
+.footer-contact p+p{margin-top:5px}
+.footer-social-note{display:block;position:absolute;left:296px;top:79px;width:175px;margin:0;color:var(--beige);font-size:16px;font-weight:400;line-height:19.2px;letter-spacing:-.64px;text-align:center}
+.footer-socials{left:329px;top:126px;width:110px;height:45px;gap:20px}
+.footer-social{width:45px;height:45px}
+.footer-social img{width:45px;height:45px}
+.footer-social:nth-child(1){display:none}
+
 }
 
 @media (min-width:769px) and (max-width:1919px){
