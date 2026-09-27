@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="about.css">
 </head>
 <body>
+<div class="site-shell">
 <header class="site-header">
   <a class="logo" href="index.html">NEO INK</a>
   <nav class="desktop-nav" aria-label="Основная навигация">
@@ -21,9 +22,18 @@
   </nav>
   <a class="header-contact" href="contact.html">Контакты</a>
   <div class="language" aria-label="Выбор языка">
-    <button type="button">EN</button><span>|</span><button type="button" class="is-active">RU</button>
+    <button type="button">EN</button><span>I</span><button type="button" class="is-active">RU</button>
   </div>
+  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="tablet-menu" aria-label="Открыть меню">Menu</button>
 </header>
+<div class="menu-overlay" id="menu-overlay" hidden></div>
+<nav class="tablet-menu" id="tablet-menu" aria-label="Планшетная навигация" hidden>
+  <a href="portfolio.html">Портфолио</a>
+  <a href="about.html">О студии</a>
+  <a href="client-info.html">Клиентам</a>
+  <a href="meanings.html">Значения татуировок</a>
+  <a href="contact.html">Контакты</a>
+</nav>
 
 <main>
   <section class="about-cover" aria-labelledby="about-cover-title">
@@ -110,5 +120,7 @@
 <span class="footer-social"><img src="footer-vk.png" alt="ВКонтакте"></span>
 </div>
 </footer>
+</div>
+<script src="script.js?v=20260928-3"></script>
 </body>
 </html>
