@@ -1,0 +1,21 @@
+:root{--ink:#141414;--panel:#2c2c2c;--beige:#cec6c1}
+*{box-sizing:border-box}
+html{background:var(--ink)}
+body{margin:0;min-width:1920px;background:var(--ink);color:var(--beige);font-family:"IBM Plex Sans",sans-serif}
+.site-header,main{width:1920px;margin-left:auto;margin-right:auto}
+.site-header{height:72px;position:relative;background:var(--ink);font-size:20px;line-height:24px;letter-spacing:-.8px;z-index:2}
+.site-header a{color:inherit;text-decoration:none}
+.logo{position:absolute;left:50px;top:26px;width:77px;height:20px;font-weight:500;line-height:20px}
+.desktop-nav{position:absolute;left:688px;top:24px;width:545px;height:24px;display:flex;gap:30px;white-space:nowrap}
+.header-contact{position:absolute;left:1700px;top:24px;width:85px;height:24px;text-align:center}
+.language{position:absolute;left:1805px;top:24px;width:65px;height:24px;display:flex;align-items:center;justify-content:center;gap:6px}
+.language button{border:0;background:none;color:inherit;font:inherit;letter-spacing:inherit;padding:0;cursor:pointer}
+.language button:not(.is-active){opacity:.6}
+.client-cover{position:relative;width:1920px;height:721px;background:var(--panel);overflow:hidden}
+.client-cover-wordmark{position:absolute;left:50px;top:50px;width:1820px;height:439px;display:block}
+.client-cover-dots{position:absolute;top:539px;width:684px;height:132px;display:block}
+.client-cover-dots-left{left:50px}
+.client-cover-dots-right{left:1186px}
+.client-cover-copy{position:absolute;left:793px;top:539px;width:335px;height:52px;margin:0;text-align:center;font-size:22px;font-weight:400;line-height:26.4px;letter-spacing:-.88px}
+.client-cover-button{position:absolute;left:793px;top:611px;width:335px;height:60px;border-radius:5px;background:var(--beige);color:var(--ink);display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:20px;font-weight:400;line-height:24px;letter-spacing:-.8px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
