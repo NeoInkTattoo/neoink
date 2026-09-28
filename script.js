@@ -51,7 +51,7 @@ const homePortfolioTrack=document.querySelector(".portfolio-section .portfolio-g
 const homePortfolioMobile=window.matchMedia("(max-width: 430px)");
 
 if(homePortfolioTrack){
-  const photos=[...homePortfolioTrack.querySelectorAll(":scope > img")];
+  const photos=[...homePortfolioTrack.querySelectorAll(":scope > picture")];
   const edgeCount=2;
   let ready=false;
   let settleTimer;
@@ -81,7 +81,7 @@ if(homePortfolioTrack){
       const clone=photo=>{
         const copy=photo.cloneNode(true);
         copy.classList.add("portfolio-clone");
-        copy.alt="";
+        copy.querySelector("img").alt="";
         copy.setAttribute("aria-hidden","true");
         return copy;
       };
