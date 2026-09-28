@@ -1,5 +1,11 @@
-/* The mobile artwork contains the wordmark, pin and butterfly as one image.
-   The link remains an accessible, clickable layer above it. */
+/* One image keeps the wordmark, pin and butterfly together at every size.
+   The contact link remains a clickable layer above it. */
+.cta-wordmark { top: 75px; height: auto; }
+
+@media (min-width: 391px) and (max-width: 768px) {
+  .cta-wordmark { top: 54px; height: auto; }
+}
+
 @media (max-width: 480px) {
   .cta-section {
     position: relative;
@@ -28,7 +34,6 @@
 
   .cta-section .mobile-break { display: none; }
   .cta-wordmark { left: 0; top: 23.78%; width: 100%; height: auto; }
-  .cta-pin, .cta-butterfly { display: none; }
 
   .cta-button {
     left: 29.714%;
