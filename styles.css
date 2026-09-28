@@ -268,15 +268,15 @@ body{min-width:0;overflow-x:hidden}
 .review-name{position:absolute;left:187px;top:11px;width:103px;font-size:16px;line-height:19.2px;letter-spacing:-.64px}
 .review-text{position:absolute;left:140px;top:55px;width:150px;height:136px;margin:0;font-size:14px;line-height:16.8px;letter-spacing:-.28px;overflow:hidden}
 
-/* CTA 50515:5170 */
-.cta-section{position:relative;width:calc(100% - 40px);height:147px;margin:20px 20px 0;overflow:hidden}
-.cta-section h2{position:absolute;left:50%;top:0;width:auto;height:24px;margin:0;transform:translateX(-50%);font-size:20px;line-height:24px;letter-spacing:-.6px;text-align:center;white-space:nowrap}
-.cta-wordmark{position:absolute;left:0;top:39px;width:100%;height:108px;display:block}
-.cta-pin{position:absolute;left:23px;top:34px;width:81px;height:59px}
-.cta-butterfly{position:absolute;left:auto;right:44px;top:40.5px;width:70.7px;height:88.9px}
-.cta-button{position:absolute;left:50%;top:70px;width:121px;height:45px;transform:translateX(-50%);border-radius:5px}
-.cta-button span{position:absolute;left:5px;top:5px;width:85px;height:35px;border:1px solid var(--beige);border-radius:5px;font-size:18px;line-height:21.6px;letter-spacing:-.72px}
-.cta-button img{position:absolute;left:95px;top:12px;width:21px;height:21px}
+/* Russian CTA adapts the 768 composition to the 390 layout. */
+.cta-section{position:relative;width:calc(100% - 40px);height:182px;margin:20px 20px 0;overflow:hidden}
+.cta-section h2{position:absolute;left:0;top:0;width:100%;height:48px;margin:0;transform:none;display:flex;flex-direction:column;align-items:center;font-size:20px;line-height:24px;letter-spacing:-.6px;text-align:center;white-space:nowrap}
+.cta-wordmark{position:absolute;left:0;top:63px;width:100%;height:auto;display:block}
+.cta-pin{position:absolute;left:20px;top:58px;width:93px;height:68px}
+.cta-butterfly{position:absolute;left:auto;right:42px;top:64px;width:71px;height:89px}
+.cta-button{position:absolute;left:50%;top:94px;width:max-content;min-width:0;height:45px;padding:5px;transform:translateX(-50%);border-radius:5px;display:flex;align-items:center;gap:5px}
+.cta-button span{position:static;width:auto;height:35px;padding:0 7px;border:1px solid var(--beige);border-radius:5px;font-size:16px;line-height:19.2px;letter-spacing:-.64px}
+.cta-button img{position:static;width:21px;height:21px;object-fit:contain}
 
 /* Footer 50515:5169 */
 .site-footer{position:relative;width:100%;height:172px;margin:20px auto 0;overflow:hidden}
