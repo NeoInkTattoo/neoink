@@ -83,7 +83,7 @@ body{min-width:0;overflow-x:hidden}
 /* Session day 50523:7307 */
 .session-day{width:728px;height:493px;margin:100px 0 0 20px}
 .session-day h2{left:0;top:0;width:350px;height:42px;font-size:40px;line-height:42px;letter-spacing:-1.2px}
-.session-day-list{left:364px;top:1px;width:364px;height:492px;gap:20px}
+.session-day-list{left:364px;top:0;width:364px;height:492px;gap:20px}
 .session-day-list article{width:364px!important;height:auto!important}
 .session-day-list h3{font-size:24px;line-height:28.8px;letter-spacing:-.48px}
 .session-day-list p{width:364px!important;white-space:normal!important;font-size:18px;line-height:21.6px;letter-spacing:-.36px}
