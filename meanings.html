@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="meanings.css?v=20260928-3">
+  <link rel="stylesheet" href="meanings.css?v=20260928-4">
 </head>
 <body>
 <div class="site-shell">
@@ -47,16 +47,16 @@
 <section class="meanings-catalog" aria-labelledby="meanings-title">
   <h2 id="meanings-title">Значения татуировок</h2>
   <div class="meanings-filters" aria-label="Фильтры значений татуировок">
-    <button type="button" class="is-active">Все</button>
-    <button type="button">Животные</button>
-    <button type="button">Растения</button>
-    <button type="button">Сакральные</button>
-    <button type="button">Символы</button>
-    <button type="button">Надписи</button>
-    <button type="button">Другие</button>
+    <button type="button" class="is-active" data-filter="all" aria-pressed="true">Все</button>
+    <button type="button" data-filter="animals" aria-pressed="false">Животные</button>
+    <button type="button" data-filter="plants" aria-pressed="false">Растения</button>
+    <button type="button" data-filter="spiritual" aria-pressed="false">Сакральные</button>
+    <button type="button" data-filter="symbols" aria-pressed="false">Символы</button>
+    <button type="button" data-filter="words" aria-pressed="false">Надписи</button>
+    <button type="button" data-filter="other" aria-pressed="false">Другие</button>
   </div>
 
-  <article class="meaning-card meaning-card-1">
+  <article class="meaning-card meaning-card-1 is-featured" data-category="animals">
     <img class="meaning-photo" src="meaning-butterfly.png" alt="Татуировка бабочки">
     <div class="meaning-copy">
       <div class="meaning-category">ЖИВОТНЫЕ</div>
@@ -65,7 +65,7 @@
     </div>
   </article>
 
-  <article class="meaning-card meaning-card-2 is-tall">
+  <article class="meaning-card meaning-card-2 is-tall is-featured" data-category="spiritual">
     <img class="meaning-photo" src="meaning-cross.png" alt="Татуировка креста">
     <div class="meaning-copy">
       <div class="meaning-category">САКРАЛЬНЫЕ</div>
@@ -74,7 +74,7 @@
     </div>
   </article>
 
-  <article class="meaning-card meaning-card-3">
+  <article class="meaning-card meaning-card-3" data-category="symbols">
     <img class="meaning-photo" src="meaning-heart.png" alt="Татуировка сердца">
     <div class="meaning-copy">
       <div class="meaning-category">СИМВОЛЫ</div>
@@ -83,7 +83,7 @@
     </div>
   </article>
 
-  <article class="meaning-card meaning-card-4">
+  <article class="meaning-card meaning-card-4" data-category="plants">
     <img class="meaning-photo" src="meaning-lavender.png" alt="Татуировка лаванды">
     <div class="meaning-copy">
       <div class="meaning-category">РАСТЕНИЯ</div>
@@ -92,7 +92,7 @@
     </div>
   </article>
 
-  <article class="meaning-card meaning-card-5">
+  <article class="meaning-card meaning-card-5" data-category="plants">
     <img class="meaning-photo" src="meaning-lotus.png" alt="Татуировка лотоса">
     <div class="meaning-copy">
       <div class="meaning-category">РАСТЕНИЯ</div>
@@ -101,7 +101,7 @@
     </div>
   </article>
 
-  <article class="meaning-card meaning-card-6">
+  <article class="meaning-card meaning-card-6 is-featured" data-category="symbols">
     <img class="meaning-photo" src="meaning-moon.png" alt="Татуировка луны">
     <div class="meaning-copy">
       <div class="meaning-category">СИМВОЛЫ</div>
@@ -110,7 +110,7 @@
     </div>
   </article>
 
-  <article class="meaning-card meaning-card-7 is-tall">
+  <article class="meaning-card meaning-card-7 is-tall is-featured" data-category="other">
     <img class="meaning-photo" src="meaning-mountains.png" alt="Татуировка гор">
     <div class="meaning-copy">
       <div class="meaning-category">ДРУГИЕ</div>
@@ -119,7 +119,7 @@
     </div>
   </article>
 
-  <article class="meaning-card meaning-card-8">
+  <article class="meaning-card meaning-card-8" data-category="plants">
     <img class="meaning-photo" src="meaning-olive.png" alt="Татуировка оливковой ветви">
     <div class="meaning-copy">
       <div class="meaning-category">РАСТЕНИЯ</div>
@@ -128,10 +128,11 @@
     </div>
   </article>
 
-  <button class="meanings-more" type="button">Показать еще</button>
+  <p class="meanings-empty" hidden>Пока нет татуировок в этой категории.</p>
+  <button class="meanings-more" type="button" aria-expanded="false">Показать ещё</button>
 </section>
 <section class="cta-section" id="contact" aria-labelledby="cta-title">
-<h2 id="cta-title">ЕСТЬ ИДЕЯ? ДАВАЙТЕ ОБСУДИМ.</h2>
+<h2 id="cta-title">ЕСТЬ ИДЕЯ? <br class="mobile-break">ДАВАЙТЕ ОБСУДИМ.</h2>
 <img class="cta-wordmark" src="cta-wordmark.png" alt="">
 <img class="cta-pin" src="cta-pin.png" alt="">
 <img class="cta-butterfly" src="cta-butterfly.png" alt="">
@@ -142,7 +143,7 @@
 </section>
 </main>
 <footer class="site-footer">
-<img class="footer-bg" src="footer-bg.png" alt="">
+<picture><source media="(max-width: 430px)" srcset="footer-bg-mobile.png"><img class="footer-bg" src="footer-bg.png" alt=""></picture>
 <div class="footer-logo">NEO INK</div>
 <div class="footer-contact">
 <p><span>Адрес: </span>ул. Крутицкая, 29<br>г. Иваново, Россия</p>
@@ -156,6 +157,6 @@
 </div>
 </footer>
 </div>
-<script src="script.js?v=20260928-6"></script>
+<script src="script.js?v=20260928-7"></script>
 </body>
 </html>

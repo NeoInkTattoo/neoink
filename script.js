@@ -94,3 +94,48 @@ if(portfolioGallery){
   updatePortfolio();
   window.addEventListener("resize",updatePortfolio);
 }
+
+const meaningsCatalog=document.querySelector(".meanings-catalog");
+const meaningCards=[...meaningsCatalog?.querySelectorAll(".meaning-card")||[]];
+const meaningFilters=[...meaningsCatalog?.querySelectorAll(".meanings-filters button")||[]];
+const meaningsMore=meaningsCatalog?.querySelector(".meanings-more");
+const meaningsEmpty=meaningsCatalog?.querySelector(".meanings-empty");
+let meaningFilter="all";
+let meaningsExpanded=false;
+
+function updateMeanings(){
+  if(!meaningsCatalog)return;
+  const mobile=window.matchMedia("(max-width: 430px)").matches;
+  if(!mobile){meaningFilter="all";meaningsExpanded=false;}
+  const matching=meaningCards.filter(card=>meaningFilter==="all"||card.dataset.category===meaningFilter);
+  meaningCards.forEach(card=>{
+    card.hidden=mobile&&(!matching.includes(card)||(meaningFilter==="all"&&!meaningsExpanded&&!card.classList.contains("is-featured")));
+  });
+  if(meaningsMore){
+    meaningsMore.hidden=mobile&&(meaningFilter!=="all"||meaningCards.length<=4);
+    meaningsMore.setAttribute("aria-expanded",String(meaningsExpanded));
+    meaningsMore.textContent=meaningsExpanded?"Свернуть":"Показать ещё";
+  }
+  if(meaningsEmpty)meaningsEmpty.hidden=!mobile||matching.length>0;
+  meaningFilters.forEach(button=>{
+    const active=button.dataset.filter===meaningFilter;
+    button.classList.toggle("is-active",active);
+    button.setAttribute("aria-pressed",String(active));
+  });
+}
+
+meaningsMore?.addEventListener("click",()=>{
+  if(!window.matchMedia("(max-width: 430px)").matches)return;
+  meaningsExpanded=!meaningsExpanded;
+  updateMeanings();
+});
+meaningFilters.forEach(button=>button.addEventListener("click",()=>{
+  if(!window.matchMedia("(max-width: 430px)").matches)return;
+  meaningFilter=button.dataset.filter;
+  meaningsExpanded=false;
+  updateMeanings();
+}));
+if(meaningsCatalog){
+  updateMeanings();
+  window.addEventListener("resize",updateMeanings);
+}

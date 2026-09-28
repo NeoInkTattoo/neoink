@@ -49,6 +49,8 @@ body{margin:0;min-width:0;background:var(--ink);color:var(--beige);font-family:"
 .cta-section{position:relative;width:1820px;height:724px;margin:170px 0 0 50px}.cta-section h2{position:absolute;left:477px;top:0;width:767px;height:60px;margin:0;font-size:50px;font-weight:500;line-height:60px;letter-spacing:-1.5px;white-space:nowrap}.cta-wordmark{position:absolute;left:0;top:105px;width:1820px;height:619px;display:block}.cta-pin{position:absolute;left:108px;top:75px;width:483px;height:353px;display:block;object-fit:contain}.cta-butterfly{position:absolute;left:1212px;top:159px;width:367px;height:462px;display:block;object-fit:cover}.cta-button{position:absolute;left:557px;top:329px;width:705px;height:171px;border-radius:5px;background:var(--ink);display:block;color:var(--beige);text-decoration:none}.cta-button span{position:absolute;left:20px;top:20px;width:528px;height:131px;border:1px solid var(--beige);border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:100px;font-weight:400;line-height:120px;letter-spacing:-4px;white-space:nowrap}.cta-button img{position:absolute;left:568px;top:27px;width:117px;height:117px;display:block}
 .site-footer{position:relative;width:1920px;height:628px;margin:50px auto 0;overflow:hidden}.footer-bg{position:absolute;inset:0;width:1920px;height:628px;object-fit:cover;display:block}.footer-logo{position:absolute;left:50px;top:303px;width:77px;height:20px;color:var(--ink);font-size:20px;font-weight:500;line-height:20px;letter-spacing:-.8px}.footer-contact{position:absolute;left:807px;top:267px;width:278px;height:94px;font-size:20px;font-weight:400;line-height:24px;letter-spacing:-.8px;color:rgba(206,198,193,.8)}.footer-contact p{margin:0;color:var(--beige)}.footer-contact p+p{margin-top:20px}.footer-contact a{color:var(--beige);text-decoration:none}.footer-contact span{color:rgba(206,198,193,.8)}.footer-socials{position:absolute;left:1207px;top:288px;width:236px;height:52px;display:flex;gap:40px}.footer-social{width:52px;height:52px;display:block}.footer-social img{width:52px;height:52px;display:block}
 .footer-social-note{display:none}
+.mobile-break{display:none}
+.meanings-empty{display:none}
 
 
 @media (max-width:768px) and (min-width:391px){
@@ -138,4 +140,81 @@ body{min-width:0;overflow-x:hidden}
 
 @media (min-width:769px) and (max-width:1919px){
 .site-shell{position:absolute;top:0;left:50%;margin-left:-960px}
+}
+
+@media (max-width:430px){
+body{min-width:0;overflow-x:hidden}
+.site-shell{position:relative!important;left:auto!important;top:auto!important;width:100%;max-width:430px;margin:0 auto;transform:none!important}
+.site-header,main,.site-footer{width:100%;max-width:430px;margin-left:auto;margin-right:auto}
+
+/* Shared mobile header */
+.site-header{height:44px;font-size:16px;line-height:19.2px;letter-spacing:-.64px;z-index:40}
+.logo{left:20px;top:12px;width:60px;height:19px;font-size:16px;font-weight:400;line-height:19.2px;letter-spacing:-.64px}
+.desktop-nav,.header-contact{display:none}
+.language{left:auto;right:60px;top:12px;width:52px;height:19px;gap:3px}
+.language button,.language span{font-size:16px;line-height:19.2px;letter-spacing:-.64px}
+.menu-toggle{display:block;position:absolute;right:20px;left:auto;top:15px;width:20px;height:13px;font-size:0;z-index:50;touch-action:manipulation}
+.menu-toggle::before,.menu-toggle::after{content:"";position:absolute;left:0;width:20px;height:1px;background:var(--beige)}
+.menu-toggle::before{top:0;box-shadow:0 6px 0 var(--beige)}
+.menu-toggle::after{top:12px}
+.menu-overlay{display:block;position:fixed;z-index:38;inset:44px 0 0;background:rgba(0,0,0,.25)}
+.menu-overlay[hidden]{display:none}
+.tablet-menu{position:absolute;z-index:39;left:0;top:44px;width:100%;height:230px;background:var(--panel);padding:20px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:20px}
+.tablet-menu[hidden]{display:none}
+.tablet-menu a{color:var(--beige);text-decoration:none;font-size:18px;line-height:21.6px;letter-spacing:-.72px}
+
+/* Mobile meanings cover and catalog */
+.meanings-cover{width:100%;height:244px}
+.meanings-cover-wordmark{left:20px;top:15px;width:calc(100% - 40px);height:96px;object-fit:fill}
+.meanings-cover-dots{top:131px;width:51px;height:93px;object-fit:cover;opacity:.2}
+.meanings-cover-dots-left{left:20px;object-position:left}
+.meanings-cover-dots-right{left:auto;right:20px;object-position:right}
+.meanings-cover-copy{left:50%;top:131px;width:226px;height:auto;transform:translateX(-50%);font-size:16px;line-height:19.2px;letter-spacing:-.64px}
+.meanings-cover-button{left:50%;top:179px;width:228px;height:45px;transform:translateX(-50%);font-size:16px;line-height:19.2px;letter-spacing:-.64px}
+
+.meanings-catalog{position:relative;width:calc(100% - 40px);height:auto;margin:40px 20px 0;display:flex;flex-direction:column;gap:10px}
+.meanings-catalog>h2{position:static;width:100%;height:25px;margin:0 0 5px;font-size:24px;line-height:25.2px;letter-spacing:-.72px;white-space:normal}
+.meanings-filters{position:static;width:100%;height:95px;margin:0 0 10px;display:grid;grid-template-columns:50px repeat(3,minmax(0,1fr));grid-template-rows:45px 45px;gap:5px}
+.meanings-filters button,.meanings-filters button:first-child{width:100%;height:45px;padding:0 3px;font-size:14px;line-height:16.8px;letter-spacing:-.56px;white-space:nowrap}
+.meanings-filters button:nth-child(5){grid-column:2;grid-row:2}
+.meanings-filters button:nth-child(6){grid-column:3;grid-row:2}
+.meanings-filters button:nth-child(7){grid-column:4;grid-row:2}
+.meaning-card,.meaning-card.is-tall{position:relative;left:auto;top:auto;width:100%;height:310px;flex:none;overflow:hidden}
+.meaning-card.is-tall{height:327px}
+.meaning-card-1{order:1}.meaning-card-2{order:2}.meaning-card-7{order:3}.meaning-card-6{order:4}
+.meaning-card-3{order:5}.meaning-card-4{order:6}.meaning-card-5{order:7}.meaning-card-8{order:8}
+.meaning-card[hidden],.meanings-more[hidden],.meanings-empty[hidden]{display:none!important}
+.meaning-photo,.meaning-card.is-tall .meaning-photo{width:100%;height:190px;object-fit:cover;border-radius:5px}
+.meaning-copy,.meaning-card.is-tall .meaning-copy{position:static;padding:10px;width:100%}
+.meaning-category{height:17px;font-size:12px;line-height:14.4px;letter-spacing:-.24px}
+.meaning-copy h3{margin:5px 0 0;font-size:18px;line-height:21.6px;letter-spacing:-.72px}
+.meaning-copy p{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden;width:100%;margin:5px 0 0;padding-right:15px;font-size:14px;line-height:16.8px;letter-spacing:-.28px}
+.meaning-card.is-tall .meaning-copy p{-webkit-line-clamp:4}
+.meaning-arrow{position:absolute;right:10px;bottom:10px;height:12px;margin:0}
+.meanings-empty:not([hidden]){display:block;order:98;margin:0;font-size:14px;line-height:17px}
+.meanings-more{position:static;order:99;width:236px;height:45px;margin:10px auto 0;font-size:16px;line-height:19.2px;letter-spacing:-.64px}
+
+/* Shared Russian booking block and mobile footer */
+.cta-section{position:relative;width:calc(100% - 40px);height:182px;margin:20px 20px 0;overflow:hidden}
+.cta-section h2{left:0;top:0;width:100%;height:48px;margin:0;display:block;font-size:20px;line-height:24px;letter-spacing:-.6px;text-align:center;white-space:nowrap}
+.mobile-break{display:initial}
+.cta-wordmark{left:0;top:63px;width:100%;height:auto}
+.cta-pin{left:20px;top:58px;width:93px;height:68px}
+.cta-butterfly{left:auto;right:42px;top:64px;width:71px;height:89px}
+.cta-button{left:50%;top:94px;width:max-content;min-width:0;height:45px;padding:5px;transform:translateX(-50%);display:flex;align-items:center;gap:5px}
+.cta-button span{position:static;width:auto;height:35px;padding:0 7px;font-size:16px;line-height:19.2px;letter-spacing:-.64px}
+.cta-button img{position:static;width:21px;height:21px;object-fit:contain}
+.site-footer{width:100%;height:172px;margin:20px auto 0}
+.footer-bg{width:100%;height:172px;object-fit:cover}
+.footer-logo{left:20px;top:77px;width:54px;height:17px;font-size:14px;font-weight:400;line-height:16.8px;letter-spacing:-.28px}
+.footer-contact,.footer-social-note{display:none}
+.footer-socials{left:50%;top:64px;width:98px;height:44px;gap:10px;transform:translateX(-50%)}
+.footer-social{width:44px;height:44px}
+.footer-social img{width:44px;height:44px}
+.footer-social:nth-child(1){display:none}
+}
+
+@media (max-width:360px){
+.meanings-filters button,.meanings-filters button:first-child{font-size:12px;letter-spacing:-.48px}
+.meanings-cover-wordmark{height:auto;aspect-ratio:350/96}
 }
