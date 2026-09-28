@@ -87,8 +87,10 @@ body{min-width:0;overflow-x:hidden}
 .meanings-filters{left:0;top:72px;width:720px;height:45px;gap:5px}
 .meanings-filters button{height:45px;border-radius:1000px;font-size:18px;line-height:21.6px;letter-spacing:-.72px;padding:10px;width:110px}
 .meanings-filters button:nth-child(1){width:50px}
-.meanings-filters button:nth-child(2),.meanings-filters button:nth-child(3),.meanings-filters button:nth-child(4),.meanings-filters button:nth-child(5){width:110px}
-.meanings-filters button:nth-child(6),.meanings-filters button:nth-child(7){width:100px}
+.meanings-filters button:nth-child(2),.meanings-filters button:nth-child(3),.meanings-filters button:nth-child(5){width:110px}
+.meanings-filters button:nth-child(4){width:122px}
+.meanings-filters button:nth-child(6){width:100px}
+.meanings-filters button:nth-child(7){width:92px}
 
 .meaning-card{width:236px;height:356px}
 .meaning-card.is-tall{height:539px}
