@@ -145,7 +145,7 @@ body{min-width:0;overflow-x:hidden}
 .about-cover-dots{top:133px;width:51px;height:93px;object-fit:cover;opacity:.2}
 .about-cover-dots-left{left:20px;object-position:left}
 .about-cover-dots-right{left:auto;right:20px;object-position:right}
-.about-cover-copy{left:50%;top:133px;width:226px;height:auto;transform:translateX(-50%);font-size:16px;line-height:19.2px;letter-spacing:-.64px}
+.about-cover-copy{left:50%;top:133px;width:245px;height:auto;transform:translateX(-50%);font-size:16px;line-height:19.2px;letter-spacing:-.64px}
 .about-cover-button{left:50%;top:181px;width:228px;height:45px;transform:translateX(-50%);font-size:16px;line-height:19.2px;letter-spacing:-.64px}
 
 .about-me{width:calc(100% - 40px);height:auto;margin:40px 20px 0}
