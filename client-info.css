@@ -88,20 +88,29 @@ body{min-width:0;overflow-x:hidden}
 .session-day-list h3{font-size:24px;line-height:28.8px;letter-spacing:-.48px}
 .session-day-list p{width:364px!important;white-space:normal!important;font-size:18px;line-height:21.6px;letter-spacing:-.36px}
 
-/* Healing methods 50522:6997 */
-.healing-section{width:728px;height:977px;margin:100px 0 0 20px}
-.healing-heading{left:0;top:0;width:381px;height:118px}
-.healing-heading h2{font-size:40px;line-height:42px;letter-spacing:-1.2px}
-.healing-heading p{margin-top:10px;width:381px;font-size:18px;line-height:21.6px;letter-spacing:-.72px}
+/* Healing methods 50523:7271 */
+.healing-section{width:728px;height:1029px;margin:100px 0 0 20px}
+.healing-heading{left:0;top:0;width:364px;height:160px}
+.healing-heading h2{width:364px;height:84px;font-size:40px;line-height:42px;letter-spacing:-1.2px}
+.healing-heading p{margin-top:10px;width:364px;font-size:18px;line-height:21.6px;letter-spacing:-.72px}
 .healing-photo{width:auto;border-radius:5px}
-.healing-photo-film{left:0;top:148px;width:354px;height:396px}
-.healing-column-film{left:364px;top:148px;width:364px;height:396px}
-.healing-photo-pad{left:364px;top:559px;width:364px;height:418px}
-.healing-column-pad{left:0;top:559px;width:354px;height:418px}
+.healing-photo-film{left:0;top:190px;width:354px;height:396px}
+.healing-column-film{left:364px;top:190px;width:364px;height:396px}
+.healing-photo-pad{left:364px;top:611px;width:364px;height:418px}
+.healing-column-pad{left:0;top:611px;width:354px;height:418px}
 .healing-column>h3{font-size:20px;line-height:24px;letter-spacing:-.6px}
 .healing-points{margin-top:10px;gap:15px}
 .healing-points h4{font-size:18px;line-height:21.6px;letter-spacing:-.36px}
 .healing-points p{font-size:16px;line-height:19.2px;letter-spacing:-.64px}
+.healing-column-film .healing-points article:nth-child(1){height:65px}
+.healing-column-film .healing-points article:nth-child(2){height:103px}
+.healing-column-film .healing-points article:nth-child(3){height:84px}
+.healing-column-film .healing-points article:nth-child(4){height:65px}
+.healing-column-film .healing-points article:nth-child(3) p{width:349px}
+.healing-column-pad .healing-points article:nth-child(1){height:66px}
+.healing-column-pad .healing-points article:nth-child(2){height:122px}
+.healing-column-pad .healing-points article:nth-child(3){height:66px}
+.healing-column-pad .healing-points article:nth-child(4){height:85px}
 
 /* Continued aftercare 50522:6948 */
 .aftercare-section{width:728px;height:1144px;margin:100px 0 0 20px}
