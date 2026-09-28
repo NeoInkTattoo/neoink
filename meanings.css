@@ -110,15 +110,15 @@ body{min-width:0;overflow-x:hidden}
 .meaning-arrow{height:12px;margin-left:3px}
 .meanings-more{left:246px;top:1265px;width:236px;height:45px;font-size:18px;line-height:21.6px;letter-spacing:-.72px}
 
-/* CTA 50528:7672 */
-.cta-section{position:relative;width:728px;height:291px;margin:100px 20px 0 20px;overflow:hidden}
-.cta-section h2{left:181px;top:0;width:366px;height:36px;font-size:30px;line-height:36px;letter-spacing:-.9px;text-align:left}
-.cta-wordmark{left:0;top:66px;width:728px;height:225px}
-.cta-pin{left:48px;top:57px;width:168px;height:121px}
-.cta-butterfly{left:489px;top:78px;width:147px;height:185px}
-.cta-button{left:237px;top:142px;width:252px;height:72px}
-.cta-button span{left:10px;top:10px;width:178px;height:52px;font-size:40px;line-height:48px;letter-spacing:-1.6px}
-.cta-button img{left:198px;top:14px;width:44px;height:44px}
+/* CTA reused from previous tablet pages */
+.cta-section{position:relative;width:728px;height:314px;margin:100px 20px 0 20px;overflow:hidden}
+.cta-section h2{left:134px;top:0;width:460px;height:36px;font-size:30px;line-height:36px;letter-spacing:-.9px;text-align:center}
+.cta-wordmark{left:0;top:66px;width:728px;height:248px}
+.cta-pin{left:43px;top:53px;width:193px;height:141px}
+.cta-butterfly{left:505px;top:88px;width:147px;height:185px}
+.cta-button{left:223px;top:156px;width:282px;height:72px}
+.cta-button span{left:10px;top:10px;width:211px;height:52px;font-size:40px;line-height:48px;letter-spacing:-1.6px}
+.cta-button img{left:227px;top:13px;width:47px;height:47px}
 
 /* Footer 50511:4111 */
 .site-footer{position:relative;width:768px;height:251px;margin:20px auto 0}
