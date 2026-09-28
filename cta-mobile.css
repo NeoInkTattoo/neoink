@@ -1,11 +1,11 @@
-/* The artwork, pin, button and butterfly share the 350px Figma composition.
-   Their coordinates scale together on narrower phones. */
+/* The mobile artwork contains the wordmark, pin and butterfly as one image.
+   The link remains an accessible, clickable layer above it. */
 @media (max-width: 480px) {
   .cta-section {
     position: relative;
     width: min(350px, calc(100% - 40px));
     height: auto;
-    aspect-ratio: 350 / 182;
+    aspect-ratio: 350 / 164;
     margin: 20px auto 0;
     overflow: visible;
   }
@@ -17,9 +17,7 @@
     width: 100%;
     height: auto;
     margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: block;
     transform: none;
     font-size: clamp(16px, 5.13vw, 20px);
     line-height: 1.2;
@@ -28,22 +26,22 @@
     white-space: nowrap;
   }
 
-  .cta-section .mobile-break { display: initial; }
-  .cta-wordmark { left: 0; top: 34.615%; width: 100%; height: auto; }
-  .cta-pin { left: 6.571%; top: 31.868%; width: 26.571%; height: auto; }
-  .cta-butterfly { left: 67.143%; right: auto; top: 35.165%; width: 20.2%; height: auto; }
+  .cta-section .mobile-break { display: none; }
+  .cta-wordmark { left: 0; top: 23.78%; width: 100%; height: auto; }
+  .cta-pin, .cta-butterfly { display: none; }
 
   .cta-button {
-    left: 32.571%;
-    top: 51.648%;
-    width: 37.714%;
+    left: 29.714%;
+    top: 48.171%;
+    width: 40.286%;
     min-width: 0;
-    height: 24.725%;
+    height: 27.439%;
     padding: 1.43%;
     transform: none;
     display: flex;
     align-items: center;
     gap: 3.57%;
+    z-index: 1;
   }
 
   .cta-button span {
@@ -55,7 +53,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: clamp(12px, 4.1vw, 16px);
+    font-size: clamp(14px, 4.615vw, 18px);
     line-height: 1.2;
     letter-spacing: -.04em;
   }
