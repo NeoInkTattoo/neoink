@@ -115,9 +115,9 @@ body{min-width:0;overflow-x:hidden}
 }
 
 
-@media (max-width:430px){
+@media (max-width:480px){
 body{min-width:0;overflow-x:hidden}
-.site-shell{width:100%;max-width:430px;margin:0 auto;transform:none!important;position:relative!important;left:auto!important;top:auto!important}
+.site-shell{width:100%;max-width:480px;margin:0 auto;transform:none!important;position:relative!important;left:auto!important;top:auto!important}
 .site-header,main,.site-footer{width:100%;max-width:430px;margin-left:auto;margin-right:auto}
 
 /* Header 50515:5269 */
@@ -152,7 +152,7 @@ body{min-width:0;overflow-x:hidden}
 }
 
 
-@media (max-width:430px){
+@media (max-width:480px){
 /* Portfolio 50515:5254 */
 .portfolio-section{position:relative;width:calc(100% - 40px);height:398px;margin:40px 20px 0}
 .portfolio-section h2{position:absolute;left:0;top:0;width:auto;height:25px;margin:0;font-size:24px;font-weight:500;line-height:25.2px;letter-spacing:-.72px}

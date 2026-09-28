@@ -112,9 +112,9 @@ body{min-width:0;overflow-x:hidden}
 }
 
 /* Portfolio mobile layout, Figma 50515:5324. */
-@media (max-width:430px){
+@media (max-width:480px){
 body{min-width:0;overflow-x:hidden}
-.site-shell{position:relative!important;left:auto!important;top:auto!important;width:100%;max-width:430px;margin:0 auto;transform:none!important}
+.site-shell{position:relative!important;left:auto!important;top:auto!important;width:100%;max-width:480px;margin:0 auto;transform:none!important}
 .site-header,main,.site-footer{width:100%;max-width:430px;margin-left:auto;margin-right:auto}
 .site-header{height:44px;font-size:16px;line-height:19.2px;letter-spacing:-.64px;z-index:40}
 .logo{left:20px;top:12px;width:60px;height:19px;font-size:16px;font-weight:400;line-height:19.2px;letter-spacing:-.64px}
