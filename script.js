@@ -47,6 +47,65 @@ updateDesktopScale();
 window.addEventListener("resize",updateDesktopScale);
 window.addEventListener("load",updateDesktopScale);
 
+const homePortfolioTrack=document.querySelector(".portfolio-section .portfolio-grid");
+const homePortfolioMobile=window.matchMedia("(max-width: 430px)");
+
+if(homePortfolioTrack){
+  const photos=[...homePortfolioTrack.querySelectorAll(":scope > img")];
+  const edgeCount=2;
+  let ready=false;
+  let settleTimer;
+
+  function portfolioStep(){
+    const gap=parseFloat(getComputedStyle(homePortfolioTrack).columnGap)||0;
+    return photos[0].getBoundingClientRect().width+gap;
+  }
+
+  function jumpToPortfolio(position){
+    homePortfolioTrack.style.scrollSnapType="none";
+    homePortfolioTrack.scrollLeft=position;
+    requestAnimationFrame(()=>{homePortfolioTrack.style.scrollSnapType="";});
+  }
+
+  function wrapHomePortfolio(){
+    if(!homePortfolioMobile.matches||!ready)return;
+    const step=portfolioStep();
+    const index=Math.round(homePortfolioTrack.scrollLeft/step);
+    if(index<edgeCount)jumpToPortfolio((index+photos.length)*step);
+    else if(index>=edgeCount+photos.length)jumpToPortfolio((index-photos.length)*step);
+  }
+
+  function initHomePortfolio(){
+    if(!homePortfolioMobile.matches||photos.length<3)return;
+    if(!ready){
+      const clone=photo=>{
+        const copy=photo.cloneNode(true);
+        copy.classList.add("portfolio-clone");
+        copy.alt="";
+        copy.setAttribute("aria-hidden","true");
+        return copy;
+      };
+      photos.slice(-edgeCount).reverse().forEach(photo=>homePortfolioTrack.insertBefore(clone(photo),homePortfolioTrack.firstChild));
+      photos.slice(0,edgeCount).forEach(photo=>homePortfolioTrack.appendChild(clone(photo)));
+      ready=true;
+    }
+    jumpToPortfolio(edgeCount*portfolioStep());
+  }
+
+  homePortfolioTrack.addEventListener("scroll",()=>{
+    clearTimeout(settleTimer);
+    settleTimer=setTimeout(wrapHomePortfolio,180);
+  },{passive:true});
+  homePortfolioTrack.addEventListener("scrollend",wrapHomePortfolio);
+  homePortfolioTrack.addEventListener("keydown",event=>{
+    if(!homePortfolioMobile.matches||!["ArrowLeft","ArrowRight"].includes(event.key))return;
+    event.preventDefault();
+    homePortfolioTrack.scrollBy({left:(event.key==="ArrowRight"?1:-1)*portfolioStep(),behavior:"smooth"});
+  });
+  homePortfolioMobile.addEventListener("change",initHomePortfolio);
+  initHomePortfolio();
+}
+
 const portfolioGallery=document.querySelector(".portfolio-gallery");
 const portfolioMore=portfolioGallery?.querySelector(".portfolio-more");
 const portfolioImages=[...portfolioGallery?.querySelectorAll(".portfolio-grid img")||[]];
