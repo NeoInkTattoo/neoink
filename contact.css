@@ -81,3 +81,48 @@ body{min-width:0;overflow-x:hidden}
 @media (min-width:769px) and (max-width:1919px){
 .site-shell{position:absolute;top:0;left:50%;margin-left:-960px}
 }
+
+@media (max-width:430px){
+body{min-width:0;overflow-x:hidden}
+.site-shell{position:relative!important;left:auto!important;top:auto!important;width:100%;max-width:430px;margin:0 auto;transform:none!important}
+.site-header,main,.site-footer{width:100%;max-width:430px;margin-left:auto;margin-right:auto}
+
+/* Header shared with the Russian mobile pages */
+.site-header{height:44px;font-size:16px;line-height:19.2px;letter-spacing:-.64px;z-index:40}
+.logo{left:20px;top:12px;width:60px;height:19px;font-size:16px;font-weight:400;line-height:19.2px;letter-spacing:-.64px}
+.desktop-nav,.header-contact{display:none}
+.language{left:auto;right:60px;top:12px;width:52px;height:19px;gap:3px}
+.language button,.language span{font-size:16px;line-height:19.2px;letter-spacing:-.64px}
+.menu-toggle{display:block;position:absolute;right:20px;left:auto;top:15px;width:20px;height:13px;font-size:0;z-index:50;touch-action:manipulation}
+.menu-toggle::before,.menu-toggle::after{content:"";position:absolute;left:0;width:20px;height:1px;background:var(--beige)}
+.menu-toggle::before{top:0;box-shadow:0 6px 0 var(--beige)}
+.menu-toggle::after{top:12px}
+.menu-overlay{display:block;position:fixed;z-index:38;inset:44px 0 0;background:rgba(0,0,0,.25)}
+.menu-overlay[hidden]{display:none}
+.tablet-menu{position:absolute;z-index:39;left:0;top:44px;width:100%;height:230px;background:#2c2c2c;padding:20px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:20px}
+.tablet-menu[hidden]{display:none}
+.tablet-menu a{color:var(--beige);text-decoration:none;font-size:18px;line-height:21.6px;letter-spacing:-.72px}
+
+/* Contact 50515:5600 */
+.contact-section{width:100%;height:517px}
+.contact-wordmark{left:20px;top:15px;width:calc(100% - 40px);height:101px;object-fit:fill}
+.contact-pills{left:20px;top:136px;width:calc(100% - 40px);height:146px;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:70px 70px;gap:6px}
+.contact-pill,.contact-pill:first-child,.contact-pill:nth-child(2){width:100%;height:70px;min-width:0;border-radius:50px;gap:3px;padding:0 6px;font-size:14px;font-weight:400;line-height:16.8px;letter-spacing:-.28px;text-align:center}
+.contact-pill a{white-space:nowrap}
+.contact-map{left:0;top:302px;width:100%;height:215px;object-fit:cover;object-position:center}
+
+/* Footer 50515:5618 */
+.site-footer{width:100%;height:172px;margin:0 auto;overflow:hidden}
+.footer-bg{width:100%;height:172px;object-fit:cover}
+.footer-logo{left:20px;top:77px;width:54px;height:17px;font-size:14px;font-weight:400;line-height:16.8px;letter-spacing:-.28px}
+.footer-contact,.footer-social-note{display:none}
+.footer-socials{left:50%;top:64px;width:98px;height:44px;gap:10px;transform:translateX(-50%)}
+.footer-social{width:44px;height:44px}
+.footer-social img{width:44px;height:44px}
+.footer-social:nth-child(1){display:none}
+}
+
+@media (max-width:360px){
+.contact-wordmark{height:auto;aspect-ratio:350/101}
+.contact-pill,.contact-pill:first-child,.contact-pill:nth-child(2){font-size:12px;letter-spacing:-.2px}
+}
