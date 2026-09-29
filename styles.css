@@ -294,3 +294,6 @@ body{min-width:0;overflow-x:hidden}
 .footer-social img{width:44px;height:44px}
 .footer-social:nth-child(1){display:none}
 }
+
+/* Preserve image positioning while selecting smaller phone sources. */
+picture.mobile-art{display:contents}

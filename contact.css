@@ -126,3 +126,6 @@ body{min-width:0;overflow-x:hidden}
 .contact-wordmark{height:auto;aspect-ratio:350/101}
 .contact-pill,.contact-pill:first-child,.contact-pill:nth-child(2){font-size:12px;letter-spacing:-.2px}
 }
+
+/* Preserve image positioning while selecting smaller phone sources. */
+picture.mobile-art{display:contents}

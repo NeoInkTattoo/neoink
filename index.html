@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260929-8">
+  <link rel="stylesheet" href="styles.css?v=20260929-mobile-opt1">
   <link rel="stylesheet" href="cta-mobile.css?v=20260929-3">
 </head>
 <body>
@@ -23,10 +23,10 @@
   <a href="contact.html">Контакты</a>
 </nav>
 <main><section class="hero" aria-labelledby="hero-title">
-<img class="hero-vector" src="https://www.figma.com/api/mcp/asset/0a7ff84c-995d-47da-9a5e-246cd05ffc0f.svg" alt="">
-<img class="hero-image" src="hero-girl.png.png" alt="Тату-студия Neo Ink в Иваново">
-<img class="tablet-hero-wordmark" src="tablet-hero-wordmark.png" alt="">
-<picture><source media="(max-width: 430px)" srcset="hero-mobile-art.png"><img class="tablet-hero-image" src="tablet-hero-image.png" alt="Тату-студия Neo Ink в Иваново"></picture>
+<picture class="mobile-art"><source media="(max-width: 768px)" srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="><img class="hero-vector" src="https://www.figma.com/api/mcp/asset/0a7ff84c-995d-47da-9a5e-246cd05ffc0f.svg" alt=""></picture>
+<picture class="mobile-art"><source media="(max-width: 768px)" srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="><img class="hero-image" src="hero-girl.png.png" alt="Тату-студия Neo Ink в Иваново"></picture>
+<img class="tablet-hero-wordmark" src="tablet-hero-wordmark.png" alt="" decoding="async">
+<picture><source media="(max-width: 480px)" type="image/webp" srcset="hero-mobile-art.webp"><img class="tablet-hero-image" fetchpriority="high" src="tablet-hero-image.png" alt="Тату-студия Neo Ink в Иваново"></picture>
 <h1 id="hero-title" class="sr-only">Тату-студия Neo Ink в Иваново</h1>
 <div class="hero-copy"><p>Тату-студия в Иваново<br>Татуировки по авторским эскизам.</p><a class="book-button" href="contact.html">Записаться</a></div>
 <div class="hero-features" aria-label="Особенности студии"><span>ТОНКИЕ ЛИНИИ</span><span>ТОЧНОЕ ИСПОЛНЕНИЕ</span><span>ОРИГИНАЛЬНЫЕ ЭСКИЗЫ</span></div>
@@ -75,7 +75,7 @@
 </div>
 
 <article class="process-card process-card-1">
-<picture><source media="(max-width: 430px)" srcset="process-consultation-mobile.jpg"><img src="process-consultation.png" alt="Консультация перед созданием татуировки"></picture>
+<picture><source media="(max-width: 480px)" type="image/webp" srcset="process-consultation-mobile.webp"><img loading="lazy" decoding="async" src="process-consultation.png" alt="Консультация перед созданием татуировки"></picture>
 <div class="process-card-copy">
 <h3>Консультация</h3>
 <p>Обсуждаем вашу идею, место, размер и детали будущей татуировки. Отвечаем на вопросы и определяем направление работы.</p>
@@ -83,7 +83,7 @@
 </article>
 
 <article class="process-card process-card-2">
-<picture><source media="(max-width: 430px)" srcset="process-sketch-mobile.jpg"><img src="process-sketch.png" alt="Создание индивидуального эскиза"></picture>
+<picture><source media="(max-width: 480px)" type="image/webp" srcset="process-sketch-mobile.webp"><img loading="lazy" decoding="async" src="process-sketch.png" alt="Создание индивидуального эскиза"></picture>
 <div class="process-card-copy">
 <h3>Эскиз</h3>
 <p>Создаём индивидуальный эскиз с учётом вашей идеи, анатомии и выбранного места.</p>
@@ -91,7 +91,7 @@
 </article>
 
 <article class="process-card process-card-3">
-<picture><source media="(max-width: 430px)" srcset="process-session-mobile.jpg"><img src="process-session.png" alt="Процесс нанесения татуировки"></picture>
+<picture><source media="(max-width: 480px)" type="image/webp" srcset="process-session-mobile.webp"><img loading="lazy" decoding="async" src="process-session.png" alt="Процесс нанесения татуировки"></picture>
 <div class="process-card-copy">
 <h3>Сеанс</h3>
 <p>Переносим эскиз на кожу и начинаем работу.<br class="process-mobile-break"> В процессе внимательно следим за каждой деталью.</p>
@@ -99,7 +99,7 @@
 </article>
 
 <article class="process-card process-card-4">
-<picture><source media="(max-width: 430px)" srcset="process-aftercare-mobile.jpg"><img src="process-aftercare.png" alt="Уход за татуировкой после сеанса"></picture>
+<picture><source media="(max-width: 480px)" type="image/webp" srcset="process-aftercare-mobile.webp"><img loading="lazy" decoding="async" src="process-aftercare.png" alt="Уход за татуировкой после сеанса"></picture>
 <div class="process-card-copy">
 <h3>Уход</h3>
 <p>После сеанса подробно рассказываем, как ухаживать за татуировкой в период заживления.</p>
@@ -107,37 +107,37 @@
 </article>
 </section><section class="reviews-section" id="reviews" aria-labelledby="reviews-title">
 <h2 id="reviews-title">Отзывы</h2>
-<img class="reviews-arrows" src="https://www.figma.com/api/mcp/asset/a09908f9-fd65-4cb1-b111-3a0b096b7993.svg" alt="">
+<img loading="lazy" class="reviews-arrows" src="https://www.figma.com/api/mcp/asset/a09908f9-fd65-4cb1-b111-3a0b096b7993.svg" alt="">
 
 <article class="review-card review-card-left">
-<img class="review-photo" src="https://www.figma.com/api/mcp/asset/79259016-f0a6-42a5-a2f8-51a7d14bee19.png" alt="">
-<img class="review-avatar" src="https://www.figma.com/api/mcp/asset/a4ea39a9-882a-4266-98ed-7367a84439d6.png" alt="">
+<img loading="lazy" decoding="async" class="review-photo" src="https://www.figma.com/api/mcp/asset/79259016-f0a6-42a5-a2f8-51a7d14bee19.png" alt="">
+<img loading="lazy" decoding="async" class="review-avatar" src="https://www.figma.com/api/mcp/asset/a4ea39a9-882a-4266-98ed-7367a84439d6.png" alt="">
 <div class="review-name">Алексей<br>Морозов</div>
 <p class="review-text">Очень долго выбирала студию. Пришел со своей идеей и несколькими референсами, а мастер помог собрать всё в один эскиз и адаптировать его под выбранное место. Отдельно понравилось, что меня не торопили с решением. В итоге получилось даже лучше, чем я представлял. Обязательно вернусь ещё.</p>
 </article>
 
 <article class="review-card review-card-center">
-<img class="review-photo" src="https://www.figma.com/api/mcp/asset/fe49c974-b20e-4212-b8b6-ce2feb9f0f96.png" alt="">
-<img class="review-avatar" src="https://www.figma.com/api/mcp/asset/053c91cf-a11f-498b-8775-0d68610f1c14.png" alt="">
+<img loading="lazy" decoding="async" class="review-photo" src="https://www.figma.com/api/mcp/asset/fe49c974-b20e-4212-b8b6-ce2feb9f0f96.png" alt="">
+<img loading="lazy" decoding="async" class="review-avatar" src="https://www.figma.com/api/mcp/asset/053c91cf-a11f-498b-8775-0d68610f1c14.png" alt="">
 <div class="review-name">Дмитрий<br>Волков</div>
 <p class="review-text">Пришёл с довольно сырой задумкой — примерно понимал, что хочу, но готового эскиза не было. Мастер внимательно выслушал, предложил несколько вариантов композиции и нарисовал индивидуальный эскиз. На сеансе всё прошло спокойно и комфортно, постоянно спрашивали о самочувствии.</p>
 </article>
 
 <article class="review-card review-card-right">
-<img class="review-photo" src="https://www.figma.com/api/mcp/asset/bfe9e90e-d71d-4ed3-9ab8-2bd62aa6c9ab.png" alt="">
-<img class="review-avatar" src="https://www.figma.com/api/mcp/asset/b0087f7d-20a4-412d-98b2-9e8b396d8dc0.png" alt="">
+<img loading="lazy" decoding="async" class="review-photo" src="https://www.figma.com/api/mcp/asset/bfe9e90e-d71d-4ed3-9ab8-2bd62aa6c9ab.png" alt="">
+<img loading="lazy" decoding="async" class="review-avatar" src="https://www.figma.com/api/mcp/asset/b0087f7d-20a4-412d-98b2-9e8b396d8dc0.png" alt="">
 <div class="review-name">Дарья<br>Лебедева</div>
 <p class="review-text">Это уже не первая моя татуировка, поэтому для меня особенно важны качество работы и отношение мастера. В студии мне понравилось всё, от первого общения до рекомендаций по заживлению. В студии приятная спокойная атмосфера, всё чисто и аккуратно. Татуировка зажила отлично, а линии остались такими же чёткими.</p>
 </article>
 </section><div id="info"></div><div id="meanings"></div><section class="cta-section" id="contact" aria-labelledby="cta-title">
 <h2 id="cta-title"><span>ЕСТЬ ИДЕЯ?</span> <span>ДАВАЙТЕ ОБСУДИМ.</span></h2>
-<img class="cta-wordmark" src="cta-mobile-composite.png" alt="">
+<picture class="mobile-art"><source media="(max-width: 480px)" type="image/webp" srcset="cta-mobile-composite.webp"><img class="cta-wordmark" src="cta-mobile-composite.png" alt="" loading="lazy" decoding="async"></picture>
 <a class="cta-button" href="contact.html">
 <span>КОНТАКТЫ</span>
 <img src="cta-arrow.png" alt="">
 </a>
 </section></main><footer class="site-footer">
-<picture><source media="(max-width: 430px)" srcset="footer-bg-mobile.png"><img class="footer-bg" src="footer-bg.png" alt=""></picture>
+<picture><source media="(max-width: 480px)" type="image/webp" srcset="footer-bg-mobile.webp"><img class="footer-bg" src="footer-bg.png" alt="" loading="lazy" decoding="async"></picture>
 <div class="footer-logo">NEO INK</div>
 <div class="footer-contact">
 <p><span>Адрес: </span>ул. Крутицкая, 29<br>г. Иваново, Россия</p>
@@ -149,4 +149,4 @@
 <span class="footer-social"><img src="footer-telegram.png" alt="Telegram"></span>
 <span class="footer-social"><img src="footer-vk.png" alt="ВКонтакте"></span>
 </div>
-</footer></div><script src="script.js?v=20260929-2"></script></body></html>
+</footer></div><script src="script.js?v=20260929-mobile-opt1"></script></body></html>

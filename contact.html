@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="contact.css?v=20260929-1">
+  <link rel="stylesheet" href="contact.css?v=20260929-mobile-opt1">
 </head>
 <body>
 <div class="site-shell">
@@ -59,12 +59,12 @@
       </div>
     </div>
 
-    <img class="contact-map" src="contact-map.png" alt="Карта расположения тату-студии Neo Ink на Крутицкой улице в Иваново">
+    <picture class="mobile-art"><source media="(max-width: 480px)" type="image/webp" srcset="contact-map-mobile.webp"><img class="contact-map" src="contact-map.png" loading="lazy" decoding="async" alt="Карта расположения тату-студии Neo Ink на Крутицкой улице в Иваново"></picture>
   </section>
 </main>
 
 <footer class="site-footer">
-  <picture><source media="(max-width: 430px)" srcset="footer-bg-mobile.png"><img class="footer-bg" src="footer-bg.png" alt=""></picture>
+  <picture><source media="(max-width: 480px)" type="image/webp" srcset="footer-bg-mobile.webp"><img class="footer-bg" src="footer-bg.png" alt="" loading="lazy" decoding="async"></picture>
   <div class="footer-logo">NEO INK</div>
   <div class="footer-contact">
     <p><span>Адрес: </span>ул. Крутицкая, 29<br>г. Иваново, Россия</p>
@@ -78,6 +78,6 @@
   </div>
 </footer>
 </div>
-<script src="script.js?v=20260928-7"></script>
+<script src="script.js?v=20260929-mobile-opt1"></script>
 </body>
 </html>

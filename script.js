@@ -62,7 +62,7 @@ document.querySelectorAll(".faq-item .faq-toggle").forEach(button=>{
 });
 
 const homePortfolioTrack=document.querySelector(".portfolio-section .portfolio-grid");
-const homePortfolioMobile=window.matchMedia("(max-width: 430px)");
+const homePortfolioMobile=window.matchMedia("(max-width: 480px)");
 
 if(homePortfolioTrack){
   const photos=[...homePortfolioTrack.querySelectorAll(":scope > picture")];
@@ -130,11 +130,11 @@ let portfolioExpanded=false;
 
 function updatePortfolio(){
   if(!portfolioGallery)return;
-  const mobile=window.matchMedia("(max-width: 430px)").matches;
+  const mobile=window.matchMedia("(max-width: 480px)").matches;
   if(!mobile){portfolioFilter="all";portfolioExpanded=false;}
   const matches=portfolioImages.filter(img=>portfolioFilter==="all"||img.dataset.tags?.split(" ").includes(portfolioFilter));
   portfolioImages.forEach(img=>{
-    img.hidden=mobile&&!matches.includes(img);
+    img.parentElement.hidden=mobile&&!matches.includes(img);
   });
   portfolioGallery.classList.toggle("is-expanded",mobile&&(portfolioExpanded||portfolioFilter!=="all"));
   if(portfolioMore){
@@ -151,13 +151,13 @@ function updatePortfolio(){
 }
 
 portfolioMore?.addEventListener("click",()=>{
-  if(!window.matchMedia("(max-width: 430px)").matches)return;
+  if(!window.matchMedia("(max-width: 480px)").matches)return;
   portfolioExpanded=!portfolioExpanded;
   updatePortfolio();
 });
 
 portfolioFilters.forEach(button=>button.addEventListener("click",()=>{
-  if(!window.matchMedia("(max-width: 430px)").matches)return;
+  if(!window.matchMedia("(max-width: 480px)").matches)return;
   portfolioFilter=button.dataset.filter;
   portfolioExpanded=false;
   updatePortfolio();
@@ -178,7 +178,7 @@ let meaningsExpanded=false;
 
 function updateMeanings(){
   if(!meaningsCatalog)return;
-  const mobile=window.matchMedia("(max-width: 430px)").matches;
+  const mobile=window.matchMedia("(max-width: 480px)").matches;
   if(!mobile){meaningFilter="all";meaningsExpanded=false;}
   const matching=meaningCards.filter(card=>meaningFilter==="all"||card.dataset.category===meaningFilter);
   meaningCards.forEach(card=>{
@@ -198,12 +198,12 @@ function updateMeanings(){
 }
 
 meaningsMore?.addEventListener("click",()=>{
-  if(!window.matchMedia("(max-width: 430px)").matches)return;
+  if(!window.matchMedia("(max-width: 480px)").matches)return;
   meaningsExpanded=!meaningsExpanded;
   updateMeanings();
 });
 meaningFilters.forEach(button=>button.addEventListener("click",()=>{
-  if(!window.matchMedia("(max-width: 430px)").matches)return;
+  if(!window.matchMedia("(max-width: 480px)").matches)return;
   meaningFilter=button.dataset.filter;
   meaningsExpanded=false;
   updateMeanings();

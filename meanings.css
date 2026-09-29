@@ -218,3 +218,6 @@ body{min-width:0;overflow-x:hidden}
 .meanings-filters button,.meanings-filters button:first-child{font-size:12px;letter-spacing:-.48px}
 .meanings-cover-wordmark{height:auto;aspect-ratio:350/96}
 }
+
+/* Preserve image positioning while selecting smaller phone sources. */
+picture.mobile-art{display:contents}
