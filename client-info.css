@@ -181,6 +181,29 @@ body{min-width:0;overflow-x:hidden}
 .footer-social:nth-child(1){display:none}
 }
 
+/* FAQ answers participate in layout so any combination can open without overlap. */
+.faq-section{height:auto}
+.faq-list{position:relative;left:910px;top:0;height:auto;display:flex;flex-direction:column;gap:30px}
+.faq-item,.faq-item.is-open{height:auto;min-height:46px;padding:0 52px 0 0;flex:none}
+.faq-item p[hidden]{display:none}
+.faq-toggle{position:absolute;right:0;top:0;width:46px;height:46px;padding:0;border:0;border-radius:50%;background:none;cursor:pointer}
+.faq-toggle .faq-arrow{position:static;width:100%;height:100%;display:block}
+.faq-toggle:focus-visible{outline:2px solid var(--beige);outline-offset:4px}
+
+@media (min-width:481px) and (max-width:768px){
+  .faq-section{padding-top:72px}
+  .faq-list{left:0;top:0;width:728px;height:auto;gap:20px}
+  .faq-item,.faq-item.is-open{height:auto;min-height:44px;padding:0 52px 0 0;flex:none}
+  .faq-toggle{width:44px;height:44px}
+}
+
+@media (max-width:480px){
+  .faq-section{padding-top:0}
+  .faq-list{position:static;left:auto;top:auto;width:100%;height:auto;gap:10px}
+  .faq-item,.faq-item.is-open{height:auto;min-height:44px;padding:0 54px 0 0;flex:none}
+  .faq-toggle{width:44px;height:44px}
+}
+
 @media (min-width:769px) and (max-width:1919px){
 .site-shell{position:absolute;top:0;left:50%;margin-left:-960px}
 }

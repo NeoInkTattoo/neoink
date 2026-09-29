@@ -47,6 +47,20 @@ updateDesktopScale();
 window.addEventListener("resize",updateDesktopScale);
 window.addEventListener("load",updateDesktopScale);
 
+document.querySelectorAll(".faq-item .faq-toggle").forEach(button=>{
+  button.addEventListener("click",()=>{
+    const answer=document.getElementById(button.getAttribute("aria-controls"));
+    if(!answer)return;
+    const open=button.getAttribute("aria-expanded")!=="true";
+    answer.hidden=!open;
+    button.setAttribute("aria-expanded",String(open));
+    button.setAttribute("aria-label",`${open?"Скрыть":"Показать"} ответ: ${button.closest(".faq-item")?.querySelector("h3")?.textContent||""}`);
+    button.querySelector(".faq-arrow").src=open?"client-faq-arrow-up.svg":"client-faq-arrow-down.svg";
+    button.closest(".faq-item")?.classList.toggle("is-open",open);
+    updateDesktopScale();
+  });
+});
+
 const homePortfolioTrack=document.querySelector(".portfolio-section .portfolio-grid");
 const homePortfolioMobile=window.matchMedia("(max-width: 430px)");
 

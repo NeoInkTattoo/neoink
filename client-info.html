@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="client-info.css?v=20260929-2">
+  <link rel="stylesheet" href="client-info.css?v=20260929-3">
   <link rel="stylesheet" href="cta-mobile.css?v=20260929-3">
 </head>
 <body>
@@ -119,22 +119,60 @@
   <div class="faq-list">
     <div class="faq-divider" aria-hidden="true"></div>
     <article class="faq-item is-open">
-      <h3>Сколько стоит татуировка?</h3>
-      <p>Стоимость начинается от 4 000 ₽. Итоговая цена зависит от размера, расположения, сложности и детализации татуировки. Расскажите нам о своей идее, и мы сориентируем вас по стоимости до записи.</p>
-      <img class="faq-arrow" src="client-faq-arrow-up.svg" alt="">
+      <h3 id="faq-question-1">Сколько стоит татуировка?</h3>
+      <p id="faq-answer-1" role="region" aria-labelledby="faq-question-1">Стоимость начинается от 4 000 ₽. Итоговая цена зависит от размера, расположения, сложности и детализации татуировки. Расскажите нам о своей идее, и мы сориентируем вас по стоимости до записи.</p>
+      <button class="faq-toggle" type="button" aria-label="Скрыть ответ: Сколько стоит татуировка?" aria-controls="faq-answer-1" aria-expanded="true">
+        <img class="faq-arrow" src="client-faq-arrow-up.svg" alt="">
+      </button>
     </article>
     <div class="faq-divider" aria-hidden="true"></div>
-    <article class="faq-item"><h3>Больно ли делать татуировку?</h3><img class="faq-arrow" src="client-faq-arrow-down.svg" alt=""></article>
+    <article class="faq-item">
+      <h3 id="faq-question-2">Больно ли делать татуировку?</h3>
+      <p id="faq-answer-2" role="region" aria-labelledby="faq-question-2" hidden>Обычно ощущения похожи на частое царапанье или лёгкое жжение кожи. На одних участках это почти не беспокоит, на других чувствуется сильнее. Всё зависит от места нанесения и вашей чувствительности.</p>
+      <button class="faq-toggle" type="button" aria-label="Показать ответ: Больно ли делать татуировку?" aria-controls="faq-answer-2" aria-expanded="false">
+        <img class="faq-arrow" src="client-faq-arrow-down.svg" alt="">
+      </button>
+    </article>
     <div class="faq-divider" aria-hidden="true"></div>
-    <article class="faq-item"><h3>С какого возраста можно делать татуировку?</h3><img class="faq-arrow" src="client-faq-arrow-down.svg" alt=""></article>
+    <article class="faq-item">
+      <h3 id="faq-question-3">С какого возраста можно делать татуировку?</h3>
+      <p id="faq-answer-3" role="region" aria-labelledby="faq-question-3" hidden>Самостоятельно сделать татуировку можно с 18 лет. С 16 до 18 лет потребуется письменное согласие родителя.</p>
+      <button class="faq-toggle" type="button" aria-label="Показать ответ: С какого возраста можно делать татуировку?" aria-controls="faq-answer-3" aria-expanded="false">
+        <img class="faq-arrow" src="client-faq-arrow-down.svg" alt="">
+      </button>
+    </article>
     <div class="faq-divider" aria-hidden="true"></div>
-    <article class="faq-item"><h3>В вашей студии стерильно и безопасно?</h3><img class="faq-arrow" src="client-faq-arrow-down.svg" alt=""></article>
+    <article class="faq-item">
+      <h3 id="faq-question-4">В вашей студии стерильно и безопасно?</h3>
+      <p id="faq-answer-4" role="region" aria-labelledby="faq-question-4" hidden>Да. Мы используем одноразовые расходные материалы, стерильные инструменты и обрабатываем рабочее место до и после каждого сеанса. Всё, что соприкасается с кожей, защищаем барьерной защитой или используем одноразово.</p>
+      <button class="faq-toggle" type="button" aria-label="Показать ответ: В вашей студии стерильно и безопасно?" aria-controls="faq-answer-4" aria-expanded="false">
+        <img class="faq-arrow" src="client-faq-arrow-down.svg" alt="">
+      </button>
+    </article>
     <div class="faq-divider" aria-hidden="true"></div>
-    <article class="faq-item"><h3>Как записаться на сеанс?</h3><img class="faq-arrow" src="client-faq-arrow-down.svg" alt=""></article>
+    <article class="faq-item">
+      <h3 id="faq-question-5">Как записаться на сеанс?</h3>
+      <p id="faq-answer-5" role="region" aria-labelledby="faq-question-5" hidden>Напишите нам в сообщения сообщества или Telegram либо позвоните по телефону +7 901 688-60-70. Расскажите немного о своей идее, а мы сориентируем по стоимости и подберём удобное время.</p>
+      <button class="faq-toggle" type="button" aria-label="Показать ответ: Как записаться на сеанс?" aria-controls="faq-answer-5" aria-expanded="false">
+        <img class="faq-arrow" src="client-faq-arrow-down.svg" alt="">
+      </button>
+    </article>
     <div class="faq-divider" aria-hidden="true"></div>
-    <article class="faq-item"><h3>Можно ли заказать индивидуальный эскиз?</h3><img class="faq-arrow" src="client-faq-arrow-down.svg" alt=""></article>
+    <article class="faq-item">
+      <h3 id="faq-question-6">Можно ли заказать индивидуальный эскиз?</h3>
+      <p id="faq-answer-6" role="region" aria-labelledby="faq-question-6" hidden>Конечно! Можно прийти с готовой идеей, референсами или просто задумкой. Мы вместе обсудим детали и создадим эскиз специально для вас.</p>
+      <button class="faq-toggle" type="button" aria-label="Показать ответ: Можно ли заказать индивидуальный эскиз?" aria-controls="faq-answer-6" aria-expanded="false">
+        <img class="faq-arrow" src="client-faq-arrow-down.svg" alt="">
+      </button>
+    </article>
     <div class="faq-divider" aria-hidden="true"></div>
-    <article class="faq-item"><h3>Можно ли перекрыть старую татуировку?</h3><img class="faq-arrow" src="client-faq-arrow-down.svg" alt=""></article>
+    <article class="faq-item">
+      <h3 id="faq-question-7">Можно ли перекрыть старую татуировку?</h3>
+      <p id="faq-answer-7" role="region" aria-labelledby="faq-question-7" hidden>Да, во многих случаях старую татуировку можно перекрыть. Пришлите нам фото, и мастер посмотрит, что можно сделать, предложит варианты и поможет подобрать новый эскиз.</p>
+      <button class="faq-toggle" type="button" aria-label="Показать ответ: Можно ли перекрыть старую татуировку?" aria-controls="faq-answer-7" aria-expanded="false">
+        <img class="faq-arrow" src="client-faq-arrow-down.svg" alt="">
+      </button>
+    </article>
     <div class="faq-divider" aria-hidden="true"></div>
   </div>
 </section>
@@ -162,6 +200,6 @@
 </div>
 </footer>
 </div>
-<script src="script.js?v=20260928-5"></script>
+<script src="script.js?v=20260929-1"></script>
 </body>
 </html>
