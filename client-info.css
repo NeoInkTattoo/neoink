@@ -189,6 +189,8 @@ body{min-width:0;overflow-x:hidden}
 .faq-toggle{position:absolute;right:0;top:0;width:46px;height:46px;padding:0;border:0;border-radius:50%;background:none;cursor:pointer}
 .faq-toggle .faq-arrow{position:static;width:100%;height:100%;display:block}
 .faq-toggle:focus-visible{outline:2px solid var(--beige);outline-offset:4px}
+.faq-phone{color:inherit;white-space:nowrap;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px}
+.faq-answer-followup{display:block;margin-top:10px}
 
 @media (min-width:481px) and (max-width:768px){
   .faq-section{padding-top:72px}
