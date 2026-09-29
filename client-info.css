@@ -257,18 +257,19 @@ body{min-width:0;overflow-x:hidden}
 
 .healing-section{margin-top:60px;display:flex;flex-direction:column}
 .healing-heading{order:0}
-.healing-photo{position:static;width:100%;height:auto;aspect-ratio:350/392;margin-top:20px;border-radius:5px;object-fit:cover}
-.healing-photo-film{order:1;object-position:center}
-.healing-photo-film,.healing-photo-pad{width:100%;height:auto}
-.healing-column{position:static;width:100%;height:auto;margin-top:20px}
-.healing-column-film{order:2;width:100%;height:auto}
-.healing-photo-pad{order:3}
-.healing-column-pad{order:4;width:100%;height:auto}
-.healing-column>h3{margin:0;font-size:24px;line-height:25.2px;letter-spacing:-.72px}
-.healing-points{margin-top:10px;gap:10px}
-.healing-points article,.healing-column-film .healing-points article:nth-child(n),.healing-column-pad .healing-points article:nth-child(n){height:auto}
-.healing-points h4{width:100%;font-size:18px;line-height:21.6px;letter-spacing:-.72px}
-.healing-points p{width:100%;margin:5px 0 0;font-size:16px;line-height:19.2px;letter-spacing:-.64px}
+.healing-column{display:contents}
+.healing-column>h3{width:100%;margin:0;font-size:24px;line-height:25.2px;letter-spacing:-.72px}
+.healing-column-film>h3{order:1;margin-top:19px}
+.healing-photo{position:static;width:100%;height:auto;aspect-ratio:350/392;margin-top:10px;border-radius:5px;object-fit:cover}
+.healing-photo-film{order:2;object-position:center}
+.healing-column-film .healing-points{order:3}
+.healing-column-pad>h3{order:4;margin-top:30px}
+.healing-photo-pad{order:5}
+.healing-column-pad .healing-points{order:6}
+.healing-points{width:100%;margin-top:20px;gap:15px}
+.healing-points article,.healing-column-film .healing-points article:nth-child(n),.healing-column-pad .healing-points article:nth-child(n){width:100%;height:auto}
+.healing-points h4{width:100%;padding:10px;border-radius:5px;background:var(--panel);font-size:18px;line-height:21.6px;letter-spacing:-.72px}
+.healing-points p,.healing-column-film .healing-points article:nth-child(n) p{width:100%;margin:5px 0 0;font-size:16px;line-height:19.2px;letter-spacing:-.64px}
 
 .aftercare-section{margin-top:60px}
 .aftercare-table{position:static;width:100%;height:auto;margin-top:20px;border:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:none;grid-auto-rows:minmax(265px,auto);gap:20px 0}
