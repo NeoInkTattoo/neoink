@@ -3,7 +3,11 @@
 .cta-wordmark { top: 75px; height: auto; }
 
 @media (min-width: 391px) and (max-width: 768px) {
-  .cta-wordmark { top: 54px; height: auto; }
+  .cta-section { height: 316px; }
+  .cta-wordmark { top: 56px; height: auto; }
+  .cta-button { left: 222px; top: 150px; width: 284px; }
+  .cta-button span { width: 210px; }
+  .cta-button img { left: 228px; }
 }
 
 @media (max-width: 480px) {
