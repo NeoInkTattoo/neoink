@@ -212,3 +212,40 @@ if(meaningsCatalog){
   updateMeanings();
   window.addEventListener("resize",updateMeanings);
 }
+
+const reviewsCarousel=document.querySelector('.review-carousel');
+if(reviewsCarousel){
+  const stage=reviewsCarousel.querySelector('.reviews-stage');
+  const slides=[...stage.querySelectorAll('.review-slide')];
+  const status=reviewsCarousel.querySelector('.review-status');
+  let current=1;
+  let touchStart=null;
+  function showReview(index,announce=false){
+    current=(index+slides.length)%slides.length;
+    slides.forEach((slide,i)=>{
+      slide.classList.toggle('is-current',i===current);
+      slide.classList.toggle('is-before',i===(current-1+slides.length)%slides.length);
+      slide.classList.toggle('is-after',i===(current+1)%slides.length);
+      slide.setAttribute('aria-hidden',String(i!==current));
+    });
+    if(announce)status.textContent=`Отзыв ${current+1} из ${slides.length}: ${slides[current].querySelector('h3').textContent}`;
+  }
+  reviewsCarousel.querySelector('.review-prev').addEventListener('click',()=>showReview(current-1,true));
+  reviewsCarousel.querySelector('.review-next').addEventListener('click',()=>showReview(current+1,true));
+  stage.addEventListener('keydown',event=>{
+    if(!['ArrowLeft','ArrowRight'].includes(event.key))return;
+    event.preventDefault();
+    showReview(current+(event.key==='ArrowRight'?1:-1),true);
+  });
+  stage.addEventListener('touchstart',event=>{
+    const t=event.touches[0];touchStart={x:t.clientX,y:t.clientY};
+  },{passive:true});
+  stage.addEventListener('touchend',event=>{
+    if(!touchStart)return;
+    const t=event.changedTouches[0],dx=t.clientX-touchStart.x,dy=t.clientY-touchStart.y;
+    touchStart=null;
+    if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)*1.3)showReview(current+(dx<0?1:-1),true);
+  },{passive:true});
+  stage.addEventListener('touchcancel',()=>{touchStart=null;},{passive:true});
+  showReview(current);
+}
