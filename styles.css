@@ -367,3 +367,24 @@ picture.mobile-art{display:contents}
  .review-carousel .reviews-controls{margin-top:24px}
 }
 @media (prefers-reduced-motion:reduce){.review-carousel .review-slide{transition:none}}
+
+/* Updated editable review layout — Figma 50626:3751. */
+.review-carousel .review-slide,.review-carousel .review-work{border-radius:5px}
+.review-carousel .review-slide-copy{justify-content:flex-start}
+.review-carousel .review-quote{margin-top:30px;letter-spacing:-.88px}
+.review-carousel .review-person h3{letter-spacing:-.48px}
+.review-carousel .review-person span{letter-spacing:-.36px}
+.review-carousel .reviews-controls button img{display:block;width:54px;height:54px}
+@media (min-width:769px){
+ .reviews-section.review-carousel{padding:100px 0}
+ .review-carousel .reviews-heading{height:152px}
+ .review-carousel .reviews-heading h2{width:1400px;margin:0 auto}
+ .review-carousel .reviews-heading p{letter-spacing:-.88px}
+}
+@media (max-width:768px){
+ .review-carousel .reviews-controls button img{width:44px;height:44px}
+ .review-carousel .review-quote{margin-top:24px;letter-spacing:-.32px}
+}
+@media (max-width:480px){
+ .review-carousel .review-quote{margin-top:20px;letter-spacing:-.28px}
+}
