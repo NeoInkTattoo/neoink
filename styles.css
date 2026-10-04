@@ -390,3 +390,20 @@ picture.mobile-art{display:contents}
 @media (max-width:480px){
  .review-carousel .review-quote{margin-top:20px;letter-spacing:-.28px}
 }
+
+/* Process layout — Figma 50615:6116. */
+@media (min-width:769px){
+ .process-section{height:1061px}
+ .process-card{width:440px}
+ .process-card picture{display:block;width:440px;height:440px}
+ .process-card img{width:440px;height:440px}
+ .process-card-copy{margin-top:20px}
+ .process-card-1{left:0;top:411px}
+ .process-card-2{left:460px;top:251px}
+ .process-card-3{left:920px;top:501px}
+ .process-card-4{left:1380px;top:211px}
+ .process-card-1 .process-card-copy,.process-card-1 .process-card-copy p{width:376px}
+ .process-card-2 .process-card-copy,.process-card-2 .process-card-copy p{width:390px}
+ .process-card-3 .process-card-copy,.process-card-3 .process-card-copy p{width:379px}
+ .process-card-4 .process-card-copy,.process-card-4 .process-card-copy p{width:402px}
+}
