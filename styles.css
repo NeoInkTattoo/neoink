@@ -407,3 +407,11 @@ picture.mobile-art{display:contents}
  .process-card-3 .process-card-copy,.process-card-3 .process-card-copy p{width:379px}
  .process-card-4 .process-card-copy,.process-card-4 .process-card-copy p{width:402px}
 }
+
+/* Updated cover — Figma 50638:6639. */
+.laptop-hero-process{display:none}
+@media (min-width:769px){
+ .laptop-hero-wordmark{top:20px;height:289px}
+ .laptop-hero-process{display:block;position:absolute;left:50px;top:329px;width:674px;height:289px}
+ .laptop-hero-process img{display:block;border-radius:5px}
+}
