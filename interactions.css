@@ -1,0 +1,17 @@
+/* Shared interaction states from Figma UI kit 50002:1960. */
+.book-button,.portfolio-button,.about-cover-button,.about-me-button,.portfolio-cover-button,.client-cover-button,.meanings-cover-button,.cta-button{transition:opacity .18s ease}
+.footer-social{position:relative;border-radius:5px;background:rgba(206,198,193,.2);transition:background-color .18s ease}
+.footer-social-instagram{background:rgba(217,217,217,.2)}
+.footer-social img.social-symbol{position:absolute;width:44.230769%;height:44.230769%;left:28.846154%;top:28.846154%;object-fit:contain}
+.footer-social-instagram img.social-symbol{width:57.692308%;height:57.692308%;left:30.769231%;top:11.538462%}
+.social-tooltip{position:absolute;z-index:10;left:50%;bottom:calc(100% + 5px);transform:translateX(-50%);width:169px;min-height:37px;padding:5px;border-radius:5px;background:#2b2b2b;color:rgba(255,255,255,.6);font-family:"IBM Plex Sans",sans-serif;font-size:10px;font-weight:400;line-height:9px;letter-spacing:-.4px;white-space:nowrap;opacity:0;visibility:hidden;transition:opacity .18s ease,visibility .18s ease}
+.social-tooltip::after{content:"";position:absolute;left:calc(50% - 4px);bottom:-5px;width:8px;height:5px;background:url("social-tooltip-pointer.svg") center/8px 5px no-repeat}
+@media (hover:hover) and (pointer:fine){
+ .book-button:hover,.portfolio-button:hover,.about-cover-button:hover,.about-me-button:hover,.portfolio-cover-button:hover,.client-cover-button:hover,.meanings-cover-button:hover,.cta-button:hover{opacity:.8}
+ .footer-social:hover{background:rgba(217,217,217,.25)}
+ .footer-social-instagram:hover .social-tooltip{opacity:1;visibility:visible}
+}
+.book-button:focus-visible,.portfolio-button:focus-visible,.about-cover-button:focus-visible,.about-me-button:focus-visible,.portfolio-cover-button:focus-visible,.client-cover-button:focus-visible,.meanings-cover-button:focus-visible,.cta-button:focus-visible,.footer-social:focus-visible{outline:2px solid var(--beige,#cec6c1);outline-offset:4px}
+.footer-social:focus-visible{background:rgba(217,217,217,.25)}
+.footer-social-instagram:focus-visible .social-tooltip{opacity:1;visibility:visible}
+@media(prefers-reduced-motion:reduce){.book-button,.portfolio-button,.about-cover-button,.about-me-button,.portfolio-cover-button,.client-cover-button,.meanings-cover-button,.cta-button,.footer-social,.social-tooltip{transition:none}}
