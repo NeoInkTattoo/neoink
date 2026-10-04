@@ -376,10 +376,12 @@ picture.mobile-art{display:contents}
 .review-carousel .review-person span{letter-spacing:-.36px}
 .review-carousel .reviews-controls button img{display:block;width:54px;height:54px}
 @media (min-width:769px){
- .reviews-section.review-carousel{padding:100px 0}
- .review-carousel .reviews-heading{height:152px}
+ .reviews-section.review-carousel{padding:0}
+ .review-carousel .reviews-heading{height:120px}
  .review-carousel .reviews-heading h2{width:1400px;margin:0 auto}
- .review-carousel .reviews-heading p{letter-spacing:-.88px}
+ .review-carousel .reviews-heading p{margin-top:15px;letter-spacing:-.88px}
+ .review-carousel .reviews-stage{margin-top:40px}
+ .review-carousel .reviews-controls{margin-top:30px}
 }
 @media (max-width:768px){
  .review-carousel .reviews-controls button img{width:44px;height:44px}
