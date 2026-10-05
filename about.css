@@ -196,3 +196,23 @@ body{min-width:0;overflow-x:hidden}
 
 /* Preserve image positioning while selecting smaller phone sources. */
 picture.mobile-art{display:contents}
+
+/* Compact About Studio cover — Figma 50653:7167. */
+.about-cover-photo{display:none}
+@media(min-width:769px){
+.about-cover{height:450px}
+.about-cover-wordmark{left:50px;top:40px;width:740px;height:201.032px}
+.about-cover-dots{display:none}
+.about-cover-copy{left:50px;top:265px;width:850px;height:auto;text-align:left;font-size:22px;line-height:30px;letter-spacing:-.88px;color:rgba(206,198,193,.8)}
+.about-cover-button{left:50px;top:349px}
+.about-cover-photo{display:block;position:absolute;left:960px;top:40px;width:910px;height:370px;object-fit:cover;border-radius:5px}
+}
+@media(max-width:768px){
+.about-cover-copy{width:calc(100% - 180px)}
+}
+@media(max-width:480px){
+.about-cover{height:280px}
+.about-cover-copy{top:133px;width:calc(100% - 110px)}
+.about-cover-button{top:auto;bottom:20px}
+.about-cover-dots{top:133px;height:127px}
+}
