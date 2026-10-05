@@ -278,3 +278,19 @@ body.meaning-modal-open{overflow:hidden}
 @media (max-width:480px){
   .meanings-empty:not([hidden]){position:static;display:block;order:98;margin:0;font-size:14px;line-height:17px}
 }
+
+/* Figma popup 50666:4300 — exact desktop geometry. */
+@media (min-width:769px){
+  .meaning-modal{padding:32px}
+  .meaning-modal-dialog{width:1180px;height:700px;grid-template-columns:520px 660px}
+  .meaning-modal-media{width:520px;height:700px}
+  .meaning-modal-image{width:520px;height:700px;border-radius:5px 0 0 5px}
+  .meaning-modal-body{padding:46px 52px 34px 48px}
+  .meaning-modal-category{margin:0 0 16px;font-size:16px;line-height:19px;letter-spacing:-.32px}
+  .meaning-modal-body h2{margin:0 52px 15px 0;font-size:48px;line-height:1.05;letter-spacing:-1.92px}
+  .meaning-modal-lead{margin:0 0 19px;width:510px;font-size:21px;line-height:1.35;letter-spacing:-.63px}
+  .meaning-modal-content{width:510px;font-size:17px;line-height:1.5;letter-spacing:-.34px}
+  .meaning-modal-content p{margin:0 0 16px}
+  .meaning-modal-more{width:270px;min-width:270px;height:52px;margin-top:16px}
+  .meaning-modal-close{right:20px;top:18px}
+}
