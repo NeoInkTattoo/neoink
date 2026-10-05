@@ -1,0 +1,119 @@
+name: Optimize site images
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/optimize-images.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  optimize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install WebP tools
+        run: sudo apt-get update && sudo apt-get install -y webp
+
+      - name: Convert heavy PNG/JPG assets to WebP
+        shell: bash
+        run: |
+          set -euo pipefail
+          converted=0
+          while IFS= read -r -d '' file; do
+            size=$(stat -c%s "$file")
+            if [ "$size" -lt 150000 ]; then
+              continue
+            fi
+
+            stem="${file%.*}"
+            # Handle the accidental double extension hero-girl.png.png cleanly.
+            if [[ "$file" == "./hero-girl.png.png" ]]; then
+              out="./hero-girl.webp"
+            else
+              out="${stem}.webp"
+            fi
+
+            if [ -f "$out" ]; then
+              echo "Keeping existing $out"
+              continue
+            fi
+
+            echo "Optimizing $file -> $out"
+            cwebp -quiet -q 84 -m 6 -alpha_q 90 -metadata none "$file" -o "$out"
+            converted=$((converted+1))
+          done < <(find . -maxdepth 1 -type f \( -iname '*.png' -o -iname '*.jpg' -o -iname '*.jpeg' \) -print0)
+
+          echo "Created $converted new WebP files"
+
+      - name: Point HTML at WebP assets
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+
+          roots = list(Path('.').glob('*.html')) + list(Path('meanings').glob('*.html'))
+          assets = {}
+
+          for p in Path('.').glob('*.webp'):
+              assets[p.name] = p.name
+
+          # Map original raster names to an existing WebP file.
+          originals = list(Path('.').glob('*.png')) + list(Path('.').glob('*.jpg')) + list(Path('.').glob('*.jpeg'))
+          mapping = {}
+          for src in originals:
+              if src.name == 'hero-girl.png.png' and Path('hero-girl.webp').exists():
+                  mapping[src.name] = 'hero-girl.webp'
+                  continue
+              target = src.with_suffix('.webp')
+              if target.exists():
+                  mapping[src.name] = target.name
+
+          for html in roots:
+              text = html.read_text(encoding='utf-8')
+              old = text
+              for src, target in mapping.items():
+                  text = text.replace(src, target)
+              if text != old:
+                  html.write_text(text, encoding='utf-8')
+                  print('Updated', html)
+          PY
+
+      - name: Show savings
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          total_old = 0
+          total_new = 0
+          pairs = []
+          for src in list(Path('.').glob('*.png')) + list(Path('.').glob('*.jpg')) + list(Path('.').glob('*.jpeg')):
+              if src.stat().st_size < 150000:
+                  continue
+              target = Path('hero-girl.webp') if src.name == 'hero-girl.png.png' else src.with_suffix('.webp')
+              if target.exists():
+                  total_old += src.stat().st_size
+                  total_new += target.stat().st_size
+                  pairs.append((src.name, src.stat().st_size, target.name, target.stat().st_size))
+          for a,sa,b,sb in sorted(pairs, key=lambda x:x[1]-x[3], reverse=True):
+              print(f'{a}: {sa/1024:.0f} KB -> {b}: {sb/1024:.0f} KB')
+          print(f'Total referenced source assets: {total_old/1024/1024:.2f} MB -> {total_new/1024/1024:.2f} MB')
+          PY
+
+      - name: Commit optimized assets
+        shell: bash
+        run: |
+          if git diff --quiet && [ -z "$(git status --porcelain)" ]; then
+            echo "No optimization changes"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add '*.webp' '*.html' meanings/*.html
+          git commit -m "Optimize heavy site images with WebP"
+          git push
