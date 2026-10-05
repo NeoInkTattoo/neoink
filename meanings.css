@@ -11,7 +11,7 @@ body{margin:0;min-width:0;background:var(--ink);color:var(--beige);font-family:"
 .language{position:absolute;left:1805px;top:24px;width:65px;height:24px;display:flex;align-items:center;justify-content:center;gap:6px}
 .language button,.menu-toggle{border:0;background:none;color:inherit;font:inherit;letter-spacing:inherit;padding:0;cursor:pointer}.menu-toggle{display:none}.tablet-menu{display:none}.menu-overlay{display:none}
 .language button:not(.is-active){opacity:.6}
-.meanings-cover{position:relative;width:1920px;height:751px;background:var(--panel);overflow:hidden}
+.meanings-cover{position:relative;width:1920px;height:751px;overflow:hiddenbackground:transparent!important;background-color:transparent!important;}
 .meanings-cover-wordmark{position:absolute;left:50px;top:50px;width:1823px;height:469px;display:block}
 .meanings-cover-dots{position:absolute;top:569px;width:684px;height:132px;display:block}
 .meanings-cover-dots-left{left:50px}
@@ -75,7 +75,7 @@ body{min-width:0;overflow-x:hidden}
 .tablet-menu a{color:var(--beige);text-decoration:none;font-size:18px;line-height:21.6px;letter-spacing:-.72px}
 
 /* Cover 50528:7693 */
-.meanings-cover{width:768px;height:372px}
+.meanings-cover{width:768px;height:372pxbackground:transparent!important;background-color:transparent!important;}
 .meanings-cover-wordmark{left:20px;top:20px;width:728px;height:188px}
 .meanings-cover-dots{top:238px;width:199px;height:104px;object-fit:cover}
 .meanings-cover-dots-left{left:20px}
@@ -164,7 +164,7 @@ body{min-width:0;overflow-x:hidden}
 .tablet-menu a{color:var(--beige);text-decoration:none;font-size:18px;line-height:21.6px;letter-spacing:-.72px}
 
 /* Mobile meanings cover and catalog */
-.meanings-cover{width:100%;height:244px}
+.meanings-cover{width:100%;height:244pxbackground:transparent!important;background-color:transparent!important;}
 .meanings-cover-wordmark{left:20px;top:15px;width:calc(100% - 40px);height:96px;object-fit:fill}
 .meanings-cover-dots{top:131px;width:51px;height:93px;object-fit:cover;opacity:.2}
 .meanings-cover-dots-left{left:20px;object-position:left}
@@ -226,7 +226,7 @@ picture.mobile-art{display:contents}
 /* Compact desktop cover — latest Meanings frame in supplied Figma canvas (50660:8662) */
 .meanings-cover-photo{display:none}
 @media (min-width:769px){
-.meanings-cover{height:450px;background:transparent}
+.meanings-cover{height:450px;background:transparent!important;background-color:transparent!important;}
 .meanings-cover-wordmark{left:50px;top:40px;width:816px;height:210px;object-fit:fill}
 .meanings-cover-dots{display:none}
 .meanings-cover-copy{left:50px;top:270px;width:850px;height:60px;margin:0;text-align:left;font-size:22px;line-height:30px;letter-spacing:-.88px;color:rgba(206,198,193,.8)}
