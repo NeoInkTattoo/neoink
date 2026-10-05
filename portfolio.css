@@ -186,3 +186,15 @@ picture.mobile-art{display:contents}
 .portfolio-grid picture.portfolio-item img{display:block;width:100%;height:100%;object-fit:cover;border-radius:5px}
 @media (min-width:481px) and (max-width:768px){.portfolio-grid picture.portfolio-item{width:236px;height:275px}}
 @media (max-width:480px){.portfolio-grid picture.portfolio-item{width:100%;height:auto;aspect-ratio:170/198}.portfolio-grid picture.portfolio-item img{height:auto;aspect-ratio:170/198}}
+
+
+/* Compact desktop cover — Figma 50659:7864 */
+.portfolio-cover-photo{display:none}
+@media (min-width:769px){
+.portfolio-cover{height:450px}
+.portfolio-cover-wordmark{left:50px;top:40px;width:887px;height:190px;object-fit:fill}
+.portfolio-cover-dots{display:none}
+.portfolio-cover-copy{left:50px;top:254px;width:850px;height:60px;margin:0;text-align:left;font-size:22px;line-height:30px;letter-spacing:-.88px;color:rgba(206,198,193,.8)}
+.portfolio-cover-button{left:50px;top:350px;width:335px;height:60px}
+.portfolio-cover-photo{display:block;position:absolute;left:960px;top:40px;width:910px;height:370px;object-fit:cover;border-radius:5px}
+}
