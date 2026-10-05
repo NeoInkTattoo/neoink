@@ -11,7 +11,7 @@ body{margin:0;min-width:0;background:var(--ink);color:var(--beige);font-family:"
 .language{position:absolute;left:1805px;top:24px;width:65px;height:24px;display:flex;align-items:center;justify-content:center;gap:6px}
 .language button,.menu-toggle{border:0;background:none;color:inherit;font:inherit;letter-spacing:inherit;padding:0;cursor:pointer}.menu-toggle{display:none}.tablet-menu{display:none}.menu-overlay{display:none}
 .language button:not(.is-active){opacity:.6}
-.meanings-cover{position:relative;width:1920px;height:751px;overflow:hiddenbackground:transparent!important;background-color:transparent!important;}
+.meanings-cover{position:relative;width:1920px;height:751px;overflow:hidden;background:transparent!important;background-color:transparent!important;}
 .meanings-cover-wordmark{position:absolute;left:50px;top:50px;width:1823px;height:469px;display:block}
 .meanings-cover-dots{position:absolute;top:569px;width:684px;height:132px;display:block}
 .meanings-cover-dots-left{left:50px}
@@ -75,7 +75,7 @@ body{min-width:0;overflow-x:hidden}
 .tablet-menu a{color:var(--beige);text-decoration:none;font-size:18px;line-height:21.6px;letter-spacing:-.72px}
 
 /* Cover 50528:7693 */
-.meanings-cover{width:768px;height:372pxbackground:transparent!important;background-color:transparent!important;}
+.meanings-cover{width:768px;height:372px;background:transparent!important;background-color:transparent!important;}
 .meanings-cover-wordmark{left:20px;top:20px;width:728px;height:188px}
 .meanings-cover-dots{top:238px;width:199px;height:104px;object-fit:cover}
 .meanings-cover-dots-left{left:20px}
@@ -164,7 +164,7 @@ body{min-width:0;overflow-x:hidden}
 .tablet-menu a{color:var(--beige);text-decoration:none;font-size:18px;line-height:21.6px;letter-spacing:-.72px}
 
 /* Mobile meanings cover and catalog */
-.meanings-cover{width:100%;height:244pxbackground:transparent!important;background-color:transparent!important;}
+.meanings-cover{width:100%;height:244px;background:transparent!important;background-color:transparent!important;}
 .meanings-cover-wordmark{left:20px;top:15px;width:calc(100% - 40px);height:96px;object-fit:fill}
 .meanings-cover-dots{top:131px;width:51px;height:93px;object-fit:cover;opacity:.2}
 .meanings-cover-dots-left{left:20px;object-position:left}
@@ -262,4 +262,19 @@ body.meaning-modal-open{overflow:hidden}
 .meaning-modal-lead{font-size:18px}
 .meaning-modal-content{font-size:15px}
 .meaning-modal-close{right:12px;top:12px}
+}
+
+/* Interactive tattoo-meaning filters on every breakpoint. */
+.meanings-filters button{transition:background-color .18s ease,color .18s ease,border-color .18s ease,opacity .18s ease}
+.meanings-filters button:not(.is-active){background:#242424;color:var(--beige);border-color:rgba(206,198,193,.2)}
+@media (hover:hover) and (pointer:fine){
+  .meanings-filters button:not(.is-active):hover{border-color:rgba(206,198,193,.55);background:rgba(206,198,193,.12)}
+}
+.meaning-card[hidden]{display:none!important}
+.meanings-empty:not([hidden]){display:block;position:absolute;left:0;top:135px;margin:0;color:rgba(206,198,193,.7);font-size:18px;line-height:1.4}
+@media (max-width:768px) and (min-width:481px){
+  .meanings-empty:not([hidden]){top:147px;font-size:16px}
+}
+@media (max-width:480px){
+  .meanings-empty:not([hidden]){position:static;display:block;order:98;margin:0;font-size:14px;line-height:17px}
 }
