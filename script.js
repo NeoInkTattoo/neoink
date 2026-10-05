@@ -31,13 +31,17 @@ function updateDesktopScale(){
   if(!siteShell)return;
   const viewport=window.innerWidth;
 
+  const meaningDialog=document.querySelector(".meaning-modal-dialog");
+
   if(viewport>=769&&viewport<1920){
     const scale=viewport/1920;
     siteShell.style.transform=`scale(${scale})`;
     document.body.style.height=`${Math.ceil(siteShell.scrollHeight*scale)}px`;
+    if(meaningDialog)meaningDialog.style.transform=`scale(${scale})`;
   }else{
     siteShell.style.transform="";
     document.body.style.height="";
+    if(meaningDialog)meaningDialog.style.transform="";
   }
 
   if(viewport>768)setMenu(false);
