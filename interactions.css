@@ -15,3 +15,9 @@
 .footer-social:focus-visible{background:rgba(217,217,217,.25)}
 .footer-social-instagram:focus-visible .social-tooltip{opacity:1;visibility:visible}
 @media(prefers-reduced-motion:reduce){.book-button,.portfolio-button,.about-cover-button,.about-me-button,.portfolio-cover-button,.client-cover-button,.meanings-cover-button,.cta-button img,.footer-social,.social-tooltip{transition:none}}
+
+/* Header text hover: only the label under the pointer fades by 20%. */
+.site-header a{transition:opacity .18s ease}
+@media (hover:hover) and (pointer:fine){
+ .site-header a:hover{opacity:.8}
+}
