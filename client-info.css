@@ -317,3 +317,15 @@ body{min-width:0;overflow-x:hidden}
 
 /* Preserve image positioning while selecting smaller phone sources. */
 picture.mobile-art{display:contents}
+
+
+/* Compact desktop cover — Figma 50660:8345 */
+.client-cover-photo{display:none}
+@media (min-width:769px){
+.client-cover{height:450px}
+.client-cover-wordmark{left:50px;top:40px;width:870px;height:210px;object-fit:fill}
+.client-cover-dots{display:none}
+.client-cover-copy{left:50px;top:270px;width:850px;height:60px;margin:0;text-align:left;font-size:22px;line-height:30px;letter-spacing:-.88px;color:rgba(206,198,193,.8)}
+.client-cover-button{left:50px;top:350px;width:335px;height:60px}
+.client-cover-photo{display:block;position:absolute;left:960px;top:40px;width:910px;height:370px;object-fit:cover;border-radius:5px}
+}
