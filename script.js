@@ -173,7 +173,9 @@ const meaningCards=[...meaningsCatalog?.querySelectorAll(".meaning-card")||[]];
 const meaningFilters=[...meaningsCatalog?.querySelectorAll(".meanings-filters button")||[]];
 const meaningsMore=meaningsCatalog?.querySelector(".meanings-more");
 const meaningsEmpty=meaningsCatalog?.querySelector(".meanings-empty");
-let meaningFilter="all";
+const meaningFilterParam=new URLSearchParams(window.location.search).get("filter");
+const allowedMeaningFilters=new Set(["all","animals","plants","spiritual","symbols","words","other"]);
+let meaningFilter=allowedMeaningFilters.has(meaningFilterParam)?meaningFilterParam:"all";
 let meaningsExpanded=false;
 
 function updateMeanings(){
@@ -244,6 +246,9 @@ meaningsMore?.addEventListener("click",()=>{
 meaningFilters.forEach(button=>button.addEventListener("click",()=>{
   meaningFilter=button.dataset.filter;
   meaningsExpanded=false;
+  const url=new URL(window.location.href);
+  if(meaningFilter==="all")url.searchParams.delete("filter");else url.searchParams.set("filter",meaningFilter);
+  history.replaceState(null,"",url);
   updateMeanings();
 }));
 
@@ -332,7 +337,8 @@ async function openMeaningModal(link){
     const pageTitle=doc.querySelector("h1")?.textContent?.trim();
     const pageCategory=doc.querySelector(".detail-category")?.textContent?.trim();
     const pageLead=doc.querySelector(".detail-lead")?.textContent?.trim();
-    const pageContent=doc.querySelector(".detail-content")?.innerHTML;
+    const detailParagraphs=[...doc.querySelectorAll(".detail-content p")].slice(0,2);
+    const pageContent=detailParagraphs.map(p=>p.outerHTML).join("");
     if(pageTitle)meaningModalTitle.textContent=pageTitle.replace(/^Значение татуировки\s*[«"]?|[»"]$/g,"").trim();
     if(pageCategory)meaningModalCategory.textContent=pageCategory;
     if(pageLead)meaningModalLead.textContent=pageLead;
