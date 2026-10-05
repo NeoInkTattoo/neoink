@@ -226,7 +226,7 @@ picture.mobile-art{display:contents}
 /* Compact desktop cover — latest Meanings frame in supplied Figma canvas (50660:8662) */
 .meanings-cover-photo{display:none}
 @media (min-width:769px){
-.meanings-cover{height:450px}
+.meanings-cover{height:450px;background:transparent}
 .meanings-cover-wordmark{left:50px;top:40px;width:816px;height:210px;object-fit:fill}
 .meanings-cover-dots{display:none}
 .meanings-cover-copy{left:50px;top:270px;width:850px;height:60px;margin:0;text-align:left;font-size:22px;line-height:30px;letter-spacing:-.88px;color:rgba(206,198,193,.8)}
