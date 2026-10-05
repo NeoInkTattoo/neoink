@@ -191,7 +191,7 @@ picture.mobile-art{display:contents}
 /* Compact desktop cover — Figma 50659:7864 */
 .portfolio-cover-photo{display:none}
 @media (min-width:769px){
-.portfolio-cover{height:450px}
+.portfolio-cover{height:450px;background:transparent}
 .portfolio-cover-wordmark{left:50px;top:40px;width:887px;height:190px;object-fit:fill}
 .portfolio-cover-dots{display:none}
 .portfolio-cover-copy{left:50px;top:254px;width:850px;height:60px;margin:0;text-align:left;font-size:22px;line-height:30px;letter-spacing:-.88px;color:rgba(206,198,193,.8)}
