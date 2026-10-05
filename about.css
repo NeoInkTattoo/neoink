@@ -200,7 +200,7 @@ picture.mobile-art{display:contents}
 /* Compact About Studio cover — Figma 50653:7167. */
 .about-cover-photo{display:none}
 @media(min-width:769px){
-.about-cover{height:450px}
+.about-cover{height:450px;background:transparent}
 .about-cover-wordmark{left:50px;top:40px;width:740px;height:201.032px}
 .about-cover-dots{display:none}
 .about-cover-copy{left:50px;top:265px;width:850px;height:auto;text-align:left;font-size:22px;line-height:30px;letter-spacing:-.88px;color:rgba(206,198,193,.8)}
@@ -220,7 +220,7 @@ picture.mobile-art{display:contents}
 
 /* Compact desktop cover — Figma 50658:7753 */
 @media (min-width:769px){
-.about-cover{height:450px}
+.about-cover{height:450px;background:transparent}
 .about-cover-wordmark{left:50px;top:40px;width:773px;height:210px;object-fit:fill}
 .about-cover-dots{display:none}
 .about-cover-copy{left:50px;top:270px;width:850px;height:60px;margin:0;text-align:left;font-size:22px;line-height:30px;letter-spacing:-.88px;color:rgba(206,198,193,.8)}
