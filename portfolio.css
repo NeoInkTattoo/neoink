@@ -11,7 +11,7 @@ body{margin:0;min-width:0;background:var(--ink);color:var(--beige);font-family:"
 .language{position:absolute;left:1805px;top:24px;width:65px;height:24px;display:flex;align-items:center;justify-content:center;gap:6px}
 .language button,.menu-toggle{border:0;background:none;color:inherit;font:inherit;letter-spacing:inherit;padding:0;cursor:pointer}.menu-toggle{display:none}.tablet-menu{display:none}.menu-overlay{display:none}
 .language button:not(.is-active){opacity:.6}
-.portfolio-cover{position:relative;width:1920px;height:672px;background:var(--panel);overflow:hidden}
+.portfolio-cover{position:relative;width:1920px;height:672px;overflow:hiddenbackground:transparent!important;background-color:transparent!important;}
 .portfolio-cover-wordmark{position:absolute;left:50px;top:50px;width:1820px;height:390px;display:block}
 .portfolio-cover-dots{position:absolute;top:490px;width:684px;height:132px;display:block}
 .portfolio-cover-dots-left{left:50px}
@@ -62,7 +62,7 @@ body{min-width:0;overflow-x:hidden}
 .tablet-menu a{color:var(--beige);text-decoration:none;font-size:18px;line-height:21.6px;letter-spacing:-.72px}
 
 /* Cover 50520:6821 */
-.portfolio-cover{width:768px;height:365px}
+.portfolio-cover{width:768px;height:365pxbackground:transparent!important;background-color:transparent!important;}
 .portfolio-cover-wordmark{left:20px;top:20px;width:728px;height:181px}
 .portfolio-cover-dots{top:231px;width:199px;height:104px;object-fit:cover}
 .portfolio-cover-dots-left{left:20px}
@@ -131,7 +131,7 @@ body{min-width:0;overflow-x:hidden}
 .tablet-menu[hidden]{display:none}
 .tablet-menu a{color:var(--beige);text-decoration:none;font-size:18px;line-height:21.6px;letter-spacing:-.72px}
 
-.portfolio-cover{width:100%;height:235px}
+.portfolio-cover{width:100%;height:235pxbackground:transparent!important;background-color:transparent!important;}
 .portfolio-cover-wordmark{left:20px;top:15px;width:calc(100% - 40px);height:87px;object-fit:fill}
 .portfolio-cover-dots{top:122px;width:51px;height:93px;object-fit:cover;opacity:.2}
 .portfolio-cover-dots-left{left:20px;object-position:left}
@@ -191,7 +191,7 @@ picture.mobile-art{display:contents}
 /* Compact desktop cover — Figma 50659:7864 */
 .portfolio-cover-photo{display:none}
 @media (min-width:769px){
-.portfolio-cover{height:450px;background:transparent}
+.portfolio-cover{height:450px;background:transparent!important;background-color:transparent!important;}
 .portfolio-cover-wordmark{left:50px;top:40px;width:887px;height:190px;object-fit:fill}
 .portfolio-cover-dots{display:none}
 .portfolio-cover-copy{left:50px;top:254px;width:850px;height:60px;margin:0;text-align:left;font-size:22px;line-height:30px;letter-spacing:-.88px;color:rgba(206,198,193,.8)}
