@@ -249,3 +249,69 @@ if(reviewsCarousel){
   stage.addEventListener('touchcancel',()=>{touchStart=null;},{passive:true});
   showReview(current);
 }
+
+
+const meaningModal=document.querySelector("#meaning-modal");
+const meaningModalTitle=meaningModal?.querySelector("#meaning-modal-title");
+const meaningModalCategory=meaningModal?.querySelector(".meaning-modal-category");
+const meaningModalLead=meaningModal?.querySelector(".meaning-modal-lead");
+const meaningModalContent=meaningModal?.querySelector(".meaning-modal-content");
+const meaningModalImage=meaningModal?.querySelector(".meaning-modal-image");
+const meaningModalMore=meaningModal?.querySelector(".meaning-modal-more");
+let meaningModalTrigger=null;
+
+function closeMeaningModal(){
+  if(!meaningModal||meaningModal.hidden)return;
+  meaningModal.hidden=true;
+  document.body.classList.remove("meaning-modal-open");
+  meaningModalTrigger?.focus?.();
+}
+
+async function openMeaningModal(link){
+  if(!meaningModal)return;
+  meaningModalTrigger=link;
+  const title=link.querySelector("h3")?.textContent?.trim()||"Значение татуировки";
+  const category=link.querySelector(".meaning-category")?.textContent?.trim()||"";
+  const cardText=link.querySelector(".meaning-copy p")?.textContent?.trim()||"";
+  const cardImage=link.querySelector(".meaning-photo");
+  meaningModalTitle.textContent=title;
+  meaningModalCategory.textContent=category;
+  meaningModalLead.textContent=cardText.replace(/\s+/g," ").replace(/\.\.\.\s*$/,"");
+  meaningModalContent.innerHTML="<p>Загружаем подробное значение…</p>";
+  meaningModalImage.src=cardImage?.currentSrc||cardImage?.src||"";
+  meaningModalImage.alt=cardImage?.alt||title;
+  meaningModalMore.href=link.href;
+  meaningModal.hidden=false;
+  document.body.classList.add("meaning-modal-open");
+  meaningModal.querySelector(".meaning-modal-close")?.focus();
+
+  try{
+    const response=await fetch(link.href,{credentials:"same-origin"});
+    if(!response.ok)throw new Error("Failed to load");
+    const html=await response.text();
+    const doc=new DOMParser().parseFromString(html,"text/html");
+    const pageTitle=doc.querySelector("h1")?.textContent?.trim();
+    const pageCategory=doc.querySelector(".detail-category")?.textContent?.trim();
+    const pageLead=doc.querySelector(".detail-lead")?.textContent?.trim();
+    const pageContent=doc.querySelector(".detail-content")?.innerHTML;
+    if(pageTitle)meaningModalTitle.textContent=pageTitle.replace(/^Значение татуировки\s*[«"]?|[»"]$/g,"").trim();
+    if(pageCategory)meaningModalCategory.textContent=pageCategory;
+    if(pageLead)meaningModalLead.textContent=pageLead;
+    if(pageContent)meaningModalContent.innerHTML=pageContent;
+  }catch(error){
+    meaningModalContent.innerHTML="<p>Подробное значение можно открыть на отдельной странице.</p>";
+  }
+}
+
+document.querySelectorAll("[data-meaning-link]").forEach(link=>{
+  link.addEventListener("click",event=>{
+    if(event.defaultPrevented||event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;
+    event.preventDefault();
+    openMeaningModal(link);
+  });
+});
+
+meaningModal?.querySelectorAll("[data-meaning-close]").forEach(el=>el.addEventListener("click",closeMeaningModal));
+document.addEventListener("keydown",event=>{
+  if(event.key==="Escape"&&meaningModal&&!meaningModal.hidden)closeMeaningModal();
+});
