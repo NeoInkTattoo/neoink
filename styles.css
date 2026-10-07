@@ -415,3 +415,14 @@ picture.mobile-art{display:contents}
  .laptop-hero-process{display:block;position:absolute;left:50px;top:329px;width:674px;height:289px}
  .laptop-hero-process img{display:block;border-radius:5px}
 }
+
+
+/* Main page — Figma 50653:7218, desktop canvas. */
+@media(min-width:769px){
+ .hero .book-button{width:335px}
+ .reviews-section.review-carousel{height:704px;margin-top:170px;padding-bottom:0}
+ .cta-section{margin-top:310px}
+ .review-carousel .review-person{height:64px}
+ .review-carousel .review-person img{width:64px;height:64px}
+ .review-carousel .review-slide-copy{height:416px}
+}
