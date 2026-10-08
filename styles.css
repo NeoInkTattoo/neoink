@@ -435,3 +435,9 @@ picture.mobile-art{display:contents}
  .review-carousel .review-slide.is-before{transform:translateX(calc(-100% - 12px))}
  .review-carousel .review-slide.is-after{transform:translateX(calc(100% + 12px))}
 }
+
+/* Clip the desktop cover photograph to the same corners as adjacent photos. */
+@media (min-width:769px){
+ .laptop-hero-photo{border-radius:5px;overflow:hidden}
+ .laptop-hero-photo img{border-radius:inherit}
+}
