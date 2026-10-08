@@ -294,3 +294,17 @@ body.meaning-modal-open{overflow:hidden}
   .meaning-modal-more{width:270px;min-width:270px;height:52px;margin-top:16px}
   .meaning-modal-close{right:20px;top:18px}
 }
+
+/* Mobile cover grows with its text; the booking button stays in normal flow. */
+@media (max-width:480px){
+.meanings-cover{height:auto;min-height:0;display:flex;flex-direction:column;align-items:center;padding:15px 20px 20px;background:transparent}
+.meanings-cover-wordmark{position:static;width:100%;flex:none;margin:0 0 20px;transform:none}
+.meanings-cover-copy{position:relative;left:auto;top:auto;width:min(245px,100%);height:auto;margin:0;transform:none;flex:none;overflow-wrap:break-word}
+.meanings-cover-button{position:relative;left:auto;top:auto;width:min(228px,100%);height:45px;margin:20px 0 0;transform:none;flex:none}
+}
+
+/* Override the tablet pill widths, including the nth-child rules. */
+@media (max-width:480px){
+.meanings-filters{grid-template-columns:44px repeat(3,minmax(0,1fr));height:auto;grid-template-rows:44px 44px;gap:5px}
+.meanings-filters button:nth-child(n){width:100%;min-width:0;height:44px;padding:0 2px;font-size:12px;line-height:1.2;letter-spacing:-.48px}
+}

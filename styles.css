@@ -441,3 +441,12 @@ picture.mobile-art{display:contents}
  .laptop-hero-photo{border-radius:5px;overflow:hidden}
  .laptop-hero-photo img{border-radius:inherit}
 }
+
+/* Keep mobile hero text and booking action together as copy wraps. */
+@media (max-width:480px){
+.hero{height:auto;min-height:640px;padding:527px 20px 20px}
+.hero .tablet-hero-image{height:100%}
+.hero-copy{position:relative;left:auto;top:auto;width:100%;max-width:290px;margin:0 auto;transform:none}
+.hero-copy p{width:100%;height:auto;margin:0}
+.hero .book-button{position:relative;left:auto;top:auto;width:100%;height:45px;margin:20px 0 0;transform:none}
+}

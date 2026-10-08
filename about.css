@@ -248,3 +248,11 @@ picture.mobile-art{display:contents}
 .safety-grid{position:static;height:auto;margin-top:30px;grid-template-rows:auto auto}
 .safety-card{height:auto;min-height:545px}
 }
+
+/* Mobile cover grows with its text; the booking button stays in normal flow. */
+@media (max-width:480px){
+.about-cover{height:auto;min-height:0;display:flex;flex-direction:column;align-items:center;padding:15px 20px 20px;background:transparent}
+.about-cover-wordmark{position:static;width:100%;flex:none;margin:0 0 20px;transform:none}
+.about-cover-copy{position:relative;left:auto;top:auto;width:min(245px,100%);height:auto;margin:0;transform:none;flex:none;overflow-wrap:break-word}
+.about-cover-button{position:relative;left:auto;top:auto;width:min(228px,100%);height:45px;margin:20px 0 0;transform:none;flex:none}
+}
