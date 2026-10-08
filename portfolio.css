@@ -207,3 +207,35 @@ picture.mobile-art{display:contents}
   .portfolio-more{margin-top:20px}
   .portfolio-empty:not([hidden]){font-size:16px}
 }
+
+/* Native dialog sits above the scaled page and keeps the photo proportional. */
+html.portfolio-viewer-open,html.portfolio-viewer-open body{overflow:hidden}
+.portfolio-grid img[role="button"]{cursor:zoom-in}
+.portfolio-grid img[role="button"]:focus-visible{outline:2px solid var(--beige);outline-offset:4px}
+.portfolio-viewer{position:fixed;inset:0;width:100%;height:100vh;height:100dvh;max-width:none;max-height:none;margin:0;padding:64px 32px 24px;border:0;background:rgba(0,0,0,.9);color:var(--beige);font-family:"IBM Plex Sans",sans-serif;overflow:hidden;box-sizing:border-box}
+.portfolio-viewer:not([open]){display:none}
+.portfolio-viewer[open]{display:flex;flex-direction:column;align-items:center;gap:14px}
+.portfolio-viewer::backdrop{background:rgba(0,0,0,.4)}
+.portfolio-viewer-stage{display:flex;align-items:center;justify-content:center;gap:24px;min-height:0;flex:1;width:100%}
+.portfolio-viewer-figure{display:flex;flex-direction:column;align-items:center;gap:14px;max-width:min(100%,1100px);height:100%;min-width:0;margin:0}
+.portfolio-viewer-photo{display:block;min-height:0;max-width:100%;width:auto;height:calc(100% - 46px);object-fit:contain;border-radius:5px;user-select:none;touch-action:pan-y}
+.portfolio-viewer-caption{flex:none;max-width:100%;margin:0;text-align:center;font-size:16px;line-height:22px}
+.portfolio-viewer-counter{flex:none;margin:0;font-size:16px;line-height:22px;color:rgba(206,198,193,.75)}
+.portfolio-viewer button{flex:none;display:flex;align-items:center;justify-content:center;width:48px;height:48px;padding:11px;border:1px solid rgba(206,198,193,.35);border-radius:50%;background:rgba(44,44,44,.75);color:var(--beige);cursor:pointer;touch-action:manipulation}
+.portfolio-viewer button:hover{background:#45413f}
+.portfolio-viewer button:focus-visible{outline:2px solid var(--beige);outline-offset:4px}
+.portfolio-viewer button svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.portfolio-viewer .portfolio-viewer-close{position:absolute;top:16px;right:24px;z-index:1}
+@media(max-width:768px){
+ .portfolio-viewer{padding:68px 20px 20px}
+ .portfolio-viewer-stage{position:relative;padding-bottom:60px}
+ .portfolio-viewer-figure{width:100%;max-width:100%;gap:12px}
+ .portfolio-viewer-photo{width:100%;height:calc(100% - 60px)}
+ .portfolio-viewer-caption{font-size:14px;line-height:20px;max-width:100%}
+ .portfolio-viewer .portfolio-viewer-prev,.portfolio-viewer .portfolio-viewer-next{position:absolute;bottom:0}
+ .portfolio-viewer .portfolio-viewer-prev{left:calc(50% - 62px)}
+ .portfolio-viewer .portfolio-viewer-next{right:calc(50% - 62px)}
+ .portfolio-viewer .portfolio-viewer-close{right:20px}
+}
+
+.portfolio-viewer button[hidden]{display:none}

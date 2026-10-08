@@ -176,6 +176,99 @@ if(portfolioGallery){
   window.addEventListener("resize",updatePortfolio);
 }
 
+
+const portfolioViewer=document.querySelector("#portfolio-viewer");
+if(portfolioViewer&&portfolioGallery){
+  const photo=portfolioViewer.querySelector(".portfolio-viewer-photo");
+  const caption=portfolioViewer.querySelector(".portfolio-viewer-caption");
+  const counter=portfolioViewer.querySelector(".portfolio-viewer-counter");
+  const previous=portfolioViewer.querySelector(".portfolio-viewer-prev");
+  const next=portfolioViewer.querySelector(".portfolio-viewer-next");
+  let viewerItems=[];
+  let viewerIndex=0;
+  let viewerTrigger=null;
+  let touchStart=null;
+  let nextPhoto=null;
+
+  function fullPhotoSource(img){
+    const sources=(img.dataset.srcset||img.getAttribute("srcset")||"").split(",").map(source=>source.trim().split(/\s+/));
+    const largest=sources.reduce((best,source)=>parseInt(source[1]||0)>parseInt(best[1]||0)?source:best,["",0]);
+    return largest[0]||img.dataset.src||img.getAttribute("src");
+  }
+
+  function showPortfolioPhoto(index){
+    viewerIndex=(index+viewerItems.length)%viewerItems.length;
+    const current=viewerItems[viewerIndex];
+    photo.alt=current.alt;
+    photo.src=fullPhotoSource(current);
+    caption.textContent=current.alt;
+    counter.textContent=`${viewerIndex+1} / ${viewerItems.length}`;
+    previous.hidden=next.hidden=viewerItems.length<2;
+    // Fetch just the next image after opening, never the whole gallery.
+    if(viewerItems.length>1){
+      nextPhoto=new Image();
+      nextPhoto.decoding="async";
+      nextPhoto.src=fullPhotoSource(viewerItems[(viewerIndex+1)%viewerItems.length]);
+    }
+  }
+
+  function openPortfolioViewer(img){
+    viewerItems=portfolioImages.filter(item=>portfolioFilter==="all"||item.dataset.tags?.split(" ").includes(portfolioFilter));
+    viewerTrigger=img;
+    showPortfolioPhoto(viewerItems.indexOf(img));
+    document.documentElement.classList.add("portfolio-viewer-open");
+    portfolioViewer.showModal();
+  }
+
+  portfolioImages.forEach(img=>{
+    img.setAttribute("role","button");
+    img.setAttribute("aria-label",`Открыть фото: ${img.alt}`);
+    img.setAttribute("aria-haspopup","dialog");
+    img.setAttribute("aria-controls","portfolio-viewer");
+    img.tabIndex=0;
+    img.draggable=false;
+    img.addEventListener("click",()=>openPortfolioViewer(img));
+    img.addEventListener("keydown",event=>{
+      if(event.key==="Enter"||event.key===" "){
+        event.preventDefault();
+        openPortfolioViewer(img);
+      }
+    });
+  });
+
+  previous.addEventListener("click",()=>showPortfolioPhoto(viewerIndex-1));
+  next.addEventListener("click",()=>showPortfolioPhoto(viewerIndex+1));
+  portfolioViewer.querySelector(".portfolio-viewer-close").addEventListener("click",()=>portfolioViewer.close());
+  portfolioViewer.addEventListener("click",event=>{
+    if(event.target===portfolioViewer||event.target===portfolioViewer.querySelector(".portfolio-viewer-stage"))portfolioViewer.close();
+  });
+  portfolioViewer.addEventListener("keydown",event=>{
+    if(event.key==="ArrowLeft"||event.key==="ArrowRight"){
+      event.preventDefault();
+      showPortfolioPhoto(viewerIndex+(event.key==="ArrowRight"?1:-1));
+    }
+  });
+  portfolioViewer.addEventListener("close",()=>{
+    document.documentElement.classList.remove("portfolio-viewer-open");
+    photo.removeAttribute("src");
+    nextPhoto=null;
+    touchStart=null;
+    viewerTrigger?.focus({preventScroll:true});
+  });
+  photo.addEventListener("touchstart",event=>{
+    touchStart=event.touches.length===1?{x:event.touches[0].clientX,y:event.touches[0].clientY}:null;
+  },{passive:true});
+  photo.addEventListener("touchend",event=>{
+    if(!touchStart||event.touches.length)return;
+    const touch=event.changedTouches[0];
+    const dx=touch.clientX-touchStart.x;
+    const dy=touch.clientY-touchStart.y;
+    touchStart=null;
+    if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)*1.4)showPortfolioPhoto(viewerIndex+(dx<0?1:-1));
+  },{passive:true});
+  photo.addEventListener("touchcancel",()=>{touchStart=null;},{passive:true});
+}
+
 const meaningsCatalog=document.querySelector(".meanings-catalog");
 const meaningCards=[...meaningsCatalog?.querySelectorAll(".meaning-card")||[]];
 const meaningFilters=[...meaningsCatalog?.querySelectorAll(".meanings-filters button")||[]];
