@@ -180,7 +180,6 @@ if(portfolioGallery){
 const portfolioViewer=document.querySelector("#portfolio-viewer");
 if(portfolioViewer&&portfolioGallery){
   const photo=portfolioViewer.querySelector(".portfolio-viewer-photo");
-  const caption=portfolioViewer.querySelector(".portfolio-viewer-caption");
   const counter=portfolioViewer.querySelector(".portfolio-viewer-counter");
   const previous=portfolioViewer.querySelector(".portfolio-viewer-prev");
   const next=portfolioViewer.querySelector(".portfolio-viewer-next");
@@ -201,7 +200,6 @@ if(portfolioViewer&&portfolioGallery){
     const current=viewerItems[viewerIndex];
     photo.alt=current.alt;
     photo.src=fullPhotoSource(current);
-    caption.textContent=current.alt;
     counter.textContent=`${viewerIndex+1} / ${viewerItems.length}`;
     previous.hidden=next.hidden=viewerItems.length<2;
     // Fetch just the next image after opening, never the whole gallery.
