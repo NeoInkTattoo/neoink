@@ -227,3 +227,17 @@ picture.mobile-art{display:contents}
 .about-cover-button{left:50px;top:350px;width:335px;height:60px}
 .about-cover-photo{display:block;position:absolute;left:960px;top:40px;width:910px;height:370px;object-fit:cover;border-radius:5px}
 }
+
+
+/* Updated About us page — Figma 50658:7701. */
+@media(min-width:769px){
+.about-me{margin-top:100px}
+.studio-section{height:1373px}
+.studio-lead{height:148px}
+.studio-emphasis{top:271px}
+.studio-row-design{top:373px}
+.studio-row-process{top:547px}
+.studio-row-design p{width:331px}
+.studio-row-process p{width:333px}
+.studio-photo{top:697px}
+}
