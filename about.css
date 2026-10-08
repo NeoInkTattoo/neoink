@@ -241,3 +241,10 @@ picture.mobile-art{display:contents}
 .studio-row-process p{width:333px}
 .studio-photo{top:697px}
 }
+
+@media(min-width:481px) and (max-width:768px){
+.safety-section{height:auto}
+.safety-section h2{width:728px;height:auto;white-space:normal}
+.safety-grid{position:static;height:auto;margin-top:30px;grid-template-rows:auto auto}
+.safety-card{height:auto;min-height:545px}
+}
