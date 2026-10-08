@@ -426,3 +426,12 @@ picture.mobile-art{display:contents}
  .review-carousel .review-person img{width:64px;height:64px}
  .review-carousel .review-slide-copy{height:416px}
 }
+
+/* Compact mobile reviews: keep the photo directly below the full text. */
+@media (max-width:480px){
+ .review-carousel .reviews-stage{display:grid;grid-template-columns:minmax(0,1fr);height:auto;align-items:start}
+ .review-carousel .review-slide{position:relative;left:auto;top:auto;grid-area:1 / 1;justify-self:center;align-self:start;height:auto;gap:12px;transform:none}
+ .review-carousel .review-slide-copy{flex:none;height:auto}
+ .review-carousel .review-slide.is-before{transform:translateX(calc(-100% - 12px))}
+ .review-carousel .review-slide.is-after{transform:translateX(calc(100% + 12px))}
+}
