@@ -130,40 +130,44 @@ const portfolioImages=[...portfolioGallery?.querySelectorAll(".portfolio-grid im
 const portfolioFilters=[...portfolioGallery?.querySelectorAll(".portfolio-filters button")||[]];
 const portfolioEmpty=portfolioGallery?.querySelector(".portfolio-empty");
 let portfolioFilter="all";
-let portfolioExpanded=false;
+let portfolioPages=1;
 
 function updatePortfolio(){
   if(!portfolioGallery)return;
-  const mobile=window.matchMedia("(max-width: 480px)").matches;
-  if(!mobile){portfolioFilter="all";portfolioExpanded=false;}
+  const pageSize=window.matchMedia("(max-width: 480px)").matches?6:9;
   const matches=portfolioImages.filter(img=>portfolioFilter==="all"||img.dataset.tags?.split(" ").includes(portfolioFilter));
+  const visible=matches.slice(0,portfolioPages*pageSize);
   portfolioImages.forEach(img=>{
-    img.parentElement.hidden=mobile&&!matches.includes(img);
+    const show=visible.includes(img);
+    img.parentElement.hidden=!show;
+    if(show&&img.dataset.src){
+      img.srcset=img.dataset.srcset;
+      img.src=img.dataset.src;
+      delete img.dataset.src;
+      delete img.dataset.srcset;
+    }
   });
-  portfolioGallery.classList.toggle("is-expanded",mobile&&(portfolioExpanded||portfolioFilter!=="all"));
   if(portfolioMore){
-    portfolioMore.hidden=mobile&&(portfolioFilter!=="all"||matches.length<=6);
-    portfolioMore.setAttribute("aria-expanded",String(portfolioExpanded));
-    portfolioMore.textContent=portfolioExpanded?"Свернуть":"Показать ещё";
+    portfolioMore.hidden=visible.length>=matches.length;
+    portfolioMore.setAttribute("aria-expanded",String(portfolioPages>1));
   }
-  if(portfolioEmpty)portfolioEmpty.hidden=!mobile||matches.length>0;
+  if(portfolioEmpty)portfolioEmpty.hidden=matches.length>0;
   portfolioFilters.forEach(button=>{
     const active=button.dataset.filter===portfolioFilter;
     button.classList.toggle("is-active",active);
     button.setAttribute("aria-pressed",String(active));
   });
+  requestAnimationFrame(updateDesktopScale);
 }
 
 portfolioMore?.addEventListener("click",()=>{
-  if(!window.matchMedia("(max-width: 480px)").matches)return;
-  portfolioExpanded=!portfolioExpanded;
+  portfolioPages++;
   updatePortfolio();
 });
 
 portfolioFilters.forEach(button=>button.addEventListener("click",()=>{
-  if(!window.matchMedia("(max-width: 480px)").matches)return;
   portfolioFilter=button.dataset.filter;
-  portfolioExpanded=false;
+  portfolioPages=1;
   updatePortfolio();
 }));
 
