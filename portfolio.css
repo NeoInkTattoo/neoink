@@ -252,7 +252,7 @@ html.portfolio-viewer-open,html.portfolio-viewer-open body{overflow:hidden}
 .portfolio-grid button.portfolio-item:focus-visible{outline:2px solid var(--beige);outline-offset:4px}
 .portfolio-grid button.portfolio-item img{pointer-events:none}
 .portfolio-grid button.portfolio-item:focus:not(:focus-visible){outline:none}
-@media(max-width:768px){
+@media(max-width:1024px),(hover:none) and (pointer:coarse){
  .portfolio-viewer .portfolio-viewer-close{display:none}
  .portfolio-viewer{padding-top:20px}
 }
