@@ -535,7 +535,8 @@ if(scrollHeader){
   let floating=false,referenceY=Math.max(0,window.scrollY),pending=false;
   function revealHeader(show){
     headerLayer.classList.toggle("is-visible",show);
-    headerLayer.inert=!show;
+    // visibility:hidden and pointer-events:none already hide and disable this layer.
+    // Do not mark it inert: the live header and links move out of it on return to the top.
     headerLayer.setAttribute("aria-hidden",String(!show));
   }
   function restoreHeader(){
