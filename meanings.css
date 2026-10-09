@@ -372,3 +372,12 @@ body.meaning-modal-open{overflow:hidden}
 .meaning-modal-content p+p::before{content:none}
 }
 @media(max-width:768px) and (max-height:440px){.meaning-modal-content{display:none}}
+
+/* Use the site colour for the close circle and its keyboard focus. */
+.meaning-modal .meaning-modal-close{border:2px solid var(--beige,#cec6c1);outline:none;box-shadow:none;-webkit-tap-highlight-color:transparent}
+.meaning-modal .meaning-modal-close:focus{outline:none;box-shadow:none}
+.meaning-modal .meaning-modal-close:focus-visible{outline:2px solid var(--beige,#cec6c1);outline-offset:3px}
+@media(max-width:768px){
+.meanings-cover-copy .cover-copy-full{display:none}
+.meanings-cover-copy .cover-copy-short{display:block;white-space:nowrap}
+}
