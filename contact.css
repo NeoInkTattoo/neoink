@@ -145,3 +145,7 @@ picture.mobile-art{display:contents}
 .contact-pills{position:static;height:auto;margin:20px 20px;grid-template-rows:70px 70px}
 .contact-map{position:static}
 }
+
+/* Link hit areas must not add extra space between contact rows. */
+.contact-pill a{position:relative;padding:0 12px}
+.contact-pill a::before{content:"";position:absolute;inset:-4px 0;border-radius:inherit}
