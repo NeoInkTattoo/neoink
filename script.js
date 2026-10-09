@@ -424,17 +424,36 @@ const meaningModalImage=meaningModal?.querySelector(".meaning-modal-image");
 const meaningModalMore=meaningModal?.querySelector(".meaning-modal-more");
 let meaningModalTrigger=null;
 
+let meaningPreviewHTML="";
+function setMeaningPreviewContent(html){
+  meaningPreviewHTML=html;
+  meaningModalContent.innerHTML=html;
+}
 function fitMeaningPreview(){
-  if(!meaningModal||meaningModal.hidden||!meaningModalContent)return;
-  if(!window.matchMedia("(max-width:768px)").matches){
-    meaningModalContent.style.removeProperty("--meaning-preview-lines");
-    return;
-  }
+  if(!meaningModal||meaningModal.hidden||!meaningModalContent||!meaningPreviewHTML)return;
+  meaningModalContent.innerHTML=meaningPreviewHTML;
+  if(!window.matchMedia("(max-width:768px)").matches)return;
+  const text=[...meaningModalContent.querySelectorAll("p")].map(p=>p.textContent.trim()).join(" ").replace(/\s+/g," ").trim();
+  const paragraph=document.createElement("p");
+  paragraph.textContent=text;
+  meaningModalContent.replaceChildren(paragraph);
   const lineHeight=parseFloat(getComputedStyle(meaningModalContent).lineHeight)||20;
-  const lines=Math.max(1,Math.floor(meaningModalContent.clientHeight/lineHeight));
-  meaningModalContent.style.setProperty("--meaning-preview-lines",String(lines));
+  const available=Math.floor(meaningModalContent.clientHeight/lineHeight)*lineHeight;
+  if(available<lineHeight){paragraph.textContent="";return;}
+  const fits=()=>paragraph.getBoundingClientRect().height<=available+0.5;
+  if(fits())return;
+  const words=text.split(" ");
+  let low=0,high=words.length-1;
+  while(low<high){
+    const middle=Math.ceil((low+high)/2);
+    paragraph.textContent=words.slice(0,middle).join(" ").replace(/[\s,;:—–.-]+$/u,"")+"…";
+    if(fits())low=middle;
+    else high=middle-1;
+  }
+  paragraph.textContent=words.slice(0,low).join(" ").replace(/[\s,;:—–.-]+$/u,"")+"…";
 }
 window.addEventListener("resize",()=>requestAnimationFrame(fitMeaningPreview));
+document.fonts?.ready.then(()=>requestAnimationFrame(fitMeaningPreview));
 
 function closeMeaningModal(){
   if(!meaningModal||meaningModal.hidden)return;
@@ -453,7 +472,7 @@ async function openMeaningModal(link){
   meaningModalTitle.textContent=title;
   meaningModalCategory.textContent=category;
   meaningModalLead.textContent=cardText.replace(/\s+/g," ").replace(/\.\.\.\s*$/,"");
-  meaningModalContent.innerHTML="<p>Загружаем подробное значение…</p>";
+  setMeaningPreviewContent("<p>Загружаем подробное значение…</p>");
   meaningModalImage.src=cardImage?.currentSrc||cardImage?.src||"";
   meaningModalImage.alt=cardImage?.alt||title;
   meaningModalMore.href=link.href;
@@ -475,9 +494,9 @@ async function openMeaningModal(link){
     if(pageTitle)meaningModalTitle.textContent=pageTitle.replace(/^Значение татуировки\s*[«"]?|[»"]$/g,"").trim();
     if(pageCategory)meaningModalCategory.textContent=pageCategory;
     if(pageLead)meaningModalLead.textContent=pageLead;
-    if(pageContent)meaningModalContent.innerHTML=pageContent;
+    if(pageContent)setMeaningPreviewContent(pageContent);
   }catch(error){
-    meaningModalContent.innerHTML="<p>Подробное значение можно открыть на отдельной странице.</p>";
+    setMeaningPreviewContent("<p>Подробное значение можно открыть на отдельной странице.</p>");
   }
   requestAnimationFrame(fitMeaningPreview);
 }

@@ -364,3 +364,11 @@ body.meaning-modal-open{overflow:hidden}
 .meanings-cover-copy{font-size:16px;line-height:20px;letter-spacing:-.64px}
 .meanings-cover-dots{opacity:.2}
 }
+
+/* Render a measured, word-complete preview instead of clipping inline paragraphs. */
+@media(max-width:768px){
+.meaning-modal-content{display:block;-webkit-line-clamp:unset}
+.meaning-modal-content p,.meaning-modal-content p:first-child{display:block;margin:0;-webkit-line-clamp:unset}
+.meaning-modal-content p+p::before{content:none}
+}
+@media(max-width:768px) and (max-height:440px){.meaning-modal-content{display:none}}
