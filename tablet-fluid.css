@@ -102,6 +102,8 @@ main>section:not(.hero):not([class$="-cover"]):not(.review-carousel):not(.contac
 .healing-column-pad{grid-column:1;grid-row:3}
 .healing-photo-pad{grid-column:2;grid-row:3}
 .healing-column>h3{font-size:28px}
+.healing-column .healing-points article:nth-child(n) p{width:100%!important}
+.faq-section{padding-top:0}
 .aftercare-table{margin-top:30px;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:none;border:0;gap:10px}
 .aftercare-table article{padding:115px 12px 20px;border:1px solid var(--beige);border-radius:5px;min-width:0}
 .aftercare-table article:nth-child(n){height:auto}
