@@ -21,3 +21,10 @@
 @media (hover:hover) and (pointer:fine){
  .site-header a:hover{opacity:.8}
 }
+
+.scroll-header-layer{position:fixed;left:0;right:0;top:0;z-index:400;background:var(--ink,#141414);transform:translateY(-100%);opacity:0;visibility:hidden;pointer-events:none;transition:transform .2s ease,opacity .2s ease,visibility .2s}
+.scroll-header-layer.is-visible{transform:translateY(0);opacity:1;visibility:visible;pointer-events:auto}
+.scroll-header-frame{position:absolute;top:0;left:50%;transform-origin:top center}
+.scroll-header-frame .site-header{margin:0}
+.menu-overlay.scroll-header-overlay{z-index:399}
+@media(prefers-reduced-motion:reduce){.scroll-header-layer{transition:none}}
