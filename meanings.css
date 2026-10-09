@@ -381,3 +381,17 @@ body.meaning-modal-open{overflow:hidden}
 .meanings-cover-copy .cover-copy-full{display:none}
 .meanings-cover-copy .cover-copy-short{display:block;white-space:nowrap}
 }
+
+/* Clamp only the excerpt, so the card arrow cannot be clipped with the text. */
+@media(min-width:481px) and (max-width:768px){
+.meaning-copy,.meaning-card.is-tall .meaning-copy{bottom:10px}
+.meaning-copy p{display:block;width:100%;padding-right:18px;overflow:visible}
+.meaning-excerpt{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:5;overflow:hidden}
+.meaning-card.is-tall .meaning-excerpt{-webkit-line-clamp:8}
+.meaning-arrow{position:absolute;right:0;bottom:0;width:auto;height:12px;margin:0;display:block}
+}
+@media(max-width:480px){
+.meaning-copy p,.meaning-card.is-tall .meaning-copy p{display:block;-webkit-line-clamp:unset;overflow:visible}
+.meaning-excerpt{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}
+.meaning-card.is-tall .meaning-excerpt{-webkit-line-clamp:4}
+}
