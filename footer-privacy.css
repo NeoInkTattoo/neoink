@@ -13,6 +13,7 @@
   width:auto;
   text-align:center;
   color:#cec6c1;
+  mix-blend-mode:difference;
   font-size:14px;
   line-height:20px;
   letter-spacing:normal;
