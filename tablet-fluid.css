@@ -146,3 +146,11 @@ main>section:not(.hero):not([class$="-cover"]):not(.review-carousel):not(.contac
 .about-caption-3{grid-area:5 / 1}.about-caption-4{grid-area:5 / 2}
 .about-number{font-size:80px}
 }
+
+/* Reduce section spacing continuously as the tablet viewport narrows. */
+@media(min-width:481px) and (max-width:768px){
+:root{--tablet-section-gap:clamp(60px,calc(13.888889vw - 6.666667px),100px);--tablet-cover-gap:clamp(40px,calc(13.888889vw - 26.666667px),80px);--tablet-small-gap:clamp(12px,2.604167vw,20px)}
+main>.about-stats,main>.process-section,main>.reviews-section.review-carousel,main>.safety-section,main>.studio-section,main>.session-day,main>.healing-section,main>.aftercare-section,main>.faq-section,main>.cta-section{margin-top:var(--tablet-section-gap)}
+main>.portfolio-section,main>.about-me,main>.portfolio-gallery,main>.meanings-catalog,main>.before-session{margin-top:var(--tablet-cover-gap)}
+main:has(>.studio-section)>.cta-section{margin-top:var(--tablet-small-gap)}
+}
