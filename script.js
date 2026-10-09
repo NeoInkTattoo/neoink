@@ -37,7 +37,7 @@ function updateDesktopScale(){
     const scale=viewport/1920;
     siteShell.style.transform=`scale(${scale})`;
     document.body.style.height=`${Math.ceil(siteShell.scrollHeight*scale)}px`;
-    if(meaningDialog)meaningDialog.style.transform=viewport>1024?`scale(${scale})`:"";
+    if(meaningDialog)meaningDialog.style.transform="";
   }else{
     siteShell.style.transform="";
     document.body.style.height="";
@@ -433,7 +433,6 @@ function setMeaningPreviewContent(html){
 function fitMeaningPreview(){
   if(!meaningModal||meaningModal.hidden||!meaningModalContent||!meaningPreviewHTML)return;
   meaningModalContent.innerHTML=meaningPreviewHTML;
-  if(!window.matchMedia("(max-width:1024px)").matches)return;
   const text=[...meaningModalContent.querySelectorAll("p")].map(p=>p.textContent.trim()).join(" ").replace(/\s+/g," ").trim();
   const paragraph=document.createElement("p");
   paragraph.textContent=text;
@@ -441,7 +440,7 @@ function fitMeaningPreview(){
   const lineHeight=parseFloat(getComputedStyle(meaningModalContent).lineHeight)||20;
   const available=Math.floor(meaningModalContent.clientHeight/lineHeight)*lineHeight;
   if(available<lineHeight){paragraph.textContent="";return;}
-  const fits=()=>paragraph.getBoundingClientRect().height<=available+0.5;
+  const fits=()=>paragraph.offsetHeight<=available+0.5;
   if(fits())return;
   const words=text.split(" ");
   let low=0,high=words.length-1;
@@ -490,7 +489,7 @@ async function openMeaningModal(link){
     const pageTitle=doc.querySelector("h1")?.textContent?.trim();
     const pageCategory=doc.querySelector(".detail-category")?.textContent?.trim();
     const pageLead=doc.querySelector(".detail-lead")?.textContent?.trim();
-    const detailParagraphs=[...doc.querySelectorAll(".detail-content p")].slice(0,window.matchMedia("(max-width:768px)").matches?undefined:2);
+    const detailParagraphs=[...doc.querySelectorAll(".detail-content p")];
     const pageContent=detailParagraphs.map(p=>p.outerHTML).join("");
     if(pageTitle)meaningModalTitle.textContent=pageTitle.replace(/^Значение татуировки\s*[«"]?|[»"]$/g,"").trim();
     if(pageCategory)meaningModalCategory.textContent=pageCategory;
