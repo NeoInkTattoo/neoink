@@ -28,3 +28,19 @@
 .scroll-header-frame .site-header{margin:0}
 .menu-overlay.scroll-header-overlay{z-index:399}
 @media(prefers-reduced-motion:reduce){.scroll-header-layer{transition:none}}
+
+/* Frosted dropdown: blur the page beneath it without fading the links. */
+@media(max-width:768px){
+.tablet-menu{
+ border-radius:0 0 5px 5px;
+ background:rgba(35,35,35,.64);
+ -webkit-backdrop-filter:blur(24px) saturate(140%);
+ backdrop-filter:blur(24px) saturate(140%);
+ border:1px solid rgba(206,198,193,.13);
+ border-top:0;
+ box-shadow:0 12px 28px rgba(0,0,0,.22),inset 0 1px 0 rgba(255,255,255,.06);
+}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+.tablet-menu{background:rgba(35,35,35,.94)}
+}
+}
