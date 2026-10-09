@@ -1,0 +1,22 @@
+/* Shared legal link: inside the footer, centered 20px above its lower edge. */
+.site-footer > .site-privacy-link,
+.detail-footer > .site-privacy-link {
+  position:absolute;
+  z-index:2;
+  left:20px;
+  right:20px;
+  bottom:20px;
+  top:auto;
+  margin:0;
+  padding:0;
+  display:block;
+  width:auto;
+  text-align:center;
+  color:#cec6c1;
+  font-size:14px;
+  line-height:20px;
+  letter-spacing:normal;
+}
+.site-privacy-link a {color:inherit;text-decoration:underline;text-underline-offset:3px;}
+.site-privacy-link a:focus-visible {outline:2px solid currentColor;outline-offset:4px;}
+@media(max-width:480px){.site-footer > .site-privacy-link,.detail-footer > .site-privacy-link{font-size:12px;line-height:18px;}}
