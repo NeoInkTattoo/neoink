@@ -17,9 +17,8 @@ menuButton?.addEventListener("click",()=>{
 
 menuOverlay?.addEventListener("click",()=>setMenu(false));
 
-tabletMenu?.querySelectorAll("a").forEach(link=>{
-  link.addEventListener("click",()=>setMenu(false));
-});
+// Let links navigate natively; reset the menu when a page is restored from history.
+window.addEventListener("pageshow",()=>setMenu(false));
 
 document.addEventListener("keydown",event=>{
   if(event.key==="Escape")setMenu(false);
@@ -523,6 +522,8 @@ if(scrollHeader){
   headerSlot.hidden=true;
   headerSlot.setAttribute("aria-hidden","true");
   scrollHeader.before(headerSlot);
+  const overlayAnchor=document.createComment("overlay position");
+  menuOverlay?.before(overlayAnchor);
   const menuAnchor=document.createComment("menu position");
   tabletMenu?.before(menuAnchor);
   const headerLayer=document.createElement("div");
@@ -541,6 +542,11 @@ if(scrollHeader){
     if(!floating)return;
     headerSlot.before(scrollHeader);
     if(tabletMenu)menuAnchor.after(tabletMenu);
+    if(menuOverlay){
+      overlayAnchor.after(menuOverlay);
+      menuOverlay.classList.remove("scroll-header-overlay");
+      menuOverlay.style.top="";
+    }
     headerSlot.hidden=true;
     floating=false;
     revealHeader(false);
