@@ -311,15 +311,16 @@ function updateMeanings(){
     button.setAttribute("aria-pressed",String(active));
   });
 
-  if(mobile){
+  if(mobile||tablet){
+    if(tablet)meaningsExpanded=false;
     meaningsCatalog.style.height="";
     meaningCards.forEach(card=>{
       card.style.left="";
       card.style.top="";
-      card.hidden=!matching.includes(card)||(meaningFilter==="all"&&!meaningsExpanded&&!card.classList.contains("is-featured"));
+      card.hidden=!matching.includes(card)||(mobile&&meaningFilter==="all"&&!meaningsExpanded&&!card.classList.contains("is-featured"));
     });
     if(meaningsMore){
-      meaningsMore.hidden=meaningFilter!=="all"||meaningCards.length<=4;
+      meaningsMore.hidden=tablet||meaningFilter!=="all"||meaningCards.length<=4;
       meaningsMore.setAttribute("aria-expanded",String(meaningsExpanded));
       meaningsMore.textContent=meaningsExpanded?"Свернуть":"Показать ещё";
     }
