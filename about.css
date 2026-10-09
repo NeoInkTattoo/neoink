@@ -276,3 +276,7 @@ picture.mobile-art{display:contents}
 .about-cover-copy{font-size:16px;line-height:20px;letter-spacing:-.64px}
 .about-cover-dots{opacity:.2}
 }
+
+/* Keep the short section title on one line across browser font metrics. */
+.about-me>h2{white-space:nowrap}
+@media(min-width:769px){.about-me>h2{width:max-content;height:auto}}
