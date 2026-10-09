@@ -32,7 +32,7 @@
 /* Frosted dropdown: blur the page beneath it without fading the links. */
 @media(max-width:768px){
 .tablet-menu{
- border-radius:0 0 5px 5px;
+ border-radius:0 0 20px 20px;
  background:rgba(35,35,35,.64);
  -webkit-backdrop-filter:blur(24px) saturate(140%);
  backdrop-filter:blur(24px) saturate(140%);
