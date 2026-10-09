@@ -376,7 +376,7 @@ body.meaning-modal-open{overflow:hidden}
 /* Use the site colour for the close circle and its keyboard focus. */
 .meaning-modal .meaning-modal-close{border:2px solid var(--beige,#cec6c1);outline:none;box-shadow:none;-webkit-tap-highlight-color:transparent}
 .meaning-modal .meaning-modal-close:focus{outline:none;box-shadow:none}
-.meaning-modal .meaning-modal-close:focus-visible{outline:2px solid var(--beige,#cec6c1);outline-offset:3px}
+.meaning-modal .meaning-modal-close:focus-visible{outline:none;box-shadow:none;background:#41403e}
 @media(max-width:768px){
 .meanings-cover-copy .cover-copy-full{display:none}
 .meanings-cover-copy .cover-copy-short{display:block;white-space:nowrap}
@@ -395,3 +395,7 @@ body.meaning-modal-open{overflow:hidden}
 .meaning-excerpt{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}
 .meaning-card.is-tall .meaning-excerpt{-webkit-line-clamp:4}
 }
+
+/* Centre the vector cross independently of font metrics. */
+.meaning-modal .meaning-modal-close{display:grid;place-items:center;padding:0;line-height:1}
+.meaning-modal-close svg{display:block;width:20px;height:20px;pointer-events:none}
