@@ -188,6 +188,7 @@ if(portfolioViewer&&portfolioGallery){
   let viewerTrigger=null;
   let restoreKeyboardFocus=false;
   let lastSwipeAt=0;
+  let backdropPointer=false;
   let touchStart=null;
   let nextPhoto=null;
 
@@ -228,21 +229,32 @@ if(portfolioViewer&&portfolioGallery){
     trigger.setAttribute("aria-haspopup","dialog");
     trigger.setAttribute("aria-controls","portfolio-viewer");
     img.draggable=false;
-    trigger.addEventListener("click",event=>openPortfolioViewer(img,event));
+    trigger.addEventListener("click",event=>{
+      event.stopPropagation();
+      openPortfolioViewer(img,event);
+    });
   });
 
   previous.addEventListener("click",()=>showPortfolioPhoto(viewerIndex-1));
   next.addEventListener("click",()=>showPortfolioPhoto(viewerIndex+1));
   portfolioViewer.querySelector(".portfolio-viewer-close").addEventListener("click",()=>portfolioViewer.close());
-  portfolioViewer.addEventListener("click",event=>{
-    if(event.target.closest("button")||Date.now()-lastSwipeAt<350)return;
-    // object-fit leaves empty space inside the image element on narrow screens.
+  function outsidePhoto(event){
+    if(event.target.closest("button"))return false;
+    if(!photo.naturalWidth)return event.target!==photo;
+    // Exclude only the visible photo, not the empty object-fit margins.
     const rect=photo.getBoundingClientRect();
-    const scale=Math.min(rect.width/(photo.naturalWidth||1),rect.height/(photo.naturalHeight||1));
+    const scale=Math.min(rect.width/photo.naturalWidth,rect.height/photo.naturalHeight);
     const width=photo.naturalWidth*scale,height=photo.naturalHeight*scale;
     const left=rect.left+(rect.width-width)/2,top=rect.top+(rect.height-height)/2;
-    const onPhoto=photo.naturalWidth&&event.clientX>=left&&event.clientX<=left+width&&event.clientY>=top&&event.clientY<=top+height;
-    if(!onPhoto)portfolioViewer.close();
+    return event.clientX<left||event.clientX>left+width||event.clientY<top||event.clientY>top+height;
+  }
+  portfolioViewer.addEventListener("pointerdown",event=>{
+    backdropPointer=outsidePhoto(event);
+  });
+  portfolioViewer.addEventListener("click",event=>{
+    const dismiss=backdropPointer&&outsidePhoto(event)&&Date.now()-lastSwipeAt>=350;
+    backdropPointer=false;
+    if(dismiss)portfolioViewer.close();
   });
   portfolioViewer.addEventListener("keydown",event=>{
     if(event.key==="ArrowLeft"||event.key==="ArrowRight"){
@@ -254,6 +266,7 @@ if(portfolioViewer&&portfolioGallery){
     document.documentElement.classList.remove("portfolio-viewer-open");
     photo.removeAttribute("src");
     nextPhoto=null;
+    backdropPointer=false;
     touchStart=null;
     if(restoreKeyboardFocus)viewerTrigger?.focus({preventScroll:true});
     else viewerTrigger?.blur();
