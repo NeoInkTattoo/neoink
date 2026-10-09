@@ -308,3 +308,30 @@ body.meaning-modal-open{overflow:hidden}
 .meanings-filters{grid-template-columns:44px repeat(3,minmax(0,1fr));height:auto;grid-template-rows:44px 44px;gap:5px}
 .meanings-filters button:nth-child(n){width:100%;min-width:0;height:44px;padding:0 2px;font-size:12px;line-height:1.2;letter-spacing:-.48px}
 }
+
+/* Compact screen-sized preview; the full article link always stays visible. */
+@media(max-width:768px){
+.meaning-modal{padding:14px;height:100vh;height:100dvh}
+.meaning-modal-dialog{height:min(640px,calc(100vh - 28px));height:min(640px,calc(100dvh - 28px));max-height:100%;grid-template-rows:minmax(0,28%) minmax(0,1fr)}
+.meaning-modal-media,.meaning-modal-image{height:100%;min-height:0}
+.meaning-modal-body{display:grid;grid-template-rows:auto auto auto minmax(0,1fr) auto;gap:10px;padding:18px 20px;overflow:hidden;min-height:0}
+.meaning-modal-category{margin:0;font-size:12px;line-height:1.2}
+.meaning-modal-body h2{margin:0;font-size:30px;line-height:1.05;letter-spacing:-1px}
+.meaning-modal-lead{margin:0;font-size:16px;line-height:1.35;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}
+.meaning-modal-content{min-height:0;overflow:hidden;font-size:14px;line-height:1.4}
+.meaning-modal-content p{display:none;margin:0}
+.meaning-modal-content p:first-child{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}
+.meaning-modal-more{display:flex;width:100%;min-width:0;height:44px;margin:0;padding:0 10px;font-size:16px;line-height:1.2}
+}
+@media(max-width:768px) and (max-height:600px){
+.meaning-modal-body{padding:12px 16px;gap:8px}
+.meaning-modal-body h2{font-size:26px}
+.meaning-modal-lead{-webkit-line-clamp:2;font-size:15px}
+.meaning-modal-content p:first-child{-webkit-line-clamp:2}
+}
+@media(max-width:768px) and (max-height:440px){
+.meaning-modal-dialog{grid-template-rows:minmax(0,22%) minmax(0,1fr)}
+.meaning-modal-body{grid-template-rows:auto auto minmax(0,1fr) auto}
+.meaning-modal-content{display:none}
+.meaning-modal-lead{min-height:0}
+}

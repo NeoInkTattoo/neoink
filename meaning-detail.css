@@ -51,3 +51,5 @@ h1{font-size:38px;line-height:1.05;letter-spacing:-1.2px}.detail-lead{font-size:
 .detail-related{margin-top:52px}.detail-related h2{font-size:28px;line-height:34px}.detail-related-links a{width:auto;min-width:120px;height:46px;font-size:16px}
 .detail-footer{height:190px;margin-top:50px}.detail-footer-bg{height:190px}.detail-footer-logo{top:86px}.detail-footer-contact,.detail-footer-legal{display:none}.detail-footer-socials{top:72px}.detail-footer-social{width:44px;height:44px}.detail-footer-social img{width:20px;height:20px;left:12px;top:12px}
 }
+/* Let the note panel follow the text with equal vertical padding. */
+.detail-note{min-height:0;height:auto;padding-top:18px;padding-bottom:18px}
