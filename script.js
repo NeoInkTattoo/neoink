@@ -37,7 +37,7 @@ function updateDesktopScale(){
     const scale=viewport/1920;
     siteShell.style.transform=`scale(${scale})`;
     document.body.style.height=`${Math.ceil(siteShell.scrollHeight*scale)}px`;
-    if(meaningDialog)meaningDialog.style.transform=`scale(${scale})`;
+    if(meaningDialog)meaningDialog.style.transform=viewport>1024?`scale(${scale})`:"";
   }else{
     siteShell.style.transform="";
     document.body.style.height="";
@@ -433,7 +433,7 @@ function setMeaningPreviewContent(html){
 function fitMeaningPreview(){
   if(!meaningModal||meaningModal.hidden||!meaningModalContent||!meaningPreviewHTML)return;
   meaningModalContent.innerHTML=meaningPreviewHTML;
-  if(!window.matchMedia("(max-width:768px)").matches)return;
+  if(!window.matchMedia("(max-width:1024px)").matches)return;
   const text=[...meaningModalContent.querySelectorAll("p")].map(p=>p.textContent.trim()).join(" ").replace(/\s+/g," ").trim();
   const paragraph=document.createElement("p");
   paragraph.textContent=text;
