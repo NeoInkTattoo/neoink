@@ -37,13 +37,15 @@ function updateDesktopScale(){
     const scale=viewport/1920;
     siteShell.style.transform=`scale(${scale})`;
     document.body.style.height=`${Math.ceil(siteShell.scrollHeight*scale)}px`;
-    if(meaningDialog)meaningDialog.style.transform="";
   }else{
     siteShell.style.transform="";
     document.body.style.height="";
-    if(meaningDialog)meaningDialog.style.transform="";
   }
 
+  if(meaningDialog){
+    const popupScale=Math.min(1,viewport/1920,(window.innerHeight-48)/700);
+    meaningDialog.style.transform=viewport>1024?`scale(${Math.max(0.1,popupScale)})`:"";
+  }
   if(viewport>768)setMenu(false);
 }
 
