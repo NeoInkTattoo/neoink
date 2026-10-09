@@ -424,6 +424,18 @@ const meaningModalImage=meaningModal?.querySelector(".meaning-modal-image");
 const meaningModalMore=meaningModal?.querySelector(".meaning-modal-more");
 let meaningModalTrigger=null;
 
+function fitMeaningPreview(){
+  if(!meaningModal||meaningModal.hidden||!meaningModalContent)return;
+  if(!window.matchMedia("(max-width:768px)").matches){
+    meaningModalContent.style.removeProperty("--meaning-preview-lines");
+    return;
+  }
+  const lineHeight=parseFloat(getComputedStyle(meaningModalContent).lineHeight)||20;
+  const lines=Math.max(1,Math.floor(meaningModalContent.clientHeight/lineHeight));
+  meaningModalContent.style.setProperty("--meaning-preview-lines",String(lines));
+}
+window.addEventListener("resize",()=>requestAnimationFrame(fitMeaningPreview));
+
 function closeMeaningModal(){
   if(!meaningModal||meaningModal.hidden)return;
   meaningModal.hidden=true;
@@ -448,6 +460,7 @@ async function openMeaningModal(link){
   meaningModal.hidden=false;
   document.body.classList.add("meaning-modal-open");
   meaningModal.querySelector(".meaning-modal-close")?.focus();
+  requestAnimationFrame(fitMeaningPreview);
 
   try{
     const response=await fetch(link.href,{credentials:"same-origin"});
@@ -457,7 +470,7 @@ async function openMeaningModal(link){
     const pageTitle=doc.querySelector("h1")?.textContent?.trim();
     const pageCategory=doc.querySelector(".detail-category")?.textContent?.trim();
     const pageLead=doc.querySelector(".detail-lead")?.textContent?.trim();
-    const detailParagraphs=[...doc.querySelectorAll(".detail-content p")].slice(0,2);
+    const detailParagraphs=[...doc.querySelectorAll(".detail-content p")].slice(0,window.matchMedia("(max-width:768px)").matches?undefined:2);
     const pageContent=detailParagraphs.map(p=>p.outerHTML).join("");
     if(pageTitle)meaningModalTitle.textContent=pageTitle.replace(/^Значение татуировки\s*[«"]?|[»"]$/g,"").trim();
     if(pageCategory)meaningModalCategory.textContent=pageCategory;
@@ -466,6 +479,7 @@ async function openMeaningModal(link){
   }catch(error){
     meaningModalContent.innerHTML="<p>Подробное значение можно открыть на отдельной странице.</p>";
   }
+  requestAnimationFrame(fitMeaningPreview);
 }
 
 document.querySelectorAll("[data-meaning-link]").forEach(link=>{

@@ -450,3 +450,13 @@ picture.mobile-art{display:contents}
 .hero-copy p{width:100%;height:auto;margin:0}
 .hero .book-button{position:relative;left:auto;top:auto;width:100%;height:45px;margin:20px 0 0;transform:none}
 }
+
+/* Size the stage from the visible review, so the controls sit exactly 20 px below it. */
+@media(max-width:480px){
+.review-carousel .reviews-stage{display:block;height:auto}
+.review-carousel .review-slide{position:absolute;left:50%;top:0;transform:translateX(-50%)}
+.review-carousel .review-slide.is-current{position:relative;left:auto;top:auto;margin:0 auto;transform:none}
+.review-carousel .review-slide.is-before{transform:translateX(calc(-150% - 12px))}
+.review-carousel .review-slide.is-after{transform:translateX(calc(50% + 12px))}
+.review-carousel .reviews-controls{margin-top:20px}
+}

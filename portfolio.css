@@ -259,3 +259,8 @@ html.portfolio-viewer-open,html.portfolio-viewer-open body{overflow:hidden}
 @media(hover:none){
  .portfolio-grid button.portfolio-item:focus{outline:none}
 }
+
+/* Touch navigation keeps its round buttons without an extra focus ring. */
+@media(max-width:1024px),(hover:none) and (pointer:coarse){
+.portfolio-viewer .portfolio-viewer-prev:focus,.portfolio-viewer .portfolio-viewer-next:focus{outline:none;box-shadow:none;-webkit-tap-highlight-color:transparent}
+}
