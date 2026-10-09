@@ -172,10 +172,10 @@ body{min-width:0;overflow-x:hidden}
 /* Preserve image positioning while selecting smaller phone sources. */
 picture.mobile-art{display:contents}
 
-.portfolio-grid picture.portfolio-item{display:block;width:592px;height:697px}
-.portfolio-grid picture.portfolio-item img{display:block;width:100%;height:100%;object-fit:cover;border-radius:5px}
-@media (min-width:481px) and (max-width:768px){.portfolio-grid picture.portfolio-item{width:236px;height:275px}}
-@media (max-width:480px){.portfolio-grid picture.portfolio-item{width:100%;height:auto;aspect-ratio:170/198}.portfolio-grid picture.portfolio-item img{height:auto;aspect-ratio:170/198}}
+.portfolio-grid .portfolio-item{display:block;width:592px;height:697px}
+.portfolio-grid .portfolio-item img{display:block;width:100%;height:100%;object-fit:cover;border-radius:5px}
+@media (min-width:481px) and (max-width:768px){.portfolio-grid .portfolio-item{width:236px;height:275px}}
+@media (max-width:480px){.portfolio-grid .portfolio-item{width:100%;height:auto;aspect-ratio:170/198}.portfolio-grid .portfolio-item img{height:auto;aspect-ratio:170/198}}
 
 
 /* Compact desktop cover — Figma 50659:7864 */
@@ -195,7 +195,7 @@ picture.mobile-art{display:contents}
 .portfolio-grid{position:static;height:auto;grid-template-rows:none;grid-auto-rows:auto}
 .portfolio-more{position:static;flex:none;margin:50px auto 0}
 .portfolio-grid .portfolio-item[hidden],.portfolio-more[hidden],.portfolio-empty[hidden]{display:none!important}
-.portfolio-grid picture.portfolio-item{order:initial}
+.portfolio-grid .portfolio-item{order:initial}
 .portfolio-empty:not([hidden]){display:block;font-size:20px;line-height:1.3}
 @media(min-width:481px) and (max-width:768px){
   .portfolio-filters{margin:0 0 30px}
@@ -244,4 +244,18 @@ html.portfolio-viewer-open,html.portfolio-viewer-open body{overflow:hidden}
 .portfolio-cover-wordmark{position:static;width:100%;flex:none;margin:0 0 20px;transform:none}
 .portfolio-cover-copy{position:relative;left:auto;top:auto;width:min(245px,100%);height:auto;margin:0;transform:none;flex:none;overflow-wrap:break-word}
 .portfolio-cover-button{position:relative;left:auto;top:auto;width:min(228px,100%);height:45px;margin:20px 0 0;transform:none;flex:none}
+}
+
+/* Native photo buttons activate reliably on touch and retain keyboard access. */
+.portfolio-grid button.portfolio-item{padding:0;border:0;border-radius:5px;background:transparent;color:inherit;cursor:zoom-in;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.portfolio-grid button.portfolio-item:focus{outline:none}
+.portfolio-grid button.portfolio-item:focus-visible{outline:2px solid var(--beige);outline-offset:4px}
+.portfolio-grid button.portfolio-item img{pointer-events:none}
+.portfolio-grid button.portfolio-item:focus:not(:focus-visible){outline:none}
+@media(max-width:768px){
+ .portfolio-viewer .portfolio-viewer-close{display:none}
+ .portfolio-viewer{padding-top:20px}
+}
+@media(hover:none){
+ .portfolio-grid button.portfolio-item:focus{outline:none}
 }

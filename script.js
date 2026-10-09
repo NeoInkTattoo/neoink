@@ -186,6 +186,8 @@ if(portfolioViewer&&portfolioGallery){
   let viewerItems=[];
   let viewerIndex=0;
   let viewerTrigger=null;
+  let restoreKeyboardFocus=false;
+  let lastSwipeAt=0;
   let touchStart=null;
   let nextPhoto=null;
 
@@ -210,35 +212,37 @@ if(portfolioViewer&&portfolioGallery){
     }
   }
 
-  function openPortfolioViewer(img){
+  function openPortfolioViewer(img,event){
+    if(portfolioViewer.open)return;
     viewerItems=portfolioImages.filter(item=>portfolioFilter==="all"||item.dataset.tags?.split(" ").includes(portfolioFilter));
-    viewerTrigger=img;
+    viewerTrigger=img.closest(".portfolio-item");
+    restoreKeyboardFocus=event.detail===0;
     showPortfolioPhoto(viewerItems.indexOf(img));
-    document.documentElement.classList.add("portfolio-viewer-open");
     portfolioViewer.showModal();
+    document.documentElement.classList.add("portfolio-viewer-open");
   }
 
   portfolioImages.forEach(img=>{
-    img.setAttribute("role","button");
-    img.setAttribute("aria-label",`Открыть фото: ${img.alt}`);
-    img.setAttribute("aria-haspopup","dialog");
-    img.setAttribute("aria-controls","portfolio-viewer");
-    img.tabIndex=0;
+    const trigger=img.closest(".portfolio-item");
+    trigger.setAttribute("aria-label",`Открыть фото: ${img.alt}`);
+    trigger.setAttribute("aria-haspopup","dialog");
+    trigger.setAttribute("aria-controls","portfolio-viewer");
     img.draggable=false;
-    img.addEventListener("click",()=>openPortfolioViewer(img));
-    img.addEventListener("keydown",event=>{
-      if(event.key==="Enter"||event.key===" "){
-        event.preventDefault();
-        openPortfolioViewer(img);
-      }
-    });
+    trigger.addEventListener("click",event=>openPortfolioViewer(img,event));
   });
 
   previous.addEventListener("click",()=>showPortfolioPhoto(viewerIndex-1));
   next.addEventListener("click",()=>showPortfolioPhoto(viewerIndex+1));
   portfolioViewer.querySelector(".portfolio-viewer-close").addEventListener("click",()=>portfolioViewer.close());
   portfolioViewer.addEventListener("click",event=>{
-    if(event.target===portfolioViewer||event.target===portfolioViewer.querySelector(".portfolio-viewer-stage"))portfolioViewer.close();
+    if(event.target.closest("button")||Date.now()-lastSwipeAt<350)return;
+    // object-fit leaves empty space inside the image element on narrow screens.
+    const rect=photo.getBoundingClientRect();
+    const scale=Math.min(rect.width/(photo.naturalWidth||1),rect.height/(photo.naturalHeight||1));
+    const width=photo.naturalWidth*scale,height=photo.naturalHeight*scale;
+    const left=rect.left+(rect.width-width)/2,top=rect.top+(rect.height-height)/2;
+    const onPhoto=photo.naturalWidth&&event.clientX>=left&&event.clientX<=left+width&&event.clientY>=top&&event.clientY<=top+height;
+    if(!onPhoto)portfolioViewer.close();
   });
   portfolioViewer.addEventListener("keydown",event=>{
     if(event.key==="ArrowLeft"||event.key==="ArrowRight"){
@@ -251,7 +255,8 @@ if(portfolioViewer&&portfolioGallery){
     photo.removeAttribute("src");
     nextPhoto=null;
     touchStart=null;
-    viewerTrigger?.focus({preventScroll:true});
+    if(restoreKeyboardFocus)viewerTrigger?.focus({preventScroll:true});
+    else viewerTrigger?.blur();
   });
   photo.addEventListener("touchstart",event=>{
     touchStart=event.touches.length===1?{x:event.touches[0].clientX,y:event.touches[0].clientY}:null;
@@ -262,7 +267,10 @@ if(portfolioViewer&&portfolioGallery){
     const dx=touch.clientX-touchStart.x;
     const dy=touch.clientY-touchStart.y;
     touchStart=null;
-    if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)*1.4)showPortfolioPhoto(viewerIndex+(dx<0?1:-1));
+    if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)*1.4){
+      lastSwipeAt=Date.now();
+      showPortfolioPhoto(viewerIndex+(dx<0?1:-1));
+    }
   },{passive:true});
   photo.addEventListener("touchcancel",()=>{touchStart=null;},{passive:true});
 }
