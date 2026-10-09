@@ -159,3 +159,9 @@ main>.about-stats,main>.process-section,main>.reviews-section.review-carousel,ma
 main>.portfolio-section,main>.about-me,main>.portfolio-gallery,main>.meanings-catalog,main>.before-session{margin-top:var(--tablet-cover-gap)}
 main:has(>.studio-section)>.cta-section{margin-top:var(--tablet-small-gap)}
 }
+
+@media(min-width:481px) and (max-width:768px){
+.contact-section{padding-top:clamp(12px,2.604167vw,20px)}
+.contact-wordmark{height:auto;aspect-ratio:auto;object-fit:contain}
+.contact-pills{margin-top:clamp(20px,5.208333vw,40px);margin-bottom:clamp(20px,5.208333vw,40px)}
+}
