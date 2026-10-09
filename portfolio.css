@@ -264,3 +264,23 @@ html.portfolio-viewer-open,html.portfolio-viewer-open body{overflow:hidden}
 @media(max-width:1024px),(hover:none) and (pointer:coarse){
 .portfolio-viewer .portfolio-viewer-prev:focus,.portfolio-viewer .portfolio-viewer-next:focus{outline:none;box-shadow:none;-webkit-tap-highlight-color:transparent}
 }
+
+/* Keep compact cover text, button and side graphics in the same layout. */
+.cover-copy-short{display:none}
+@media(max-width:768px){
+.cover-copy-full{display:none}
+.cover-copy-short{display:block;white-space:nowrap}
+.portfolio-cover{width:100%;height:auto;min-height:0;display:grid;grid-template-columns:minmax(0,1fr) 290px minmax(0,1fr);grid-template-rows:auto auto 45px;gap:20px;align-items:stretch;padding:20px;background:transparent}
+.portfolio-cover-wordmark{position:static;grid-column:1 / -1;grid-row:1;width:100%;height:auto;aspect-ratio:728/181;margin:0 0 10px;transform:none;object-fit:fill}
+.portfolio-cover-copy{position:static;grid-column:2;grid-row:2;width:100%;height:auto;min-width:0;margin:0;transform:none;text-align:center;font-size:18px;line-height:22px;letter-spacing:-.72px}
+.portfolio-cover-button{position:static;grid-column:2;grid-row:3;width:100%;height:45px;margin:0;transform:none}
+.portfolio-cover-dots{position:static;display:block;grid-row:2 / 4;width:100%;height:100%;min-height:0;align-self:stretch;transform:none;object-fit:cover}
+.portfolio-cover-dots-left{grid-column:1;object-position:left center}
+.portfolio-cover-dots-right{grid-column:3;object-position:right center}
+}
+@media(max-width:480px){
+.portfolio-cover{grid-template-columns:minmax(0,1fr) 228px minmax(0,1fr);column-gap:8px;padding:15px 20px 20px}
+.portfolio-cover-wordmark{aspect-ratio:350/87;margin:0}
+.portfolio-cover-copy{font-size:16px;line-height:20px;letter-spacing:-.64px}
+.portfolio-cover-dots{opacity:.2}
+}

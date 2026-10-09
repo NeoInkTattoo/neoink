@@ -256,3 +256,23 @@ picture.mobile-art{display:contents}
 .about-cover-copy{position:relative;left:auto;top:auto;width:min(245px,100%);height:auto;margin:0;transform:none;flex:none;overflow-wrap:break-word}
 .about-cover-button{position:relative;left:auto;top:auto;width:min(228px,100%);height:45px;margin:20px 0 0;transform:none;flex:none}
 }
+
+/* Keep compact cover text, button and side graphics in the same layout. */
+.cover-copy-short{display:none}
+@media(max-width:768px){
+.cover-copy-full{display:none}
+.cover-copy-short{display:block;white-space:nowrap}
+.about-cover{width:100%;height:auto;min-height:0;display:grid;grid-template-columns:minmax(0,1fr) 290px minmax(0,1fr);grid-template-rows:auto auto 45px;gap:20px;align-items:stretch;padding:20px;background:transparent}
+.about-cover-wordmark{position:static;grid-column:1 / -1;grid-row:1;width:100%;height:auto;aspect-ratio:728/204;margin:0 0 10px;transform:none;object-fit:fill}
+.about-cover-copy{position:static;grid-column:2;grid-row:2;width:100%;height:auto;min-width:0;margin:0;transform:none;text-align:center;font-size:18px;line-height:22px;letter-spacing:-.72px}
+.about-cover-button{position:static;grid-column:2;grid-row:3;width:100%;height:45px;margin:0;transform:none}
+.about-cover-dots{position:static;display:block;grid-row:2 / 4;width:100%;height:100%;min-height:0;align-self:stretch;transform:none;object-fit:cover}
+.about-cover-dots-left{grid-column:1;object-position:left center}
+.about-cover-dots-right{grid-column:3;object-position:right center}
+}
+@media(max-width:480px){
+.about-cover{grid-template-columns:minmax(0,1fr) 228px minmax(0,1fr);column-gap:8px;padding:15px 20px 20px}
+.about-cover-wordmark{aspect-ratio:350/98;margin:0}
+.about-cover-copy{font-size:16px;line-height:20px;letter-spacing:-.64px}
+.about-cover-dots{opacity:.2}
+}
