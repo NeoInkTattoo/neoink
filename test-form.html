@@ -12,17 +12,28 @@ main{width:min(100%,460px);padding:32px;border:1px solid #514540;border-radius:1
 <body>
 <main>
 <h1>Тест формы Neo Ink</h1>
-<p>Это учебная форма. Пока заявки <strong>никуда не отправляются</strong>. Используйте только вымышленные данные.</p>
-<form id="testForm">
+<p>Это учебная форма. Форма подключена к тестовому обработчику Formspree. <strong>Используйте только вымышленные данные</strong>, не отправляйте реальные телефоны.</p>
+<form id="testForm" action="https://formspree.io/f/mzeevrna" method="POST">
 <label for="name">Имя</label><input id="name" name="name" autocomplete="off" maxlength="80" required placeholder="Тест">
 <label for="phone">Телефон (вымышленный)</label><input id="phone" name="phone" type="tel" autocomplete="off" maxlength="25" required placeholder="+7 000 000-00-00">
-<button type="submit">Проверить форму</button>
+<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true"><button type="submit" id="sendButton">Отправить тестовую заявку</button>
 <p id="result" role="status" aria-live="polite"></p>
 </form>
-<p class="note">Следующий шаг: подключить обработчик заявок. До этого кнопка проверяет поля локально, ничего не передаёт по сети.</p>
+<p class="note">Заявки отправляются во внешний тестовый сервис Formspree. Не используйте эту страницу для сбора реальных персональных данных.</p>
 </main>
 <script>
-document.querySelector('#testForm').addEventListener('submit',function(e){e.preventDefault();document.querySelector('#result').textContent='Поля заполнены — локальная проверка пройдена. Отправка пока не подключена.';});
+document.querySelector('#testForm').addEventListener('submit',async function(e){
+e.preventDefault();
+const form=e.currentTarget, status=document.querySelector('#result'), button=document.querySelector('#sendButton');
+button.disabled=true;status.textContent='Отправляем тестовую заявку…';
+try{
+const response=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
+if(!response.ok) throw new Error('Server rejected submission');
+status.textContent='Заявка принята Formspree! Проверьте раздел Submissions и уведомления на почте.';
+form.reset();
+}catch(error){status.textContent='Не удалось отправить заявку. Проверьте подключение и настройки формы Formspree.';}
+finally{button.disabled=false;}
+});
 </script>
 </body>
 </html>
